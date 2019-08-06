@@ -1,0 +1,551 @@
+\hypertarget{problem1_8c}{}\doxysection{problem1.\+c File Reference}
+\label{problem1_8c}\index{problem1.c@{problem1.c}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstudent}{student}}
+\item 
+struct \mbox{\hyperlink{structdeletedRollNo}{deleted\+Roll\+No}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{problem1_8c_a4f1f814b7078f515a314c0128fc2a5f0}{add\+To\+Deleted}} (int roll\+No)
+\item 
+int \mbox{\hyperlink{problem1_8c_a36420301c09c0ab06b7e6eec11d924f2}{get\+Next\+Roll\+No}} (bool \mbox{\hyperlink{problem1_8c_a88d10feb763fb76f248f1f93a89af319}{insert}})
+\item 
+void \mbox{\hyperlink{problem1_8c_a88d10feb763fb76f248f1f93a89af319}{insert}} (char name\mbox{[}25\mbox{]}, char dob\mbox{[}20\mbox{]}, char address\mbox{[}100\mbox{]}, int phone\+No)
+\item 
+void \mbox{\hyperlink{problem1_8c_a388f572c62279f839ee138a9afbdeeb5}{print}} ()
+\item 
+struct \mbox{\hyperlink{structstudent}{student}} $\ast$ \mbox{\hyperlink{problem1_8c_a672a434fa072c01aac9687b04f5de062}{search}} (int roll\+No)
+\item 
+void \mbox{\hyperlink{problem1_8c_a432f78bacb5c80f8bf4df82b6ca0f05b}{modify}} (int roll\+No, struct \mbox{\hyperlink{structstudent}{student}} new\+Data)
+\item 
+void \mbox{\hyperlink{problem1_8c_a848de2d4ba2c049294f9895785ed2098}{delete}} (int roll\+No)
+\item 
+void \mbox{\hyperlink{problem1_8c_a16186d0fe38a320cfd4f75a0620e7120}{swap}} (struct \mbox{\hyperlink{structstudent}{student}} $\ast$a, struct \mbox{\hyperlink{structstudent}{student}} $\ast$b)
+\item 
+void \mbox{\hyperlink{problem1_8c_a47fdc9eea42b6975cdc835bb2e08810e}{sort}} ()
+\item 
+int \mbox{\hyperlink{problem1_8c_acd16e621ae5803dbbc8cb28974807f88}{to\+Int}} (char string\mbox{[}$\,$\mbox{]})
+\item 
+int \mbox{\hyperlink{problem1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstudent}{student}} $\ast$ \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}} = N\+U\+LL
+\item 
+int \mbox{\hyperlink{problem1_8c_a414b430c9502f48e6c44ea8afee44ddf}{new\+Roll\+No}} = 100
+\item 
+struct \mbox{\hyperlink{structdeletedRollNo}{deleted\+Roll\+No}} $\ast$ \mbox{\hyperlink{problem1_8c_a615e84f8fa454a597a5fab0c15413f65}{deleted\+Queue}} = N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{problem1_8c_a4f1f814b7078f515a314c0128fc2a5f0}\label{problem1_8c_a4f1f814b7078f515a314c0128fc2a5f0}} 
+\index{problem1.c@{problem1.c}!addToDeleted@{addToDeleted}}
+\index{addToDeleted@{addToDeleted}!problem1.c@{problem1.c}}
+\doxysubsubsection{\texorpdfstring{addToDeleted()}{addToDeleted()}}
+{\footnotesize\ttfamily void add\+To\+Deleted (\begin{DoxyParamCaption}\item[{int}]{roll\+No }\end{DoxyParamCaption})}
+
+This function adds the deleted roll number to a queue 
+\begin{DoxyParams}{Parameters}
+{\em roll\+No} & the roll number to be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 37 of file problem1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37                               \{}
+\DoxyCodeLine{38     \textcolor{keyword}{struct }\mbox{\hyperlink{structdeletedRollNo}{deletedRollNo}} *ptr;}
+\DoxyCodeLine{39     ptr = \mbox{\hyperlink{problem1_8c_a615e84f8fa454a597a5fab0c15413f65}{deletedQueue}};}
+\DoxyCodeLine{40     \textcolor{keywordflow}{if}(ptr != NULL)\{}
+\DoxyCodeLine{41         \textcolor{keywordflow}{while}(ptr-\/>\mbox{\hyperlink{structdeletedRollNo_a270568b1760372df987edd2d987c20b1}{next}} != NULL)\{}
+\DoxyCodeLine{42             ptr = ptr-\/>\mbox{\hyperlink{structdeletedRollNo_a270568b1760372df987edd2d987c20b1}{next}};    }
+\DoxyCodeLine{43         \}}
+\DoxyCodeLine{44         \textcolor{keyword}{struct }\mbox{\hyperlink{structdeletedRollNo}{deletedRollNo}}* \textcolor{keyword}{new} = (\textcolor{keyword}{struct }\mbox{\hyperlink{structdeletedRollNo}{deletedRollNo}}*) malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{structdeletedRollNo}{deletedRollNo}}));}
+\DoxyCodeLine{45         \textcolor{keyword}{new}-\/>\mbox{\hyperlink{structdeletedRollNo_a78626e1fa5754ea3a66085ace88c5c9d}{rollNo}} = \mbox{\hyperlink{structdeletedRollNo_a78626e1fa5754ea3a66085ace88c5c9d}{rollNo}};}
+\DoxyCodeLine{46         \textcolor{keyword}{new}-\/>next = NULL;}
+\DoxyCodeLine{47         ptr-\/>\mbox{\hyperlink{structdeletedRollNo_a270568b1760372df987edd2d987c20b1}{next}} = \textcolor{keyword}{new};}
+\DoxyCodeLine{48     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{49         \textcolor{keyword}{struct }\mbox{\hyperlink{structdeletedRollNo}{deletedRollNo}}* \textcolor{keyword}{new} = (\textcolor{keyword}{struct }\mbox{\hyperlink{structdeletedRollNo}{deletedRollNo}}*) malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{structdeletedRollNo}{deletedRollNo}}));}
+\DoxyCodeLine{50         \textcolor{keyword}{new}-\/>\mbox{\hyperlink{structdeletedRollNo_a78626e1fa5754ea3a66085ace88c5c9d}{rollNo}} = \mbox{\hyperlink{structdeletedRollNo_a78626e1fa5754ea3a66085ace88c5c9d}{rollNo}};}
+\DoxyCodeLine{51         \textcolor{keyword}{new}-\/>next = NULL;}
+\DoxyCodeLine{52         \mbox{\hyperlink{problem1_8c_a615e84f8fa454a597a5fab0c15413f65}{deletedQueue}} = \textcolor{keyword}{new};}
+\DoxyCodeLine{53     \}}
+\DoxyCodeLine{54 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem1_8c_a848de2d4ba2c049294f9895785ed2098}\label{problem1_8c_a848de2d4ba2c049294f9895785ed2098}} 
+\index{problem1.c@{problem1.c}!delete@{delete}}
+\index{delete@{delete}!problem1.c@{problem1.c}}
+\doxysubsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily void delete (\begin{DoxyParamCaption}\item[{int}]{roll\+No }\end{DoxyParamCaption})}
+
+This function deletes the data of the roll number specified 
+\begin{DoxyParams}{Parameters}
+{\em roll\+No} & the roll number to be deleted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 196 of file problem1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{196                        \{}
+\DoxyCodeLine{197     \textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}} *ptr;}
+\DoxyCodeLine{198     ptr = \mbox{\hyperlink{problem1_8c_a672a434fa072c01aac9687b04f5de062}{search}}(\mbox{\hyperlink{structstudent_aba65fad741cdd2d47b62592e0a02aa05}{rollNo}});}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200     \textcolor{keywordflow}{if}(ptr != NULL)\{}
+\DoxyCodeLine{201         \textcolor{keywordflow}{if}((ptr == \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}})\&\&(ptr-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}} == \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}}))\{}
+\DoxyCodeLine{202             \mbox{\hyperlink{problem1_8c_a4f1f814b7078f515a314c0128fc2a5f0}{addToDeleted}}(ptr-\/>\mbox{\hyperlink{structstudent_aba65fad741cdd2d47b62592e0a02aa05}{rollNo}});}
+\DoxyCodeLine{203             \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}} = NULL;}
+\DoxyCodeLine{204         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{205             \mbox{\hyperlink{problem1_8c_a4f1f814b7078f515a314c0128fc2a5f0}{addToDeleted}}(ptr-\/>\mbox{\hyperlink{structstudent_aba65fad741cdd2d47b62592e0a02aa05}{rollNo}});}
+\DoxyCodeLine{206             ptr-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}}-\/>\mbox{\hyperlink{structstudent_ab347544cd7e571abc5bf210dee1acd13}{prev}} = ptr-\/>\mbox{\hyperlink{structstudent_ab347544cd7e571abc5bf210dee1acd13}{prev}};}
+\DoxyCodeLine{207             ptr-\/>\mbox{\hyperlink{structstudent_ab347544cd7e571abc5bf210dee1acd13}{prev}}-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}} = ptr-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}};}
+\DoxyCodeLine{208             \textcolor{keywordflow}{if}(ptr == \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}}) \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}} = ptr-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}};}
+\DoxyCodeLine{209         \}}
+\DoxyCodeLine{210     \}}
+\DoxyCodeLine{211 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem1_8c_a36420301c09c0ab06b7e6eec11d924f2}\label{problem1_8c_a36420301c09c0ab06b7e6eec11d924f2}} 
+\index{problem1.c@{problem1.c}!getNextRollNo@{getNextRollNo}}
+\index{getNextRollNo@{getNextRollNo}!problem1.c@{problem1.c}}
+\doxysubsubsection{\texorpdfstring{getNextRollNo()}{getNextRollNo()}}
+{\footnotesize\ttfamily int get\+Next\+Roll\+No (\begin{DoxyParamCaption}\item[{bool}]{insert }\end{DoxyParamCaption})}
+
+This function gives us the next roll number to be added to the circular doubly linked list 
+\begin{DoxyParams}{Parameters}
+{\em insert} & bool to check if we are inserting a roll number or just require the next number for comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int the roll number 
+\end{DoxyReturn}
+
+
+Definition at line 63 of file problem1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63                               \{}
+\DoxyCodeLine{64     \textcolor{keywordflow}{if}(\mbox{\hyperlink{problem1_8c_a615e84f8fa454a597a5fab0c15413f65}{deletedQueue}} != NULL)\{}
+\DoxyCodeLine{65         \textcolor{keywordtype}{int} requiredRollNo = \mbox{\hyperlink{problem1_8c_a615e84f8fa454a597a5fab0c15413f65}{deletedQueue}}-\/>\mbox{\hyperlink{structdeletedRollNo_a78626e1fa5754ea3a66085ace88c5c9d}{rollNo}};}
+\DoxyCodeLine{66         \textcolor{keywordflow}{if}(\mbox{\hyperlink{problem1_8c_a88d10feb763fb76f248f1f93a89af319}{insert}})\mbox{\hyperlink{problem1_8c_a615e84f8fa454a597a5fab0c15413f65}{deletedQueue}} = \mbox{\hyperlink{problem1_8c_a615e84f8fa454a597a5fab0c15413f65}{deletedQueue}}-\/>\mbox{\hyperlink{structdeletedRollNo_a270568b1760372df987edd2d987c20b1}{next}};}
+\DoxyCodeLine{67         \textcolor{keywordflow}{return} requiredRollNo;}
+\DoxyCodeLine{68     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{69         \textcolor{keywordflow}{if}(\mbox{\hyperlink{problem1_8c_a88d10feb763fb76f248f1f93a89af319}{insert}})\{}
+\DoxyCodeLine{70             \mbox{\hyperlink{problem1_8c_a414b430c9502f48e6c44ea8afee44ddf}{newRollNo}}++;}
+\DoxyCodeLine{71             \textcolor{keywordflow}{return} \mbox{\hyperlink{problem1_8c_a414b430c9502f48e6c44ea8afee44ddf}{newRollNo}};}
+\DoxyCodeLine{72         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{73             \textcolor{keywordflow}{return} \mbox{\hyperlink{problem1_8c_a414b430c9502f48e6c44ea8afee44ddf}{newRollNo}} + 1;}
+\DoxyCodeLine{74         \}}
+\DoxyCodeLine{75     \}}
+\DoxyCodeLine{76 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem1_8c_a88d10feb763fb76f248f1f93a89af319}\label{problem1_8c_a88d10feb763fb76f248f1f93a89af319}} 
+\index{problem1.c@{problem1.c}!insert@{insert}}
+\index{insert@{insert}!problem1.c@{problem1.c}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void insert (\begin{DoxyParamCaption}\item[{char}]{name\mbox{[}25\mbox{]},  }\item[{char}]{dob\mbox{[}20\mbox{]},  }\item[{char}]{address\mbox{[}100\mbox{]},  }\item[{int}]{phone\+No }\end{DoxyParamCaption})}
+
+This function inserts a new student to the circular doubly linked list 
+\begin{DoxyParams}{Parameters}
+{\em name} & name of the student \\
+\hline
+{\em dob} & date of birth of student \\
+\hline
+{\em address} & address of the student \\
+\hline
+{\em phone\+No} & phone number of student \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file problem1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{87                                                                         \{}
+\DoxyCodeLine{88     \textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}} *ptr;}
+\DoxyCodeLine{89     \textcolor{keywordflow}{if}(\mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}} == NULL)\{ }
+\DoxyCodeLine{90         \textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}}* newStudent = (\textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}}*) malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{structstudent}{student}}));}
+\DoxyCodeLine{91         newStudent-\/>\mbox{\hyperlink{structstudent_aba65fad741cdd2d47b62592e0a02aa05}{rollNo}} = \mbox{\hyperlink{problem1_8c_a36420301c09c0ab06b7e6eec11d924f2}{getNextRollNo}}(\textcolor{keyword}{true});    }
+\DoxyCodeLine{92         strcpy(newStudent-\/>\mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}}, \mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}});}
+\DoxyCodeLine{93         strcpy(newStudent-\/>\mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}}, \mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}});}
+\DoxyCodeLine{94         strcpy(newStudent-\/>\mbox{\hyperlink{structstudent_ab97d32ab7f6994211ffc7a156b359964}{address}}, \mbox{\hyperlink{structstudent_ab97d32ab7f6994211ffc7a156b359964}{address}});}
+\DoxyCodeLine{95         newStudent-\/>\mbox{\hyperlink{structstudent_a121560dbc49fe2623aa5baf290e1dca8}{phoneNo}} = \mbox{\hyperlink{structstudent_a121560dbc49fe2623aa5baf290e1dca8}{phoneNo}};}
+\DoxyCodeLine{96         newStudent-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}} = newStudent;}
+\DoxyCodeLine{97         newStudent-\/>\mbox{\hyperlink{structstudent_ab347544cd7e571abc5bf210dee1acd13}{prev}} = newStudent;}
+\DoxyCodeLine{98         \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}} = newStudent;}
+\DoxyCodeLine{99     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{100         ptr = \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}};}
+\DoxyCodeLine{101         \textcolor{keywordflow}{while}((ptr-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}} != \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}})\&\&(\mbox{\hyperlink{problem1_8c_a36420301c09c0ab06b7e6eec11d924f2}{getNextRollNo}}(\textcolor{keyword}{false}) > ptr-\/>\mbox{\hyperlink{structstudent_aba65fad741cdd2d47b62592e0a02aa05}{rollNo}}))\{}
+\DoxyCodeLine{102             ptr = ptr-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}};}
+\DoxyCodeLine{103         \}}
+\DoxyCodeLine{104         \textcolor{keywordflow}{if}((\mbox{\hyperlink{problem1_8c_a36420301c09c0ab06b7e6eec11d924f2}{getNextRollNo}}(\textcolor{keyword}{false}) < ptr-\/>\mbox{\hyperlink{structstudent_aba65fad741cdd2d47b62592e0a02aa05}{rollNo}}))\{}
+\DoxyCodeLine{105             \textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}}* newStudent = (\textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}}*) malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{structstudent}{student}}));}
+\DoxyCodeLine{106             newStudent-\/>\mbox{\hyperlink{structstudent_aba65fad741cdd2d47b62592e0a02aa05}{rollNo}} = \mbox{\hyperlink{problem1_8c_a36420301c09c0ab06b7e6eec11d924f2}{getNextRollNo}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{107             strcpy(newStudent-\/>\mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}}, \mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}});}
+\DoxyCodeLine{108             strcpy(newStudent-\/>\mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}}, \mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}});}
+\DoxyCodeLine{109             strcpy(newStudent-\/>\mbox{\hyperlink{structstudent_ab97d32ab7f6994211ffc7a156b359964}{address}}, \mbox{\hyperlink{structstudent_ab97d32ab7f6994211ffc7a156b359964}{address}});}
+\DoxyCodeLine{110             newStudent-\/>\mbox{\hyperlink{structstudent_a121560dbc49fe2623aa5baf290e1dca8}{phoneNo}} = \mbox{\hyperlink{structstudent_a121560dbc49fe2623aa5baf290e1dca8}{phoneNo}};}
+\DoxyCodeLine{111             newStudent-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}} = ptr;}
+\DoxyCodeLine{112             newStudent-\/>\mbox{\hyperlink{structstudent_ab347544cd7e571abc5bf210dee1acd13}{prev}} = ptr-\/>\mbox{\hyperlink{structstudent_ab347544cd7e571abc5bf210dee1acd13}{prev}};}
+\DoxyCodeLine{113             ptr-\/>\mbox{\hyperlink{structstudent_ab347544cd7e571abc5bf210dee1acd13}{prev}}-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}} = newStudent;}
+\DoxyCodeLine{114             ptr-\/>\mbox{\hyperlink{structstudent_ab347544cd7e571abc5bf210dee1acd13}{prev}} = newStudent;}
+\DoxyCodeLine{115             \textcolor{keywordflow}{if}(ptr==\mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}}) \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}} = newStudent;}
+\DoxyCodeLine{116         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((ptr-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}} == \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}}))\{}
+\DoxyCodeLine{117             \textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}}* newStudent = (\textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}}*) malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{structstudent}{student}}));}
+\DoxyCodeLine{118             newStudent-\/>\mbox{\hyperlink{structstudent_aba65fad741cdd2d47b62592e0a02aa05}{rollNo}} = \mbox{\hyperlink{problem1_8c_a36420301c09c0ab06b7e6eec11d924f2}{getNextRollNo}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{119             strcpy(newStudent-\/>\mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}}, \mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}});}
+\DoxyCodeLine{120             strcpy(newStudent-\/>\mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}}, \mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}});}
+\DoxyCodeLine{121             strcpy(newStudent-\/>\mbox{\hyperlink{structstudent_ab97d32ab7f6994211ffc7a156b359964}{address}}, \mbox{\hyperlink{structstudent_ab97d32ab7f6994211ffc7a156b359964}{address}});}
+\DoxyCodeLine{122             newStudent-\/>\mbox{\hyperlink{structstudent_a121560dbc49fe2623aa5baf290e1dca8}{phoneNo}} = \mbox{\hyperlink{structstudent_a121560dbc49fe2623aa5baf290e1dca8}{phoneNo}};}
+\DoxyCodeLine{123             newStudent-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}} = \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}};}
+\DoxyCodeLine{124             newStudent-\/>\mbox{\hyperlink{structstudent_ab347544cd7e571abc5bf210dee1acd13}{prev}} = ptr;}
+\DoxyCodeLine{125             ptr-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}} = newStudent;}
+\DoxyCodeLine{126             \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}}-\/>\mbox{\hyperlink{structstudent_ab347544cd7e571abc5bf210dee1acd13}{prev}} = newStudent;}
+\DoxyCodeLine{127         \}}
+\DoxyCodeLine{128     \}}
+\DoxyCodeLine{129 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{problem1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{problem1.c@{problem1.c}!main@{main}}
+\index{main@{main}!problem1.c@{problem1.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 280 of file problem1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{280           \{}
+\DoxyCodeLine{281     }
+\DoxyCodeLine{282     FILE* studentDataStream = fopen(\textcolor{stringliteral}{"./StudentData.csv"}, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{283     }
+\DoxyCodeLine{284     \textcolor{keywordtype}{char} studentDataAll[2048];}
+\DoxyCodeLine{285     fgets(studentDataAll, 2048, studentDataStream);}
+\DoxyCodeLine{286     }
+\DoxyCodeLine{287     \textcolor{keywordtype}{char} studentDataArray[50][5][100];  }
+\DoxyCodeLine{288     \textcolor{keywordtype}{int} i=0;}
+\DoxyCodeLine{289     \textcolor{keywordtype}{char}* token = strtok(studentDataAll, \textcolor{stringliteral}{";"});}
+\DoxyCodeLine{290     \textcolor{keywordflow}{while}(token)\{}
+\DoxyCodeLine{291         \textcolor{keywordtype}{int} \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} = strlen(token);}
+\DoxyCodeLine{292         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} -\/ 2; ++j)\{}
+\DoxyCodeLine{293                 studentDataArray[(int)i/5][i\%5][j] = token[j+1];    }
+\DoxyCodeLine{294         \}   }
+\DoxyCodeLine{295         token = strtok(NULL, \textcolor{stringliteral}{";"});}
+\DoxyCodeLine{296         i++;}
+\DoxyCodeLine{297     \}}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299     \textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}} Data[(i+1)/5];}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < (i+1)/5; j++)\{}
+\DoxyCodeLine{302         strcpy(Data[j].\mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}}, studentDataArray[j][1]);}
+\DoxyCodeLine{303         strcpy(Data[j].\mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}}, studentDataArray[j][2]);}
+\DoxyCodeLine{304         strcpy(Data[j].\mbox{\hyperlink{structstudent_ab97d32ab7f6994211ffc7a156b359964}{address}}, studentDataArray[j][3]);}
+\DoxyCodeLine{305         Data[j].phoneNo = \mbox{\hyperlink{problem1_8c_acd16e621ae5803dbbc8cb28974807f88}{toInt}}(studentDataArray[j][4]);}
+\DoxyCodeLine{306     \}}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308     \textcolor{comment}{//Testing}}
+\DoxyCodeLine{309     }
+\DoxyCodeLine{310     \textcolor{keyword}{delete}(108);}
+\DoxyCodeLine{311     printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{312     \mbox{\hyperlink{problem1_8c_a88d10feb763fb76f248f1f93a89af319}{insert}}(Data[0].\mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}}, Data[0].\mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}}, Data[0].\mbox{\hyperlink{structstudent_ab97d32ab7f6994211ffc7a156b359964}{address}}, Data[0].\mbox{\hyperlink{structstudent_a121560dbc49fe2623aa5baf290e1dca8}{phoneNo}});}
+\DoxyCodeLine{313     \mbox{\hyperlink{problem1_8c_a88d10feb763fb76f248f1f93a89af319}{insert}}(Data[1].\mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}}, Data[1].\mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}}, Data[1].\mbox{\hyperlink{structstudent_ab97d32ab7f6994211ffc7a156b359964}{address}}, Data[1].\mbox{\hyperlink{structstudent_a121560dbc49fe2623aa5baf290e1dca8}{phoneNo}});}
+\DoxyCodeLine{314     \mbox{\hyperlink{problem1_8c_a88d10feb763fb76f248f1f93a89af319}{insert}}(Data[2].\mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}}, Data[2].\mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}}, Data[2].\mbox{\hyperlink{structstudent_ab97d32ab7f6994211ffc7a156b359964}{address}}, Data[2].\mbox{\hyperlink{structstudent_a121560dbc49fe2623aa5baf290e1dca8}{phoneNo}});}
+\DoxyCodeLine{315     \mbox{\hyperlink{problem1_8c_a88d10feb763fb76f248f1f93a89af319}{insert}}(Data[3].\mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}}, Data[3].\mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}}, Data[3].\mbox{\hyperlink{structstudent_ab97d32ab7f6994211ffc7a156b359964}{address}}, Data[3].\mbox{\hyperlink{structstudent_a121560dbc49fe2623aa5baf290e1dca8}{phoneNo}});}
+\DoxyCodeLine{316     \textcolor{keyword}{delete}(102);}
+\DoxyCodeLine{317     \textcolor{keyword}{delete}(101);}
+\DoxyCodeLine{318     \mbox{\hyperlink{problem1_8c_a88d10feb763fb76f248f1f93a89af319}{insert}}(Data[4].\mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}}, Data[4].\mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}}, Data[4].\mbox{\hyperlink{structstudent_ab97d32ab7f6994211ffc7a156b359964}{address}}, Data[4].\mbox{\hyperlink{structstudent_a121560dbc49fe2623aa5baf290e1dca8}{phoneNo}});}
+\DoxyCodeLine{319     \mbox{\hyperlink{problem1_8c_a88d10feb763fb76f248f1f93a89af319}{insert}}(Data[5].\mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}}, Data[5].\mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}}, Data[5].\mbox{\hyperlink{structstudent_ab97d32ab7f6994211ffc7a156b359964}{address}}, Data[5].\mbox{\hyperlink{structstudent_a121560dbc49fe2623aa5baf290e1dca8}{phoneNo}});}
+\DoxyCodeLine{320     \mbox{\hyperlink{problem1_8c_a88d10feb763fb76f248f1f93a89af319}{insert}}(Data[6].\mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}}, Data[6].\mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}}, Data[6].\mbox{\hyperlink{structstudent_ab97d32ab7f6994211ffc7a156b359964}{address}}, Data[6].\mbox{\hyperlink{structstudent_a121560dbc49fe2623aa5baf290e1dca8}{phoneNo}});}
+\DoxyCodeLine{321     \mbox{\hyperlink{problem1_8c_a388f572c62279f839ee138a9afbdeeb5}{print}}();}
+\DoxyCodeLine{322     printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{323     \mbox{\hyperlink{problem1_8c_a47fdc9eea42b6975cdc835bb2e08810e}{sort}}();}
+\DoxyCodeLine{324     \mbox{\hyperlink{problem1_8c_a388f572c62279f839ee138a9afbdeeb5}{print}}();}
+\DoxyCodeLine{325     printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{326     \textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}}* modify103 = (\textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}}*) malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{structstudent}{student}}));}
+\DoxyCodeLine{327     strcpy(modify103-\/>\mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}}, \textcolor{stringliteral}{"Taylor Swift"});}
+\DoxyCodeLine{328     strcpy(modify103-\/>\mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}}, \textcolor{stringliteral}{"12-\/Jan-\/45"});}
+\DoxyCodeLine{329     strcpy(modify103-\/>\mbox{\hyperlink{structstudent_ab97d32ab7f6994211ffc7a156b359964}{address}}, \textcolor{stringliteral}{"Brooklyn 99"});}
+\DoxyCodeLine{330     modify103-\/>\mbox{\hyperlink{structstudent_a121560dbc49fe2623aa5baf290e1dca8}{phoneNo}} = 1489302673;}
+\DoxyCodeLine{331     \mbox{\hyperlink{problem1_8c_a432f78bacb5c80f8bf4df82b6ca0f05b}{modify}}(103, *modify103);}
+\DoxyCodeLine{332     \mbox{\hyperlink{problem1_8c_a388f572c62279f839ee138a9afbdeeb5}{print}}();}
+\DoxyCodeLine{333     }
+\DoxyCodeLine{334     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{335 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem1_8c_a432f78bacb5c80f8bf4df82b6ca0f05b}\label{problem1_8c_a432f78bacb5c80f8bf4df82b6ca0f05b}} 
+\index{problem1.c@{problem1.c}!modify@{modify}}
+\index{modify@{modify}!problem1.c@{problem1.c}}
+\doxysubsubsection{\texorpdfstring{modify()}{modify()}}
+{\footnotesize\ttfamily void modify (\begin{DoxyParamCaption}\item[{int}]{roll\+No,  }\item[{struct \mbox{\hyperlink{structstudent}{student}}}]{new\+Data }\end{DoxyParamCaption})}
+
+This function modifes the data associated with a roll number 
+\begin{DoxyParams}{Parameters}
+{\em roll\+No} & the roll number whose data has to be modfied \\
+\hline
+{\em new\+Data} & the new data to be associated with the roll number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 180 of file problem1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{180                                                \{}
+\DoxyCodeLine{181     \textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}} *ptr;}
+\DoxyCodeLine{182     ptr = \mbox{\hyperlink{problem1_8c_a672a434fa072c01aac9687b04f5de062}{search}}(\mbox{\hyperlink{structstudent_aba65fad741cdd2d47b62592e0a02aa05}{rollNo}});}
+\DoxyCodeLine{183     \textcolor{keywordflow}{if}(ptr != NULL)\{}
+\DoxyCodeLine{184         strcpy(ptr-\/>\mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}}, newData.\mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}});}
+\DoxyCodeLine{185         strcpy(ptr-\/>\mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}}, newData.\mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}});}
+\DoxyCodeLine{186         strcpy(ptr-\/>\mbox{\hyperlink{structstudent_ab97d32ab7f6994211ffc7a156b359964}{address}}, newData.\mbox{\hyperlink{structstudent_ab97d32ab7f6994211ffc7a156b359964}{address}});}
+\DoxyCodeLine{187         ptr-\/>\mbox{\hyperlink{structstudent_a121560dbc49fe2623aa5baf290e1dca8}{phoneNo}} = newData.\mbox{\hyperlink{structstudent_a121560dbc49fe2623aa5baf290e1dca8}{phoneNo}};}
+\DoxyCodeLine{188     \}}
+\DoxyCodeLine{189 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem1_8c_a388f572c62279f839ee138a9afbdeeb5}\label{problem1_8c_a388f572c62279f839ee138a9afbdeeb5}} 
+\index{problem1.c@{problem1.c}!print@{print}}
+\index{print@{print}!problem1.c@{problem1.c}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 135 of file problem1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{135             \{}
+\DoxyCodeLine{136     \textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}} *ptr;}
+\DoxyCodeLine{137     ptr = \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}};}
+\DoxyCodeLine{138     \textcolor{keywordflow}{if}(\mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}} != NULL)\{}
+\DoxyCodeLine{139         \textcolor{keywordflow}{while}(ptr-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}} != \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}})\{}
+\DoxyCodeLine{140             printf(\textcolor{stringliteral}{"Roll No: \%d\(\backslash\)n"}, ptr-\/>\mbox{\hyperlink{structstudent_aba65fad741cdd2d47b62592e0a02aa05}{rollNo}});}
+\DoxyCodeLine{141             printf(\textcolor{stringliteral}{"Name: \%s\(\backslash\)n"}, ptr-\/>\mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}});}
+\DoxyCodeLine{142             printf(\textcolor{stringliteral}{"Date of Birth: \%s\(\backslash\)n"}, ptr-\/>\mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}});}
+\DoxyCodeLine{143                 ptr = ptr-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}};}
+\DoxyCodeLine{144         \}}
+\DoxyCodeLine{145         printf(\textcolor{stringliteral}{"Roll No: \%d\(\backslash\)n"}, ptr-\/>\mbox{\hyperlink{structstudent_aba65fad741cdd2d47b62592e0a02aa05}{rollNo}});}
+\DoxyCodeLine{146         printf(\textcolor{stringliteral}{"Name: \%s\(\backslash\)n"}, ptr-\/>\mbox{\hyperlink{structstudent_aa703f0d7451852657289ef870b689c7b}{name}});}
+\DoxyCodeLine{147         printf(\textcolor{stringliteral}{"Date of Birth: \%s\(\backslash\)n"}, ptr-\/>\mbox{\hyperlink{structstudent_a9cdbd7254cb79c9698223aec2f6001c7}{dob}});}
+\DoxyCodeLine{148     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{149         printf(\textcolor{stringliteral}{"List is empty.\(\backslash\)n"});}
+\DoxyCodeLine{150     \}}
+\DoxyCodeLine{151 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem1_8c_a672a434fa072c01aac9687b04f5de062}\label{problem1_8c_a672a434fa072c01aac9687b04f5de062}} 
+\index{problem1.c@{problem1.c}!search@{search}}
+\index{search@{search}!problem1.c@{problem1.c}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structstudent}{student}}$\ast$ search (\begin{DoxyParamCaption}\item[{int}]{roll\+No }\end{DoxyParamCaption})}
+
+This function searches for a specified roll number 
+\begin{DoxyParams}{Parameters}
+{\em roll\+No} & the roll number required \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struct student$\ast$ pointer to the required struct 
+\end{DoxyReturn}
+
+
+Definition at line 158 of file problem1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{158                                   \{}
+\DoxyCodeLine{159     \textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}} *ptr = \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}};}
+\DoxyCodeLine{160     \textcolor{keywordflow}{if}(\mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}} != NULL)\{}
+\DoxyCodeLine{161         \textcolor{keywordflow}{while}((ptr-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}} != \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}})\&\&(ptr-\/>\mbox{\hyperlink{structstudent_aba65fad741cdd2d47b62592e0a02aa05}{rollNo}} != \mbox{\hyperlink{structstudent_aba65fad741cdd2d47b62592e0a02aa05}{rollNo}}))\{}
+\DoxyCodeLine{162             ptr = ptr-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}};}
+\DoxyCodeLine{163         \}}
+\DoxyCodeLine{164             \textcolor{keywordflow}{if}(ptr-\/>\mbox{\hyperlink{structstudent_aba65fad741cdd2d47b62592e0a02aa05}{rollNo}} != \mbox{\hyperlink{structstudent_aba65fad741cdd2d47b62592e0a02aa05}{rollNo}})\{}
+\DoxyCodeLine{165             ptr = NULL;}
+\DoxyCodeLine{166             printf(\textcolor{stringliteral}{"ERROR: Can't find the requested roll number\(\backslash\)n"});}
+\DoxyCodeLine{167         \}}
+\DoxyCodeLine{168     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{169         printf(\textcolor{stringliteral}{"List is empty\(\backslash\)n"});}
+\DoxyCodeLine{170     \}}
+\DoxyCodeLine{171     \textcolor{keywordflow}{return} ptr;}
+\DoxyCodeLine{172 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem1_8c_a47fdc9eea42b6975cdc835bb2e08810e}\label{problem1_8c_a47fdc9eea42b6975cdc835bb2e08810e}} 
+\index{problem1.c@{problem1.c}!sort@{sort}}
+\index{sort@{sort}!problem1.c@{problem1.c}}
+\doxysubsubsection{\texorpdfstring{sort()}{sort()}}
+{\footnotesize\ttfamily void sort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function sorts the linked list according to the names in alphabetical order \begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 235 of file problem1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{235            \{}
+\DoxyCodeLine{236     \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{237     }
+\DoxyCodeLine{238     \textcolor{keywordflow}{if}(\mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}} == NULL)\{}
+\DoxyCodeLine{239         printf(\textcolor{stringliteral}{"List is empty.\(\backslash\)n"});}
+\DoxyCodeLine{240     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{241         \textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}}* ptr;}
+\DoxyCodeLine{242         ptr = \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}};}
+\DoxyCodeLine{243         count++;}
+\DoxyCodeLine{244         \textcolor{keywordflow}{while}(ptr-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}} != \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}})\{}
+\DoxyCodeLine{245             ptr = ptr-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}};}
+\DoxyCodeLine{246             count++;}
+\DoxyCodeLine{247         \}}
+\DoxyCodeLine{248         \textcolor{keywordtype}{int} inserted = 1;}
+\DoxyCodeLine{249         ptr = \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}};}
+\DoxyCodeLine{250         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < count; j++)\{}
+\DoxyCodeLine{251             \textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}}* \mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} = \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}};}
+\DoxyCodeLine{252             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k =0; k < count -\/1-\/j; k++)\{}
+\DoxyCodeLine{253                 \textcolor{keywordflow}{if}(strcmp(\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}}-\/>name, \mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}}-\/>next-\/>name)>0)\{}
+\DoxyCodeLine{254                     \textcolor{keywordflow}{if}(\mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}} == \mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}})\{}
+\DoxyCodeLine{255                         \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}} = \mbox{\hyperlink{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}{first}}-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}};}
+\DoxyCodeLine{256                     \}}
+\DoxyCodeLine{257                     \mbox{\hyperlink{problem1_8c_a16186d0fe38a320cfd4f75a0620e7120}{swap}}(\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}}, \mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}}-\/>next);}
+\DoxyCodeLine{258                 \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{259                     \mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} = \mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}}-\/>next;}
+\DoxyCodeLine{260                 \}}
+\DoxyCodeLine{261             \}}
+\DoxyCodeLine{262         \}}
+\DoxyCodeLine{263     \}}
+\DoxyCodeLine{264 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem1_8c_a16186d0fe38a320cfd4f75a0620e7120}\label{problem1_8c_a16186d0fe38a320cfd4f75a0620e7120}} 
+\index{problem1.c@{problem1.c}!swap@{swap}}
+\index{swap@{swap}!problem1.c@{problem1.c}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily void swap (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structstudent}{student}} $\ast$}]{a,  }\item[{struct \mbox{\hyperlink{structstudent}{student}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+This function swaps two consecutive nodes in the linked list 
+\begin{DoxyParams}{Parameters}
+{\em a} & pointer to first student \\
+\hline
+{\em b} & pointer to the next student \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 219 of file problem1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{219                                                \{}
+\DoxyCodeLine{220     \textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}}* temp1 = a-\/>\mbox{\hyperlink{structstudent_ab347544cd7e571abc5bf210dee1acd13}{prev}};}
+\DoxyCodeLine{221     \textcolor{keyword}{struct }\mbox{\hyperlink{structstudent}{student}}* temp2 = b-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}};}
+\DoxyCodeLine{222     temp1-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}} = b;}
+\DoxyCodeLine{223     b-\/>\mbox{\hyperlink{structstudent_ab347544cd7e571abc5bf210dee1acd13}{prev}} = temp1;}
+\DoxyCodeLine{224     a-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}} = temp2;}
+\DoxyCodeLine{225     temp2-\/>\mbox{\hyperlink{structstudent_ab347544cd7e571abc5bf210dee1acd13}{prev}} = a;}
+\DoxyCodeLine{226     b-\/>\mbox{\hyperlink{structstudent_a3fdac167b43bdb5e1c022dd3270c655f}{next}} = a;}
+\DoxyCodeLine{227     a-\/>\mbox{\hyperlink{structstudent_ab347544cd7e571abc5bf210dee1acd13}{prev}} = b;}
+\DoxyCodeLine{228 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem1_8c_acd16e621ae5803dbbc8cb28974807f88}\label{problem1_8c_acd16e621ae5803dbbc8cb28974807f88}} 
+\index{problem1.c@{problem1.c}!toInt@{toInt}}
+\index{toInt@{toInt}!problem1.c@{problem1.c}}
+\doxysubsubsection{\texorpdfstring{toInt()}{toInt()}}
+{\footnotesize\ttfamily int to\+Int (\begin{DoxyParamCaption}\item[{char}]{string\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+This function converts an appropriate string to int 
+\begin{DoxyParams}{Parameters}
+{\em string} & a valid string to be converted to int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int the required int value 
+\end{DoxyReturn}
+
+
+Definition at line 271 of file problem1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{271                         \{}
+\DoxyCodeLine{272     \textcolor{keywordtype}{int} n = 0;}
+\DoxyCodeLine{273     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < strlen(\textcolor{keywordtype}{string}); j++)\{}
+\DoxyCodeLine{274         n = n * 10 + \textcolor{keywordtype}{string}[j] -\/ \textcolor{charliteral}{'0'};   }
+\DoxyCodeLine{275     \}}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277     \textcolor{keywordflow}{return} n;}
+\DoxyCodeLine{278 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{problem1_8c_a615e84f8fa454a597a5fab0c15413f65}\label{problem1_8c_a615e84f8fa454a597a5fab0c15413f65}} 
+\index{problem1.c@{problem1.c}!deletedQueue@{deletedQueue}}
+\index{deletedQueue@{deletedQueue}!problem1.c@{problem1.c}}
+\doxysubsubsection{\texorpdfstring{deletedQueue}{deletedQueue}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structdeletedRollNo}{deleted\+Roll\+No}}$\ast$ deleted\+Queue = N\+U\+LL}
+
+
+
+Definition at line 30 of file problem1.\+c.
+
+\mbox{\Hypertarget{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}\label{problem1_8c_ad63f0825c52db2afe81c4051cc30b810}} 
+\index{problem1.c@{problem1.c}!first@{first}}
+\index{first@{first}!problem1.c@{problem1.c}}
+\doxysubsubsection{\texorpdfstring{first}{first}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structstudent}{student}}$\ast$ first = N\+U\+LL}
+
+
+
+Definition at line 19 of file problem1.\+c.
+
+\mbox{\Hypertarget{problem1_8c_a414b430c9502f48e6c44ea8afee44ddf}\label{problem1_8c_a414b430c9502f48e6c44ea8afee44ddf}} 
+\index{problem1.c@{problem1.c}!newRollNo@{newRollNo}}
+\index{newRollNo@{newRollNo}!problem1.c@{problem1.c}}
+\doxysubsubsection{\texorpdfstring{newRollNo}{newRollNo}}
+{\footnotesize\ttfamily int new\+Roll\+No = 100}
+
+
+
+Definition at line 20 of file problem1.\+c.
+

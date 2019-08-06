@@ -1,0 +1,56 @@
+\hypertarget{compareFiles_8c}{}\doxysection{compare\+Files.\+c File Reference}
+\label{compareFiles_8c}\index{compareFiles.c@{compareFiles.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{compareFiles_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{compareFiles_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{compareFiles_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{compareFiles.c@{compareFiles.c}!main@{main}}
+\index{main@{main}!compareFiles.c@{compareFiles.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The input data in the form of string
+
+The decrypted data in the form of string
+
+Remove the default carriage return at the end of the files
+
+Checking if the input and decrypted data are same
+
+Definition at line 5 of file compare\+Files.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5           \{}
+\DoxyCodeLine{6     FILE* original = fopen(\textcolor{stringliteral}{"inputfile.txt"}, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{7     FILE* decrypted = fopen(\textcolor{stringliteral}{"decryptedOutputfile.txt"}, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9     \textcolor{keywordtype}{char}* inputData = (\textcolor{keywordtype}{char}*) calloc(1000, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})); }
+\DoxyCodeLine{10     \textcolor{keywordtype}{char}* decryptedData = (\textcolor{keywordtype}{char}*) calloc(1000, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     fgets(inputData, 1000, original);}
+\DoxyCodeLine{13     fgets(decryptedData, 1000, decrypted);}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{16     strtok(inputData, \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n"});}
+\DoxyCodeLine{17     strtok(decryptedData, \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n"});}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     printf(\textcolor{stringliteral}{"Input: \%s\(\backslash\)n"}, inputData);}
+\DoxyCodeLine{20     printf(\textcolor{stringliteral}{"Output: \%s\(\backslash\)n"}, decryptedData);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{23     \textcolor{keywordflow}{if}(strcmp(inputData, decryptedData) == 0)\{}
+\DoxyCodeLine{24         printf(\textcolor{stringliteral}{"The strings are the same!"});}
+\DoxyCodeLine{25     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{26         printf(\textcolor{stringliteral}{"The strings are NOT SAME!"});}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}

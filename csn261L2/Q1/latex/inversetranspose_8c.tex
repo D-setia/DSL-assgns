@@ -1,0 +1,240 @@
+\hypertarget{inversetranspose_8c}{}\doxysection{inversetranspose.\+c File Reference}
+\label{inversetranspose_8c}\index{inversetranspose.c@{inversetranspose.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{inversetranspose_8c_a0d486279036c436d360d179a2cd0aa12}{gcd}} (int smaller, int greater)
+\item 
+int \mbox{\hyperlink{inversetranspose_8c_ae6b642e36db9656edd8003512516dc10}{char\+To\+Int}} (char $\ast$string)
+\item 
+char $\ast$ \mbox{\hyperlink{inversetranspose_8c_a8fea37b5b8318ee19119bf31a5c941b3}{decrypt}} (int n, int a, int b, char $\ast$encrypted)
+\item 
+int \mbox{\hyperlink{inversetranspose_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{inversetranspose_8c_ae6b642e36db9656edd8003512516dc10}\label{inversetranspose_8c_ae6b642e36db9656edd8003512516dc10}} 
+\index{inversetranspose.c@{inversetranspose.c}!charToInt@{charToInt}}
+\index{charToInt@{charToInt}!inversetranspose.c@{inversetranspose.c}}
+\doxysubsubsection{\texorpdfstring{charToInt()}{charToInt()}}
+{\footnotesize\ttfamily int char\+To\+Int (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+This functin converts a valid string to int 
+\begin{DoxyParams}{Parameters}
+{\em string} & A string with numbers for each char \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The int form of the string 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file inversetranspose.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22                            \{}
+\DoxyCodeLine{23     \textcolor{keywordtype}{int} n = 0;}
+\DoxyCodeLine{24     }
+\DoxyCodeLine{25     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < strlen(\textcolor{keywordtype}{string}); i++)\{}
+\DoxyCodeLine{26         n = n*10 + \textcolor{keywordtype}{string}[i] -\/ \textcolor{charliteral}{'0'};}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keywordflow}{return} n;}
+\DoxyCodeLine{30 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{inversetranspose_8c_a8fea37b5b8318ee19119bf31a5c941b3}\label{inversetranspose_8c_a8fea37b5b8318ee19119bf31a5c941b3}} 
+\index{inversetranspose.c@{inversetranspose.c}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!inversetranspose.c@{inversetranspose.c}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily char$\ast$ decrypt (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int}]{a,  }\item[{int}]{b,  }\item[{char $\ast$}]{encrypted }\end{DoxyParamCaption})}
+
+This function takes in the data of the encrypted file as a string and decrypts it according to the values of n, a and b given by the user 
+\begin{DoxyParams}{Parameters}
+{\em n} & Value of n used for encryption \\
+\hline
+{\em a} & Value of a used for encryption \\
+\hline
+{\em b} & Value of b used for encryption \\
+\hline
+{\em input} & The input string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$ The decrypted string 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file inversetranspose.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41                                                    \{}
+\DoxyCodeLine{42     \textcolor{keywordtype}{char}* add = \textcolor{stringliteral}{" "};}
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} j = 0;}
+\DoxyCodeLine{44     \textcolor{keywordtype}{int} a1 = 0;}
+\DoxyCodeLine{45     \textcolor{keywordtype}{int} b1 = 0;}
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} k = 0;}
+\DoxyCodeLine{47     \textcolor{keywordtype}{char}* decrypted = (\textcolor{keywordtype}{char}*) calloc(1000, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{keywordflow}{while}(strlen(encrypted)\%n != 0)\{}
+\DoxyCodeLine{50         strcat(encrypted, add);}
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{keywordflow}{if}(a>0)\{}
+\DoxyCodeLine{54         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i < n; i++)\{}
+\DoxyCodeLine{55             \textcolor{keywordflow}{if}((i*a)\%n == 1)\{}
+\DoxyCodeLine{56                 a1 = i;}
+\DoxyCodeLine{57                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{58             \}}
+\DoxyCodeLine{59         \}}
+\DoxyCodeLine{60     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{61         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = -\/1; i > -\/n; i-\/-\/)\{}
+\DoxyCodeLine{62             \textcolor{keywordflow}{if}((i*a)\%n == 1)\{}
+\DoxyCodeLine{63                 a1 = i;}
+\DoxyCodeLine{64                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{65             \}}
+\DoxyCodeLine{66         \}}
+\DoxyCodeLine{67     \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i < n; i++)\{}
+\DoxyCodeLine{70         \textcolor{keywordflow}{if}((a1*b + i)\%n == 0)\{}
+\DoxyCodeLine{71             b1 = i;}
+\DoxyCodeLine{72             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{73         \}}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} l = 0; l < strlen(encrypted)/n; l++)\{}
+\DoxyCodeLine{77         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)\{}
+\DoxyCodeLine{78             j = (i*a + b)\%n;}
+\DoxyCodeLine{79             \textcolor{keywordflow}{if}(j < 0) j += n;}
+\DoxyCodeLine{80             k = (j*a1 + b1)\%n;}
+\DoxyCodeLine{81             \textcolor{keywordflow}{if}(k < 0) k += n;}
+\DoxyCodeLine{82             decrypted[l*n+j] = encrypted[l*n+k];}
+\DoxyCodeLine{83         \}}
+\DoxyCodeLine{84     \}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \textcolor{keywordflow}{return} decrypted;   }
+\DoxyCodeLine{87 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{inversetranspose_8c_a0d486279036c436d360d179a2cd0aa12}\label{inversetranspose_8c_a0d486279036c436d360d179a2cd0aa12}} 
+\index{inversetranspose.c@{inversetranspose.c}!gcd@{gcd}}
+\index{gcd@{gcd}!inversetranspose.c@{inversetranspose.c}}
+\doxysubsubsection{\texorpdfstring{gcd()}{gcd()}}
+{\footnotesize\ttfamily int gcd (\begin{DoxyParamCaption}\item[{int}]{smaller,  }\item[{int}]{greater }\end{DoxyParamCaption})}
+
+This function takes in two positive numbers and give their G\+CD 
+\begin{DoxyParams}{Parameters}
+{\em smaller} & The smaller of the two numbers \\
+\hline
+{\em greater} & The greater of the two numbers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The G\+CD of the two numbers 
+\end{DoxyReturn}
+
+
+Definition at line 11 of file inversetranspose.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11                                  \{}
+\DoxyCodeLine{12     \textcolor{keywordflow}{if}(greater\%smaller != 0) \textcolor{keywordflow}{return} \mbox{\hyperlink{inversetranspose_8c_a0d486279036c436d360d179a2cd0aa12}{gcd}}(greater\%smaller, smaller);}
+\DoxyCodeLine{13     \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} smaller;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{inversetranspose_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{inversetranspose_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{inversetranspose.c@{inversetranspose.c}!main@{main}}
+\index{main@{main}!inversetranspose.c@{inversetranspose.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The file reading and writing takes place in the main function 
+
+Definition at line 92 of file inversetranspose.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92           \{}
+\DoxyCodeLine{93     \textcolor{keywordtype}{int} n;}
+\DoxyCodeLine{94     \textcolor{keywordtype}{char}* n\_string;}
+\DoxyCodeLine{95     \textcolor{keywordtype}{int} a;}
+\DoxyCodeLine{96     \textcolor{keywordtype}{char}* a\_string;}
+\DoxyCodeLine{97     \textcolor{keywordtype}{int} b;}
+\DoxyCodeLine{98     \textcolor{keywordtype}{char}* b\_string;}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     FILE* inputFile = fopen(\textcolor{stringliteral}{"outputfile.txt"}, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{101     \textcolor{keywordtype}{char}* fileData = (\textcolor{keywordtype}{char}*) calloc(1000, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{102     fgets(fileData, 1000, inputFile);}
+\DoxyCodeLine{103     strtok(fileData, \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n"});}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     FILE* opFile = fopen(\textcolor{stringliteral}{"decryptedOutputfile.txt"}, \textcolor{stringliteral}{"w"});}
+\DoxyCodeLine{106     \textcolor{keywordtype}{char}* opData;}
+\DoxyCodeLine{107     }
+\DoxyCodeLine{108     printf(\textcolor{stringliteral}{"Give the values of n, a and b in the format:\(\backslash\)nn a b\(\backslash\)n"});}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110     \textcolor{keywordtype}{char}* inputs = (\textcolor{keywordtype}{char}*) calloc(200, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{111     fgets(inputs, 200, stdin);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{keywordtype}{char}* args;}
+\DoxyCodeLine{114     args = strtok(inputs, \textcolor{stringliteral}{" "});}
+\DoxyCodeLine{115     }
+\DoxyCodeLine{116     \textcolor{keywordflow}{if}(args)\{}
+\DoxyCodeLine{117         n\_string = args;}
+\DoxyCodeLine{118         n = \mbox{\hyperlink{inversetranspose_8c_ae6b642e36db9656edd8003512516dc10}{charToInt}}(n\_string);}
+\DoxyCodeLine{119         args = strtok(NULL, \textcolor{stringliteral}{" "});}
+\DoxyCodeLine{120     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{121         printf(\textcolor{stringliteral}{"\(\backslash\)nPlease enter the arguments correctly\(\backslash\)n"});}
+\DoxyCodeLine{122         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{123     \}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125     \textcolor{keywordflow}{if}(args)\{}
+\DoxyCodeLine{126         a\_string = args;}
+\DoxyCodeLine{127         a = \mbox{\hyperlink{inversetranspose_8c_ae6b642e36db9656edd8003512516dc10}{charToInt}}(a\_string);}
+\DoxyCodeLine{128         args = strtok(NULL, \textcolor{stringliteral}{" "});}
+\DoxyCodeLine{129     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{130         printf(\textcolor{stringliteral}{"\(\backslash\)nPlease enter the arguments correctly\(\backslash\)n"});}
+\DoxyCodeLine{131         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{132     \}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     \textcolor{keywordflow}{if}(args)\{}
+\DoxyCodeLine{135         b\_string = args;}
+\DoxyCodeLine{136         b = \mbox{\hyperlink{inversetranspose_8c_ae6b642e36db9656edd8003512516dc10}{charToInt}}(b\_string);}
+\DoxyCodeLine{137         args = strtok(NULL, \textcolor{stringliteral}{" "});}
+\DoxyCodeLine{138     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{139         printf(\textcolor{stringliteral}{"\(\backslash\)nPlease enter the arguments correctly\(\backslash\)n"}); }
+\DoxyCodeLine{140         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{141     \}}
+\DoxyCodeLine{142     }
+\DoxyCodeLine{143     \textcolor{keywordflow}{if}(args)\{}
+\DoxyCodeLine{144         printf(\textcolor{stringliteral}{"Error: more than 3 arguments found"});   }
+\DoxyCodeLine{145         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{146     \}}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{keywordflow}{if}((a == 0)||(\mbox{\hyperlink{inversetranspose_8c_a0d486279036c436d360d179a2cd0aa12}{gcd}}(abs(a),n) != 1))\{}
+\DoxyCodeLine{149         printf(\textcolor{stringliteral}{"ERROR: Encryption is not possible.\(\backslash\)nChoose appropriate a and b\(\backslash\)n"});}
+\DoxyCodeLine{150         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{151     \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153     opData = \mbox{\hyperlink{inversetranspose_8c_a8fea37b5b8318ee19119bf31a5c941b3}{decrypt}}(n, a, b, fileData);}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, fileData);}
+\DoxyCodeLine{156     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, opData);}
+\DoxyCodeLine{157     }
+\DoxyCodeLine{158     strtok(opData, \textcolor{stringliteral}{"\_"});}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     fprintf(opFile,\textcolor{stringliteral}{"\%s"},opData);}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{163 \}}
+
+\end{DoxyCode}

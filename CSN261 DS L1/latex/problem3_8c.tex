@@ -1,0 +1,230 @@
+\hypertarget{problem3_8c}{}\doxysection{problem3.\+c File Reference}
+\label{problem3_8c}\index{problem3.c@{problem3.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{problem3_8c_aee3f1cb99f967d6d4b831bdf2f41e9cb}{remove\+All\+Shades}} (int color)
+\item 
+void \mbox{\hyperlink{problem3_8c_a2809bf224c3be923e2619dd13d040631}{keep\+Only}} (int color)
+\item 
+void \mbox{\hyperlink{problem3_8c_a66e93f3d6145d7f66fbad8faba1f6cec}{pixel\+Value}} (int x, int y)
+\item 
+int \mbox{\hyperlink{problem3_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgb\+Pixel\+Values}} \mbox{[}1268\mbox{]}\mbox{[}953\mbox{]}\mbox{[}3\mbox{]}
+\item 
+int \mbox{\hyperlink{problem3_8c_a6761340706096510fd89edca40a63b9b}{red}} = 0
+\begin{DoxyCompactList}\small\item\em 3-\/D array to store R\+GB intensity values for each pixel \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{problem3_8c_a16043f28bf0a6b55db852853f0683fc2}{blue}} = 1
+\item 
+int \mbox{\hyperlink{problem3_8c_a6e208843f894f38fa7644608917a2a41}{green}} = 2
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{problem3_8c_a2809bf224c3be923e2619dd13d040631}\label{problem3_8c_a2809bf224c3be923e2619dd13d040631}} 
+\index{problem3.c@{problem3.c}!keepOnly@{keepOnly}}
+\index{keepOnly@{keepOnly}!problem3.c@{problem3.c}}
+\doxysubsubsection{\texorpdfstring{keepOnly()}{keepOnly()}}
+{\footnotesize\ttfamily void keep\+Only (\begin{DoxyParamCaption}\item[{int}]{color }\end{DoxyParamCaption})}
+
+This function keeps the shades of only the color specified 
+\begin{DoxyParams}{Parameters}
+{\em color} & the color whose shades are to be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 36 of file problem3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{36                         \{}
+\DoxyCodeLine{37     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 1268; i++)\{}
+\DoxyCodeLine{38         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < 953; j++)\{}
+\DoxyCodeLine{39             \textcolor{keywordflow}{if}((\mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[i][j][(color+1)\%3] > \mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[i][j][(color+2)\%3])}
+\DoxyCodeLine{40                             \&\&}
+\DoxyCodeLine{41               (\mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[i][j][(color+1)\%3] > \mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[i][j][color]))\{}
+\DoxyCodeLine{42                 \mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[i][j][(color+1)\%3] = 0;}
+\DoxyCodeLine{43             \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((\mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[i][j][(color+2)\%3] > \mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[i][j][(color+1)\%3])}
+\DoxyCodeLine{44                                    \&\&}
+\DoxyCodeLine{45                 (\mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[i][j][(color+2)\%3] > \mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[i][j][color]))\{}
+\DoxyCodeLine{46                     \mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[i][j][(color+2)\%3] = 0;}
+\DoxyCodeLine{47             \}}
+\DoxyCodeLine{48         \}}
+\DoxyCodeLine{49     \}}
+\DoxyCodeLine{50 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem3_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{problem3_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{problem3.c@{problem3.c}!main@{main}}
+\index{main@{main}!problem3.c@{problem3.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 64 of file problem3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{64           \{}
+\DoxyCodeLine{65     }
+\DoxyCodeLine{66     \textcolor{keywordtype}{int} value =0;}
+\DoxyCodeLine{67     \textcolor{keywordtype}{int} counter = 0;}
+\DoxyCodeLine{68     }
+\DoxyCodeLine{69     FILE* redPixelValuesStream = fopen(\textcolor{stringliteral}{"./Q3\_ip\_Red.dat"}, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{70     FILE* bluePixelValuesStream = fopen(\textcolor{stringliteral}{"./Q3\_ip\_Blue.dat"}, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{71     FILE* greenPixelValuesStream = fopen(\textcolor{stringliteral}{"./Q3\_ip\_Green.dat"}, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{72     }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{keywordflow}{while}(fscanf(redPixelValuesStream, \textcolor{stringliteral}{"\%d,"}, \&value) != EOF)\{}
+\DoxyCodeLine{75         \mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[(int)counter/953][counter\%953][0] = value;}
+\DoxyCodeLine{76         counter++;}
+\DoxyCodeLine{77     \}}
+\DoxyCodeLine{78     }
+\DoxyCodeLine{79     counter = 0;}
+\DoxyCodeLine{80     \textcolor{keywordflow}{while}(fscanf(bluePixelValuesStream, \textcolor{stringliteral}{"\%d,"}, \&value) != EOF)\{}
+\DoxyCodeLine{81         \mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[(int)counter/953][counter\%953][1] = value;}
+\DoxyCodeLine{82         counter++;}
+\DoxyCodeLine{83     \}}
+\DoxyCodeLine{84     }
+\DoxyCodeLine{85     counter = 0;}
+\DoxyCodeLine{86     \textcolor{keywordflow}{while}(fscanf(greenPixelValuesStream, \textcolor{stringliteral}{"\%d,"}, \&value) != EOF)\{}
+\DoxyCodeLine{87         \mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[(int)counter/953][counter\%953][2] = value;}
+\DoxyCodeLine{88         counter++;}
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90     }
+\DoxyCodeLine{91     \mbox{\hyperlink{problem3_8c_a66e93f3d6145d7f66fbad8faba1f6cec}{pixelValue}}(145,67);}
+\DoxyCodeLine{92     \mbox{\hyperlink{problem3_8c_a66e93f3d6145d7f66fbad8faba1f6cec}{pixelValue}}(1245,497);}
+\DoxyCodeLine{93     \mbox{\hyperlink{problem3_8c_a66e93f3d6145d7f66fbad8faba1f6cec}{pixelValue}}(907,43);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \mbox{\hyperlink{problem3_8c_aee3f1cb99f967d6d4b831bdf2f41e9cb}{removeAllShades}}(\mbox{\hyperlink{problem3_8c_a6761340706096510fd89edca40a63b9b}{red}}, redValuesOutput, blueValuesOutput, greenValuesOutput);}
+\DoxyCodeLine{96     }
+\DoxyCodeLine{97     \mbox{\hyperlink{problem3_8c_a66e93f3d6145d7f66fbad8faba1f6cec}{pixelValue}}(145,67);}
+\DoxyCodeLine{98     \mbox{\hyperlink{problem3_8c_a66e93f3d6145d7f66fbad8faba1f6cec}{pixelValue}}(1245,497);}
+\DoxyCodeLine{99     \mbox{\hyperlink{problem3_8c_a66e93f3d6145d7f66fbad8faba1f6cec}{pixelValue}}(907,43);   }
+\DoxyCodeLine{100     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{101 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem3_8c_a66e93f3d6145d7f66fbad8faba1f6cec}\label{problem3_8c_a66e93f3d6145d7f66fbad8faba1f6cec}} 
+\index{problem3.c@{problem3.c}!pixelValue@{pixelValue}}
+\index{pixelValue@{pixelValue}!problem3.c@{problem3.c}}
+\doxysubsubsection{\texorpdfstring{pixelValue()}{pixelValue()}}
+{\footnotesize\ttfamily void pixel\+Value (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+This function prints R\+GB intensity values for a given pixel position 
+\begin{DoxyParams}{Parameters}
+{\em x} & x coordinate of pixel \\
+\hline
+{\em y} & y coordinate of pixel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file problem3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{58                              \{}
+\DoxyCodeLine{59     printf(\textcolor{stringliteral}{"Red: \%d\(\backslash\)n"},\mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[x][y][0]);}
+\DoxyCodeLine{60     printf(\textcolor{stringliteral}{"Blue: \%d\(\backslash\)n"},\mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[x][y][1]);}
+\DoxyCodeLine{61     printf(\textcolor{stringliteral}{"Green: \%d\(\backslash\)n\(\backslash\)n"},\mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[x][y][2]);}
+\DoxyCodeLine{62 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem3_8c_aee3f1cb99f967d6d4b831bdf2f41e9cb}\label{problem3_8c_aee3f1cb99f967d6d4b831bdf2f41e9cb}} 
+\index{problem3.c@{problem3.c}!removeAllShades@{removeAllShades}}
+\index{removeAllShades@{removeAllShades}!problem3.c@{problem3.c}}
+\doxysubsubsection{\texorpdfstring{removeAllShades()}{removeAllShades()}}
+{\footnotesize\ttfamily void remove\+All\+Shades (\begin{DoxyParamCaption}\item[{int}]{color }\end{DoxyParamCaption})}
+
+This function remomes all shades of the color specified 
+\begin{DoxyParams}{Parameters}
+{\em color} & the color whose shades are to be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 17 of file problem3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17                                \{}
+\DoxyCodeLine{18     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 1268; i++)\{}
+\DoxyCodeLine{19         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < 953; j++)\{}
+\DoxyCodeLine{20             \textcolor{keywordflow}{if}((\mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[i][j][color] > \mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[i][j][(color+1)\%3])}
+\DoxyCodeLine{21                             \&\&}
+\DoxyCodeLine{22               (\mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[i][j][color] > \mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[i][j][(color+2)\%3]))\{}
+\DoxyCodeLine{23                 \mbox{\hyperlink{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}{rgbPixelValues}}[i][j][color] = 0;}
+\DoxyCodeLine{24             \}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         \}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{problem3_8c_a16043f28bf0a6b55db852853f0683fc2}\label{problem3_8c_a16043f28bf0a6b55db852853f0683fc2}} 
+\index{problem3.c@{problem3.c}!blue@{blue}}
+\index{blue@{blue}!problem3.c@{problem3.c}}
+\doxysubsubsection{\texorpdfstring{blue}{blue}}
+{\footnotesize\ttfamily int blue = 1}
+
+
+
+Definition at line 9 of file problem3.\+c.
+
+\mbox{\Hypertarget{problem3_8c_a6e208843f894f38fa7644608917a2a41}\label{problem3_8c_a6e208843f894f38fa7644608917a2a41}} 
+\index{problem3.c@{problem3.c}!green@{green}}
+\index{green@{green}!problem3.c@{problem3.c}}
+\doxysubsubsection{\texorpdfstring{green}{green}}
+{\footnotesize\ttfamily int green = 2}
+
+
+
+Definition at line 10 of file problem3.\+c.
+
+\mbox{\Hypertarget{problem3_8c_a6761340706096510fd89edca40a63b9b}\label{problem3_8c_a6761340706096510fd89edca40a63b9b}} 
+\index{problem3.c@{problem3.c}!red@{red}}
+\index{red@{red}!problem3.c@{problem3.c}}
+\doxysubsubsection{\texorpdfstring{red}{red}}
+{\footnotesize\ttfamily int red = 0}
+
+
+
+3-\/D array to store R\+GB intensity values for each pixel 
+
+
+
+Definition at line 8 of file problem3.\+c.
+
+\mbox{\Hypertarget{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}\label{problem3_8c_a5d9af1772d5c1b25d6c1573f192d37e8}} 
+\index{problem3.c@{problem3.c}!rgbPixelValues@{rgbPixelValues}}
+\index{rgbPixelValues@{rgbPixelValues}!problem3.c@{problem3.c}}
+\doxysubsubsection{\texorpdfstring{rgbPixelValues}{rgbPixelValues}}
+{\footnotesize\ttfamily int rgb\+Pixel\+Values\mbox{[}1268\mbox{]}\mbox{[}953\mbox{]}\mbox{[}3\mbox{]}}
+
+
+
+Definition at line 5 of file problem3.\+c.
+

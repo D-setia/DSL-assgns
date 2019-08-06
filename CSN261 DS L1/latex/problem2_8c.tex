@@ -1,0 +1,375 @@
+\hypertarget{problem2_8c}{}\doxysection{problem2.\+c File Reference}
+\label{problem2_8c}\index{problem2.c@{problem2.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{problem2_8c_a66b9c119762c2718bf6e2c3a5e97c8e5}{insert\+Left}} (int data)
+\item 
+void \mbox{\hyperlink{problem2_8c_a6fbc8b57cddf33095cb2dcd9543fdb7e}{insert\+Right}} (int data)
+\item 
+void \mbox{\hyperlink{problem2_8c_a4a25deb7e6a91447f51d0c09566e8172}{delete\+Left}} ()
+\item 
+void \mbox{\hyperlink{problem2_8c_acb40b869406671b1933e4269eadd301b}{delete\+Right}} ()
+\item 
+void \mbox{\hyperlink{problem2_8c_a388f572c62279f839ee138a9afbdeeb5}{print}} ()
+\item 
+int \mbox{\hyperlink{problem2_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} = 1
+\item 
+int \mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}} = -\/1
+\item 
+int \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}} = 1
+\item 
+int \mbox{\hyperlink{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}{right\+Offset}} = 0
+\item 
+int $\ast$ \mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}}
+\begin{DoxyCompactList}\small\item\em length -\/ right \end{DoxyCompactList}\item 
+int $\ast$ \mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} = 0
+\begin{DoxyCompactList}\small\item\em double ended queue with int as data \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{problem2_8c_a4a25deb7e6a91447f51d0c09566e8172}\label{problem2_8c_a4a25deb7e6a91447f51d0c09566e8172}} 
+\index{problem2.c@{problem2.c}!deleteLeft@{deleteLeft}}
+\index{deleteLeft@{deleteLeft}!problem2.c@{problem2.c}}
+\doxysubsubsection{\texorpdfstring{deleteLeft()}{deleteLeft()}}
+{\footnotesize\ttfamily void delete\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function deletes a value from the left end of the deque \begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 90 of file problem2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{90                  \{}
+\DoxyCodeLine{91     \textcolor{keywordflow}{if}(\mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}} == -\/1)\{}
+\DoxyCodeLine{92         printf(\textcolor{stringliteral}{"ERROR: Operation can't be performed"});}
+\DoxyCodeLine{93     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((\mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}} + \mbox{\hyperlink{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}{rightOffset}} == \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}/2)\&\&(\mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} != 1))\{}
+\DoxyCodeLine{94         }
+\DoxyCodeLine{95         \mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} = (\textcolor{keywordtype}{int}*) calloc(\mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{96         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}; i++)\{}
+\DoxyCodeLine{97             *(\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} + i) = *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + i);}
+\DoxyCodeLine{98         \}}
+\DoxyCodeLine{99             }
+\DoxyCodeLine{100         \mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}} -\/=1;}
+\DoxyCodeLine{101         \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} /= 2;}
+\DoxyCodeLine{102         \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}} = \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} -\/ \mbox{\hyperlink{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}{rightOffset}};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104         free(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}});}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106         \mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} = (\textcolor{keywordtype}{int}*) calloc(\mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{107         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i <= \mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}}; i++)\{}
+\DoxyCodeLine{108             *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + i) = *(\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} + i);}
+\DoxyCodeLine{109         \}}
+\DoxyCodeLine{110         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}{rightOffset}}; i++)\{}
+\DoxyCodeLine{111             *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} -\/1 -\/i) = *(\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} + 2*\mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} -\/1 -\/i);}
+\DoxyCodeLine{112         \}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114         free(\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}});}
+\DoxyCodeLine{115     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{116         *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + \mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}}) = 0;}
+\DoxyCodeLine{117         \mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}} -\/= 1;}
+\DoxyCodeLine{118     \}}
+\DoxyCodeLine{119 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem2_8c_acb40b869406671b1933e4269eadd301b}\label{problem2_8c_acb40b869406671b1933e4269eadd301b}} 
+\index{problem2.c@{problem2.c}!deleteRight@{deleteRight}}
+\index{deleteRight@{deleteRight}!problem2.c@{problem2.c}}
+\doxysubsubsection{\texorpdfstring{deleteRight()}{deleteRight()}}
+{\footnotesize\ttfamily void delete\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function deletes a value from the right end of the deque \begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 125 of file problem2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{125                   \{}
+\DoxyCodeLine{126     \textcolor{keywordflow}{if}(\mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}} == \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}})\{}
+\DoxyCodeLine{127         printf(\textcolor{stringliteral}{"ERROR: Operation can't be performed"});}
+\DoxyCodeLine{128     \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((\mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}} + \mbox{\hyperlink{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}{rightOffset}} == \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}/2)\&\&(\mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} != 1))\{}
+\DoxyCodeLine{129         }
+\DoxyCodeLine{130         \mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} = (\textcolor{keywordtype}{int}*) calloc(\mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{131         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}; i++)\{}
+\DoxyCodeLine{132             *(\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} + i) = *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + i);}
+\DoxyCodeLine{133         \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135         \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}} += 1;}
+\DoxyCodeLine{136         \mbox{\hyperlink{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}{rightOffset}} = \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} -\/ \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}};}
+\DoxyCodeLine{137         \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} /= 2;}
+\DoxyCodeLine{138         \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}} = \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} -\/ \mbox{\hyperlink{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}{rightOffset}};}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140         free(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}});}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142         \mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} = (\textcolor{keywordtype}{int}*) calloc(\mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{143         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i <= \mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}}; i++)\{}
+\DoxyCodeLine{144             *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + i) = *(\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} + i); }
+\DoxyCodeLine{145         \}}
+\DoxyCodeLine{146         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}{rightOffset}}; i++)\{}
+\DoxyCodeLine{147             *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} -\/1 -\/i) = *(\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} + 2*\mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} -\/1 -\/i);}
+\DoxyCodeLine{148         \}}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150         free(\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}});}
+\DoxyCodeLine{151     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{152         *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}}) = 0;}
+\DoxyCodeLine{153         \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}} += 1;}
+\DoxyCodeLine{154         \mbox{\hyperlink{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}{rightOffset}} = \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} -\/\mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}};}
+\DoxyCodeLine{155     \}   }
+\DoxyCodeLine{156 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem2_8c_a66b9c119762c2718bf6e2c3a5e97c8e5}\label{problem2_8c_a66b9c119762c2718bf6e2c3a5e97c8e5}} 
+\index{problem2.c@{problem2.c}!insertLeft@{insertLeft}}
+\index{insertLeft@{insertLeft}!problem2.c@{problem2.c}}
+\doxysubsubsection{\texorpdfstring{insertLeft()}{insertLeft()}}
+{\footnotesize\ttfamily void insert\+Left (\begin{DoxyParamCaption}\item[{int}]{data }\end{DoxyParamCaption})}
+
+This function adds a new value to the left end of the deque 
+\begin{DoxyParams}{Parameters}
+{\em data} & the int value to be inserted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 16 of file problem2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16                          \{}
+\DoxyCodeLine{17     \textcolor{keywordflow}{if}(\mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}}-\/\mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}} == 1)\{}
+\DoxyCodeLine{18         }
+\DoxyCodeLine{19         \mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} = (\textcolor{keywordtype}{int}*) calloc(\mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{20         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}; i++)\{}
+\DoxyCodeLine{21             *(\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} + i) = *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + i);}
+\DoxyCodeLine{22         \}}
+\DoxyCodeLine{23         free(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}});}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         \mbox{\hyperlink{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}{rightOffset}} = \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} -\/ \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}};}
+\DoxyCodeLine{26         \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} *= 2;}
+\DoxyCodeLine{27         \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}} = \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} -\/ \mbox{\hyperlink{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}{rightOffset}};}
+\DoxyCodeLine{28         \mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} = (\textcolor{keywordtype}{int}*) calloc(\mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i <= \mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}}; i++)\{}
+\DoxyCodeLine{31             *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + i) = *(\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} + i);}
+\DoxyCodeLine{32         \}}
+\DoxyCodeLine{33         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}{rightOffset}}; i++)\{}
+\DoxyCodeLine{34             *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} -\/1 -\/i) = *(\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} + \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}/2 -\/1 -\/i);}
+\DoxyCodeLine{35         \}}
+\DoxyCodeLine{36             }
+\DoxyCodeLine{37         \mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}} += 1;}
+\DoxyCodeLine{38         *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + \mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}}) = data;}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         free(\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}});}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{43         \mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}} += 1;}
+\DoxyCodeLine{44         *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + \mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}}) = data;}
+\DoxyCodeLine{45     \}}
+\DoxyCodeLine{46     }
+\DoxyCodeLine{47 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem2_8c_a6fbc8b57cddf33095cb2dcd9543fdb7e}\label{problem2_8c_a6fbc8b57cddf33095cb2dcd9543fdb7e}} 
+\index{problem2.c@{problem2.c}!insertRight@{insertRight}}
+\index{insertRight@{insertRight}!problem2.c@{problem2.c}}
+\doxysubsubsection{\texorpdfstring{insertRight()}{insertRight()}}
+{\footnotesize\ttfamily void insert\+Right (\begin{DoxyParamCaption}\item[{int}]{data }\end{DoxyParamCaption})}
+
+This function adds a new value to the right end of the deque 
+\begin{DoxyParams}{Parameters}
+{\em data} & the int value to be inserted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file problem2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{54                           \{}
+\DoxyCodeLine{55     \textcolor{keywordflow}{if}(\mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}}-\/\mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}} == 1)\{}
+\DoxyCodeLine{56              }
+\DoxyCodeLine{57         \mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} = (\textcolor{keywordtype}{int}*) calloc(\mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{58         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}; i++)\{}
+\DoxyCodeLine{59             *(\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} + i) = *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + i);}
+\DoxyCodeLine{60         \}}
+\DoxyCodeLine{61         free(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}});}
+\DoxyCodeLine{62             }
+\DoxyCodeLine{63         \mbox{\hyperlink{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}{rightOffset}} = \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} -\/ \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}};}
+\DoxyCodeLine{64         \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} *= 2;}
+\DoxyCodeLine{65         \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}} = \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} -\/ \mbox{\hyperlink{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}{rightOffset}};}
+\DoxyCodeLine{66         \mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} = (\textcolor{keywordtype}{int}*) calloc(\mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{67             }
+\DoxyCodeLine{68         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i <= \mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}}; i++)\{}
+\DoxyCodeLine{69             *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + i) = * (\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} + i);}
+\DoxyCodeLine{70         \}}
+\DoxyCodeLine{71         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}{rightOffset}}; i++)\{}
+\DoxyCodeLine{72             *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} -\/1 -\/i) = *(\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}} + \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}/2 -\/1 -\/i);}
+\DoxyCodeLine{73         \}}
+\DoxyCodeLine{74             }
+\DoxyCodeLine{75         \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}} -\/= 1;}
+\DoxyCodeLine{76         \mbox{\hyperlink{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}{rightOffset}} = \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}} -\/ \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78         *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}}) = data;}
+\DoxyCodeLine{79         free(\mbox{\hyperlink{problem2_8c_a46a600194271270e8a2e63a69d7244d0}{temp}});}
+\DoxyCodeLine{80     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{81         \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}} -\/= 1;}
+\DoxyCodeLine{82         *(\mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} + \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}}) = data;}
+\DoxyCodeLine{83     \}}
+\DoxyCodeLine{84 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem2_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{problem2_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{problem2.c@{problem2.c}!main@{main}}
+\index{main@{main}!problem2.c@{problem2.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 175 of file problem2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{175           \{}
+\DoxyCodeLine{176     \mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}} = (\textcolor{keywordtype}{int}*) calloc(\mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{177     \mbox{\hyperlink{problem2_8c_a66b9c119762c2718bf6e2c3a5e97c8e5}{insertLeft}}(1);}
+\DoxyCodeLine{178     \mbox{\hyperlink{problem2_8c_a388f572c62279f839ee138a9afbdeeb5}{print}}();}
+\DoxyCodeLine{179     \mbox{\hyperlink{problem2_8c_a66b9c119762c2718bf6e2c3a5e97c8e5}{insertLeft}}(2);}
+\DoxyCodeLine{180     \mbox{\hyperlink{problem2_8c_a388f572c62279f839ee138a9afbdeeb5}{print}}();}
+\DoxyCodeLine{181     \mbox{\hyperlink{problem2_8c_a6fbc8b57cddf33095cb2dcd9543fdb7e}{insertRight}}(3);}
+\DoxyCodeLine{182     \mbox{\hyperlink{problem2_8c_a388f572c62279f839ee138a9afbdeeb5}{print}}();}
+\DoxyCodeLine{183     \mbox{\hyperlink{problem2_8c_a66b9c119762c2718bf6e2c3a5e97c8e5}{insertLeft}}(4);}
+\DoxyCodeLine{184     \mbox{\hyperlink{problem2_8c_a388f572c62279f839ee138a9afbdeeb5}{print}}();}
+\DoxyCodeLine{185     \mbox{\hyperlink{problem2_8c_a6fbc8b57cddf33095cb2dcd9543fdb7e}{insertRight}}(5);}
+\DoxyCodeLine{186     \mbox{\hyperlink{problem2_8c_a388f572c62279f839ee138a9afbdeeb5}{print}}();}
+\DoxyCodeLine{187     \mbox{\hyperlink{problem2_8c_acb40b869406671b1933e4269eadd301b}{deleteRight}}();}
+\DoxyCodeLine{188     \mbox{\hyperlink{problem2_8c_a388f572c62279f839ee138a9afbdeeb5}{print}}();}
+\DoxyCodeLine{189     \mbox{\hyperlink{problem2_8c_a4a25deb7e6a91447f51d0c09566e8172}{deleteLeft}}();}
+\DoxyCodeLine{190     \mbox{\hyperlink{problem2_8c_a388f572c62279f839ee138a9afbdeeb5}{print}}();}
+\DoxyCodeLine{191     \mbox{\hyperlink{problem2_8c_a4a25deb7e6a91447f51d0c09566e8172}{deleteLeft}}();}
+\DoxyCodeLine{192     \mbox{\hyperlink{problem2_8c_a388f572c62279f839ee138a9afbdeeb5}{print}}();}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{195 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem2_8c_a388f572c62279f839ee138a9afbdeeb5}\label{problem2_8c_a388f572c62279f839ee138a9afbdeeb5}} 
+\index{problem2.c@{problem2.c}!print@{print}}
+\index{print@{print}!problem2.c@{problem2.c}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method prints the contents of the dequeue and its size in bytes \begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 162 of file problem2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{162             \{}
+\DoxyCodeLine{163     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i <= \mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}}; i++)\{}
+\DoxyCodeLine{164         printf(\textcolor{stringliteral}{"\%d\(\backslash\)n"}, \mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}}[i]);}
+\DoxyCodeLine{165     \}}
+\DoxyCodeLine{166     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = \mbox{\hyperlink{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}{left}}+1; i < \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}}; i++)\{}
+\DoxyCodeLine{167         printf(\textcolor{stringliteral}{"\%d\(\backslash\)n"}, 0);}
+\DoxyCodeLine{168     \}}
+\DoxyCodeLine{169     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = \mbox{\hyperlink{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}{right}}; i < \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}; i++)\{}
+\DoxyCodeLine{170         printf(\textcolor{stringliteral}{"\%d\(\backslash\)n"}, \mbox{\hyperlink{problem2_8c_a216ec8090e2365fd1101662140456d4a}{deque}}[i]);}
+\DoxyCodeLine{171     \}}
+\DoxyCodeLine{172     printf(\textcolor{stringliteral}{"Size is: \%ld\(\backslash\)n"}, \mbox{\hyperlink{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}{length}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));}
+\DoxyCodeLine{173 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{problem2_8c_a216ec8090e2365fd1101662140456d4a}\label{problem2_8c_a216ec8090e2365fd1101662140456d4a}} 
+\index{problem2.c@{problem2.c}!deque@{deque}}
+\index{deque@{deque}!problem2.c@{problem2.c}}
+\doxysubsubsection{\texorpdfstring{deque}{deque}}
+{\footnotesize\ttfamily int$\ast$ deque}
+
+
+
+length -\/ right 
+
+
+
+Definition at line 8 of file problem2.\+c.
+
+\mbox{\Hypertarget{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}\label{problem2_8c_ad8f5e19e19f12974c9713e920ec54331}} 
+\index{problem2.c@{problem2.c}!left@{left}}
+\index{left@{left}!problem2.c@{problem2.c}}
+\doxysubsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily int left = -\/1}
+
+
+
+Definition at line 5 of file problem2.\+c.
+
+\mbox{\Hypertarget{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}\label{problem2_8c_a9f59b34b1f25fe00023291b678246bcc}} 
+\index{problem2.c@{problem2.c}!length@{length}}
+\index{length@{length}!problem2.c@{problem2.c}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily int length = 1}
+
+
+
+Definition at line 4 of file problem2.\+c.
+
+\mbox{\Hypertarget{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}\label{problem2_8c_a2f54f8b71f0d765e2b7dbd9a8b9774ff}} 
+\index{problem2.c@{problem2.c}!right@{right}}
+\index{right@{right}!problem2.c@{problem2.c}}
+\doxysubsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily int right = 1}
+
+
+
+Definition at line 6 of file problem2.\+c.
+
+\mbox{\Hypertarget{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}\label{problem2_8c_a63aa8527c371ba50abd06dde7bbf02b2}} 
+\index{problem2.c@{problem2.c}!rightOffset@{rightOffset}}
+\index{rightOffset@{rightOffset}!problem2.c@{problem2.c}}
+\doxysubsubsection{\texorpdfstring{rightOffset}{rightOffset}}
+{\footnotesize\ttfamily int right\+Offset = 0}
+
+
+
+Definition at line 7 of file problem2.\+c.
+
+\mbox{\Hypertarget{problem2_8c_a46a600194271270e8a2e63a69d7244d0}\label{problem2_8c_a46a600194271270e8a2e63a69d7244d0}} 
+\index{problem2.c@{problem2.c}!temp@{temp}}
+\index{temp@{temp}!problem2.c@{problem2.c}}
+\doxysubsubsection{\texorpdfstring{temp}{temp}}
+{\footnotesize\ttfamily int$\ast$ temp = 0}
+
+
+
+double ended queue with int as data 
+
+
+
+Definition at line 9 of file problem2.\+c.
+
