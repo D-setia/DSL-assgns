@@ -3,7 +3,7 @@
 #include <string.h>
 
 int main(){
-	FILE* original = fopen("inputfile.txt", "r");
+	FILE* original = fopen("Sample_testcase_1.txt", "r");
 	FILE* decrypted = fopen("decryptedOutputfile.txt", "r");
 
 	char* inputData = (char*) calloc(1000, sizeof(char)); //! The input data in the form of string

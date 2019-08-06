@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['printdetails_19',['printDetails',['../problem2_8c.html#a652b791800442c14bc0af301207049be',1,'problem2.c']]]
+  ['main_19',['main',['../problem2_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'problem2.c']]],
+  ['maketree_20',['makeTree',['../problem2_8c.html#a85c49cb6bc175f40705d9b9784a18de6',1,'problem2.c']]]
 ];

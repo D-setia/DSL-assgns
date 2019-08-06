@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "cdilmp",
   1: "d",
   2: "p",
-  3: "cimp",
+  3: "cilmp",
   4: "dl"
 };
 

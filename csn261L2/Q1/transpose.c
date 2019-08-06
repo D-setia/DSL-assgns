@@ -114,7 +114,7 @@ int main(){
 		return 0;
 	}
 
-	FILE* inputFile = fopen("inputfile.txt", "r");
+	FILE* inputFile = fopen("Sample_testcase_1.txt", "r");
 	fgets(fileData, 1000, inputFile);
 	strtok(fileData, "\n\n");
 

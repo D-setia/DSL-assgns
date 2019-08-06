@@ -133,6 +133,12 @@ void printDetails(int x, int y){
 	printf("Level: %d\n", dataArray[x][y].level);
 }
 
+/*!
+This function prints the details of the leaf node specified
+@param leafNo 	The number of the leaf node
+@param size 	The size of the array
+@return ---
+ */
 void leafDetails(int leafNo, int size){
 	int flag = 1;
 	for(int i = 0; i < size; i++){

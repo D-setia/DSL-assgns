@@ -21,6 +21,8 @@ void \mbox{\hyperlink{problem2_8c_a85c49cb6bc175f40705d9b9784a18de6}{make\+Tree}
 \item 
 void \mbox{\hyperlink{problem2_8c_a652b791800442c14bc0af301207049be}{print\+Details}} (int x, int y)
 \item 
+void \mbox{\hyperlink{problem2_8c_a460a54dcc670a3f18837a7b33c2c3e8b}{leaf\+Details}} (int \mbox{\hyperlink{problem2_8c_a888804d6ac601960887689926a09d5e3}{leaf\+No}}, int size)
+\item 
 int \mbox{\hyperlink{problem2_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
@@ -129,8 +131,8 @@ Definition at line 56 of file problem2.\+c.
 \DoxyCodeLine{60         \}}
 \DoxyCodeLine{61     \}}
 \DoxyCodeLine{62 }
-\DoxyCodeLine{63     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = size -\/ givenSize; i < size; i++)\{}
-\DoxyCodeLine{64         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = givenSize; j < size; j++)\{}
+\DoxyCodeLine{63     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < size; i++)\{}
+\DoxyCodeLine{64         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < size -\/ givenSize; j++)\{}
 \DoxyCodeLine{65             \mbox{\hyperlink{problem2_8c_af163e482779576465555099aa4e7047a}{dataArray}}[i][j].\mbox{\hyperlink{structdataCell_a30f561c10f9beceb735cfdbfb501ce3d}{data}} = 0;}
 \DoxyCodeLine{66         \}}
 \DoxyCodeLine{67     \}}
@@ -139,10 +141,49 @@ Definition at line 56 of file problem2.\+c.
 \DoxyCodeLine{70     \textcolor{keywordtype}{int} j = 0;}
 \DoxyCodeLine{71     \textcolor{keywordtype}{int} tempInt;}
 \DoxyCodeLine{72     \textcolor{keywordflow}{while}(fscanf(input, \textcolor{stringliteral}{"\%d "}, \&tempInt) != EOF)\{}
-\DoxyCodeLine{73         \mbox{\hyperlink{problem2_8c_af163e482779576465555099aa4e7047a}{dataArray}}[i + j/givenSize][j\%givenSize].\mbox{\hyperlink{structdataCell_a30f561c10f9beceb735cfdbfb501ce3d}{data}} = tempInt;    }
+\DoxyCodeLine{73         \mbox{\hyperlink{problem2_8c_af163e482779576465555099aa4e7047a}{dataArray}}[i + j/givenSize][i + j\%givenSize].\mbox{\hyperlink{structdataCell_a30f561c10f9beceb735cfdbfb501ce3d}{data}} = tempInt;    }
 \DoxyCodeLine{74         j++;}
 \DoxyCodeLine{75     \}}
 \DoxyCodeLine{76 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{problem2_8c_a460a54dcc670a3f18837a7b33c2c3e8b}\label{problem2_8c_a460a54dcc670a3f18837a7b33c2c3e8b}} 
+\index{problem2.c@{problem2.c}!leafDetails@{leafDetails}}
+\index{leafDetails@{leafDetails}!problem2.c@{problem2.c}}
+\doxysubsubsection{\texorpdfstring{leafDetails()}{leafDetails()}}
+{\footnotesize\ttfamily void leaf\+Details (\begin{DoxyParamCaption}\item[{int}]{leaf\+No,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+This function prints the details of the leaf node specified 
+\begin{DoxyParams}{Parameters}
+{\em leaf\+No} & The number of the leaf node \\
+\hline
+{\em size} & The size of the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 142 of file problem2.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{142                                       \{}
+\DoxyCodeLine{143     \textcolor{keywordtype}{int} flag = 1;}
+\DoxyCodeLine{144     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < size; i++)\{}
+\DoxyCodeLine{145         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < size; j++)\{}
+\DoxyCodeLine{146             \textcolor{keywordflow}{if}(\mbox{\hyperlink{problem2_8c_af163e482779576465555099aa4e7047a}{dataArray}}[i][j].\mbox{\hyperlink{problem2_8c_a888804d6ac601960887689926a09d5e3}{leafNo}} == \mbox{\hyperlink{problem2_8c_a888804d6ac601960887689926a09d5e3}{leafNo}})\{}
+\DoxyCodeLine{147                 printf(\textcolor{stringliteral}{"LeafNo: \%d\(\backslash\)n"}, \mbox{\hyperlink{problem2_8c_af163e482779576465555099aa4e7047a}{dataArray}}[i][j].\mbox{\hyperlink{problem2_8c_a888804d6ac601960887689926a09d5e3}{leafNo}});}
+\DoxyCodeLine{148                 printf(\textcolor{stringliteral}{"Data: \%d\(\backslash\)n"}, \mbox{\hyperlink{problem2_8c_af163e482779576465555099aa4e7047a}{dataArray}}[i][j].\mbox{\hyperlink{structdataCell_a30f561c10f9beceb735cfdbfb501ce3d}{data}});}
+\DoxyCodeLine{149                 printf(\textcolor{stringliteral}{"Level: \%d\(\backslash\)n"}, \mbox{\hyperlink{problem2_8c_af163e482779576465555099aa4e7047a}{dataArray}}[i][j].\mbox{\hyperlink{structdataCell_ad47c4690cb813d6fbfa32beec87fd1a5}{level}});}
+\DoxyCodeLine{150                 flag = 0;}
+\DoxyCodeLine{151                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{152             \}}
+\DoxyCodeLine{153         \}}
+\DoxyCodeLine{154         \textcolor{keywordflow}{if}(flag == 0) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{155     \}}
+\DoxyCodeLine{156 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{problem2_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{problem2_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
@@ -153,50 +194,54 @@ Definition at line 56 of file problem2.\+c.
 
 
 
-Definition at line 137 of file problem2.\+c.
+Definition at line 158 of file problem2.\+c.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{137           \{}
-\DoxyCodeLine{138     FILE* colsCount  = fopen(\textcolor{stringliteral}{"inputfile.txt"}, \textcolor{stringliteral}{"r"});}
-\DoxyCodeLine{139     FILE* output = fopen(\textcolor{stringliteral}{"outputfile.txt"}, \textcolor{stringliteral}{"w"});}
-\DoxyCodeLine{140     FILE* input  = fopen(\textcolor{stringliteral}{"inputfile.txt"}, \textcolor{stringliteral}{"r"}); }
-\DoxyCodeLine{141     \textcolor{keywordtype}{int} cols = \mbox{\hyperlink{problem2_8c_a91019421e232c78af5831657514aa1b7}{countCols}}(colsCount);   }
-\DoxyCodeLine{142     printf(\textcolor{stringliteral}{"\%d\(\backslash\)n"}, cols);}
-\DoxyCodeLine{143     \textcolor{keywordtype}{int} size = \mbox{\hyperlink{problem2_8c_a0080e3ea8ded722c6add21338fd7e7af}{calculateSize}}(cols);}
-\DoxyCodeLine{144     printf(\textcolor{stringliteral}{"\%d\(\backslash\)n"}, size);}
-\DoxyCodeLine{145 }
-\DoxyCodeLine{146     \mbox{\hyperlink{problem2_8c_af163e482779576465555099aa4e7047a}{dataArray}} = (\textcolor{keyword}{struct }\mbox{\hyperlink{structdataCell}{dataCell}}**) calloc(size, \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{structdataCell}{dataCell}}*));}
-\DoxyCodeLine{147     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < size; i++)\{}
-\DoxyCodeLine{148         \mbox{\hyperlink{problem2_8c_af163e482779576465555099aa4e7047a}{dataArray}}[i] = (\textcolor{keyword}{struct }\mbox{\hyperlink{structdataCell}{dataCell}}*) calloc(size, \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{structdataCell}{dataCell}}));}
-\DoxyCodeLine{149     \}}
-\DoxyCodeLine{150 }
-\DoxyCodeLine{151     \mbox{\hyperlink{problem2_8c_aa568202c036ff3994643300de471aa44}{insertArray}}(input, size, cols);}
-\DoxyCodeLine{152     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < size; i++)\{}
-\DoxyCodeLine{153         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j <size; j++)\{}
-\DoxyCodeLine{154             printf(\textcolor{stringliteral}{"\%d "}, \mbox{\hyperlink{problem2_8c_af163e482779576465555099aa4e7047a}{dataArray}}[i][j].\mbox{\hyperlink{structdataCell_a30f561c10f9beceb735cfdbfb501ce3d}{data}});}
-\DoxyCodeLine{155         \}}
-\DoxyCodeLine{156         printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
-\DoxyCodeLine{157     \}}
-\DoxyCodeLine{158     }
-\DoxyCodeLine{159     printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
-\DoxyCodeLine{160     printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
-\DoxyCodeLine{161 }
-\DoxyCodeLine{162     \mbox{\hyperlink{problem2_8c_a85c49cb6bc175f40705d9b9784a18de6}{makeTree}}(0, size, 0, size, 0);}
-\DoxyCodeLine{163     }
-\DoxyCodeLine{164     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < size; i++)\{}
-\DoxyCodeLine{165         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j <size; j++)\{}
-\DoxyCodeLine{166             printf(\textcolor{stringliteral}{"\%d "}, \mbox{\hyperlink{problem2_8c_af163e482779576465555099aa4e7047a}{dataArray}}[i][j].\mbox{\hyperlink{problem2_8c_a888804d6ac601960887689926a09d5e3}{leafNo}});}
-\DoxyCodeLine{167         \}}
-\DoxyCodeLine{168         printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
-\DoxyCodeLine{169     \}}
-\DoxyCodeLine{170     }
-\DoxyCodeLine{171     printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
-\DoxyCodeLine{172     printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{158           \{}
+\DoxyCodeLine{159     FILE* colsCount  = fopen(\textcolor{stringliteral}{"inputfile.txt"}, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{160     FILE* output = fopen(\textcolor{stringliteral}{"outputfile.txt"}, \textcolor{stringliteral}{"w"});}
+\DoxyCodeLine{161     FILE* input  = fopen(\textcolor{stringliteral}{"inputfile.txt"}, \textcolor{stringliteral}{"r"}); }
+\DoxyCodeLine{162     \textcolor{keywordtype}{int} cols = \mbox{\hyperlink{problem2_8c_a91019421e232c78af5831657514aa1b7}{countCols}}(colsCount);   }
+\DoxyCodeLine{163     printf(\textcolor{stringliteral}{"\%d\(\backslash\)n"}, cols);}
+\DoxyCodeLine{164     \textcolor{keywordtype}{int} size = \mbox{\hyperlink{problem2_8c_a0080e3ea8ded722c6add21338fd7e7af}{calculateSize}}(cols);}
+\DoxyCodeLine{165     printf(\textcolor{stringliteral}{"\%d\(\backslash\)n"}, size);}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167     printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169     \mbox{\hyperlink{problem2_8c_af163e482779576465555099aa4e7047a}{dataArray}} = (\textcolor{keyword}{struct }\mbox{\hyperlink{structdataCell}{dataCell}}**) calloc(size, \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{structdataCell}{dataCell}}*));}
+\DoxyCodeLine{170     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < size; i++)\{}
+\DoxyCodeLine{171         \mbox{\hyperlink{problem2_8c_af163e482779576465555099aa4e7047a}{dataArray}}[i] = (\textcolor{keyword}{struct }\mbox{\hyperlink{structdataCell}{dataCell}}*) calloc(size, \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{structdataCell}{dataCell}}));}
+\DoxyCodeLine{172     \}}
 \DoxyCodeLine{173 }
-\DoxyCodeLine{174     \mbox{\hyperlink{problem2_8c_a652b791800442c14bc0af301207049be}{printDetails}}(3,4);}
-\DoxyCodeLine{175     \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{176 \}}
+\DoxyCodeLine{174     \mbox{\hyperlink{problem2_8c_aa568202c036ff3994643300de471aa44}{insertArray}}(input, size, cols);}
+\DoxyCodeLine{175     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < size; i++)\{}
+\DoxyCodeLine{176         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j <size; j++)\{}
+\DoxyCodeLine{177             printf(\textcolor{stringliteral}{"\%d "}, \mbox{\hyperlink{problem2_8c_af163e482779576465555099aa4e7047a}{dataArray}}[i][j].\mbox{\hyperlink{structdataCell_a30f561c10f9beceb735cfdbfb501ce3d}{data}});}
+\DoxyCodeLine{178         \}}
+\DoxyCodeLine{179         printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{180     \}}
+\DoxyCodeLine{181     }
+\DoxyCodeLine{182     printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184     \mbox{\hyperlink{problem2_8c_a85c49cb6bc175f40705d9b9784a18de6}{makeTree}}(0, size, 0, size, 0);}
+\DoxyCodeLine{185     }
+\DoxyCodeLine{186     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < size; i++)\{}
+\DoxyCodeLine{187         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j <size; j++)\{}
+\DoxyCodeLine{188             printf(\textcolor{stringliteral}{"\%d "}, \mbox{\hyperlink{problem2_8c_af163e482779576465555099aa4e7047a}{dataArray}}[i][j].\mbox{\hyperlink{problem2_8c_a888804d6ac601960887689926a09d5e3}{leafNo}});}
+\DoxyCodeLine{189         \}}
+\DoxyCodeLine{190         printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{191     \}}
+\DoxyCodeLine{192     }
+\DoxyCodeLine{193     printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195     \mbox{\hyperlink{problem2_8c_a652b791800442c14bc0af301207049be}{printDetails}}(3,4);}
+\DoxyCodeLine{196     }
+\DoxyCodeLine{197     printf(\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199     \mbox{\hyperlink{problem2_8c_a460a54dcc670a3f18837a7b33c2c3e8b}{leafDetails}}(3, size);}
+\DoxyCodeLine{200     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{201 \}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{problem2_8c_a85c49cb6bc175f40705d9b9784a18de6}\label{problem2_8c_a85c49cb6bc175f40705d9b9784a18de6}} 

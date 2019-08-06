@@ -103,8 +103,8 @@ $(function() {
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = size - givenSize; i &lt; size; i++){</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = givenSize; j &lt; size; j++){</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; size; i++){</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; size - givenSize; j++){</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <a class="code" href="problem2_8c.html#af163e482779576465555099aa4e7047a">dataArray</a>[i][j].<a class="code" href="structdataCell.html#a30f561c10f9beceb735cfdbfb501ce3d">data</a> = 0;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
@@ -113,7 +113,7 @@ $(function() {
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">int</span> j = 0;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">int</span> tempInt;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">while</span>(fscanf(input, <span class="stringliteral">&quot;%d &quot;</span>, &amp;tempInt) != EOF){</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="problem2_8c.html#af163e482779576465555099aa4e7047a">dataArray</a>[i + j/givenSize][j%givenSize].<a class="code" href="structdataCell.html#a30f561c10f9beceb735cfdbfb501ce3d">data</a> = tempInt; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="problem2_8c.html#af163e482779576465555099aa4e7047a">dataArray</a>[i + j/givenSize][i + j%givenSize].<a class="code" href="structdataCell.html#a30f561c10f9beceb735cfdbfb501ce3d">data</a> = tempInt; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        j++;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
@@ -159,54 +159,74 @@ $(function() {
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    printf(<span class="stringliteral">&quot;Level: %d\n&quot;</span>, <a class="code" href="problem2_8c.html#af163e482779576465555099aa4e7047a">dataArray</a>[x][y].<a class="code" href="structdataCell.html#ad47c4690cb813d6fbfa32beec87fd1a5">level</a>);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="problem2_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">  137</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="problem2_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>(){</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    FILE* colsCount  = fopen(<span class="stringliteral">&quot;inputfile.txt&quot;</span>, <span class="stringliteral">&quot;r&quot;</span>);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    FILE* output = fopen(<span class="stringliteral">&quot;outputfile.txt&quot;</span>, <span class="stringliteral">&quot;w&quot;</span>);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    FILE* input  = fopen(<span class="stringliteral">&quot;inputfile.txt&quot;</span>, <span class="stringliteral">&quot;r&quot;</span>); </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">int</span> cols = <a class="code" href="problem2_8c.html#a91019421e232c78af5831657514aa1b7">countCols</a>(colsCount);    </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    printf(<span class="stringliteral">&quot;%d\n&quot;</span>, cols);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">int</span> size = <a class="code" href="problem2_8c.html#a0080e3ea8ded722c6add21338fd7e7af">calculateSize</a>(cols);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    printf(<span class="stringliteral">&quot;%d\n&quot;</span>, size);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <a class="code" href="problem2_8c.html#af163e482779576465555099aa4e7047a">dataArray</a> = (<span class="keyword">struct </span><a class="code" href="structdataCell.html">dataCell</a>**) calloc(size, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="structdataCell.html">dataCell</a>*));</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; size; i++){</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="code" href="problem2_8c.html#af163e482779576465555099aa4e7047a">dataArray</a>[i] = (<span class="keyword">struct </span><a class="code" href="structdataCell.html">dataCell</a>*) calloc(size, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="structdataCell.html">dataCell</a>));</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <a class="code" href="problem2_8c.html#aa568202c036ff3994643300de471aa44">insertArray</a>(input, size, cols);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; size; i++){</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt;size; j++){</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            printf(<span class="stringliteral">&quot;%d &quot;</span>, <a class="code" href="problem2_8c.html#af163e482779576465555099aa4e7047a">dataArray</a>[i][j].<a class="code" href="structdataCell.html#a30f561c10f9beceb735cfdbfb501ce3d">data</a>);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        }</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="problem2_8c.html#a85c49cb6bc175f40705d9b9784a18de6">makeTree</a>(0, size, 0, size, 0);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; size; i++){</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt;size; j++){</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            printf(<span class="stringliteral">&quot;%d &quot;</span>, <a class="code" href="problem2_8c.html#af163e482779576465555099aa4e7047a">dataArray</a>[i][j].<a class="code" href="problem2_8c.html#a888804d6ac601960887689926a09d5e3">leafNo</a>);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="problem2_8c.html#a460a54dcc670a3f18837a7b33c2c3e8b">  142</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="problem2_8c.html#a460a54dcc670a3f18837a7b33c2c3e8b">leafDetails</a>(<span class="keywordtype">int</span> <a class="code" href="problem2_8c.html#a888804d6ac601960887689926a09d5e3">leafNo</a>, <span class="keywordtype">int</span> size){</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">int</span> flag = 1;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; size; i++){</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; size; j++){</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="problem2_8c.html#af163e482779576465555099aa4e7047a">dataArray</a>[i][j].<a class="code" href="problem2_8c.html#a888804d6ac601960887689926a09d5e3">leafNo</a> == <a class="code" href="problem2_8c.html#a888804d6ac601960887689926a09d5e3">leafNo</a>){</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                printf(<span class="stringliteral">&quot;LeafNo: %d\n&quot;</span>, <a class="code" href="problem2_8c.html#af163e482779576465555099aa4e7047a">dataArray</a>[i][j].<a class="code" href="problem2_8c.html#a888804d6ac601960887689926a09d5e3">leafNo</a>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                printf(<span class="stringliteral">&quot;Data: %d\n&quot;</span>, <a class="code" href="problem2_8c.html#af163e482779576465555099aa4e7047a">dataArray</a>[i][j].<a class="code" href="structdataCell.html#a30f561c10f9beceb735cfdbfb501ce3d">data</a>);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                printf(<span class="stringliteral">&quot;Level: %d\n&quot;</span>, <a class="code" href="problem2_8c.html#af163e482779576465555099aa4e7047a">dataArray</a>[i][j].<a class="code" href="structdataCell.html#ad47c4690cb813d6fbfa32beec87fd1a5">level</a>);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                flag = 0;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">if</span>(flag == 0) <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="problem2_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">  158</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="problem2_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>(){</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    FILE* colsCount  = fopen(<span class="stringliteral">&quot;inputfile.txt&quot;</span>, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    FILE* output = fopen(<span class="stringliteral">&quot;outputfile.txt&quot;</span>, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    FILE* input  = fopen(<span class="stringliteral">&quot;inputfile.txt&quot;</span>, <span class="stringliteral">&quot;r&quot;</span>); </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">int</span> cols = <a class="code" href="problem2_8c.html#a91019421e232c78af5831657514aa1b7">countCols</a>(colsCount);    </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    printf(<span class="stringliteral">&quot;%d\n&quot;</span>, cols);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">int</span> size = <a class="code" href="problem2_8c.html#a0080e3ea8ded722c6add21338fd7e7af">calculateSize</a>(cols);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    printf(<span class="stringliteral">&quot;%d\n&quot;</span>, size);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <a class="code" href="problem2_8c.html#af163e482779576465555099aa4e7047a">dataArray</a> = (<span class="keyword">struct </span><a class="code" href="structdataCell.html">dataCell</a>**) calloc(size, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="structdataCell.html">dataCell</a>*));</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; size; i++){</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="problem2_8c.html#af163e482779576465555099aa4e7047a">dataArray</a>[i] = (<span class="keyword">struct </span><a class="code" href="structdataCell.html">dataCell</a>*) calloc(size, <span class="keyword">sizeof</span>(<span class="keyword">struct</span> <a class="code" href="structdataCell.html">dataCell</a>));</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="problem2_8c.html#a652b791800442c14bc0af301207049be">printDetails</a>(3,4);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;}</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="problem2_8c.html#aa568202c036ff3994643300de471aa44">insertArray</a>(input, size, cols);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; size; i++){</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt;size; j++){</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            printf(<span class="stringliteral">&quot;%d &quot;</span>, <a class="code" href="problem2_8c.html#af163e482779576465555099aa4e7047a">dataArray</a>[i][j].<a class="code" href="structdataCell.html#a30f561c10f9beceb735cfdbfb501ce3d">data</a>);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="problem2_8c.html#a85c49cb6bc175f40705d9b9784a18de6">makeTree</a>(0, size, 0, size, 0);</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; size; i++){</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt;size; j++){</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            printf(<span class="stringliteral">&quot;%d &quot;</span>, <a class="code" href="problem2_8c.html#af163e482779576465555099aa4e7047a">dataArray</a>[i][j].<a class="code" href="problem2_8c.html#a888804d6ac601960887689926a09d5e3">leafNo</a>);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <a class="code" href="problem2_8c.html#a652b791800442c14bc0af301207049be">printDetails</a>(3,4);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="problem2_8c.html#a460a54dcc670a3f18837a7b33c2c3e8b">leafDetails</a>(3, size);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aproblem2_8c_html_a85c49cb6bc175f40705d9b9784a18de6"><div class="ttname"><a href="problem2_8c.html#a85c49cb6bc175f40705d9b9784a18de6">makeTree</a></div><div class="ttdeci">void makeTree(int rowStart, int rowEnd, int colStart, int colEnd, int level)</div><div class="ttdef"><b>Definition:</b> <a href="problem2_8c_source.html#l00088">problem2.c:88</a></div></div>
 <div class="ttc" id="astructdataCell_html"><div class="ttname"><a href="structdataCell.html">dataCell</a></div><div class="ttdef"><b>Definition:</b> <a href="problem2_8c_source.html#l00008">problem2.c:8</a></div></div>
 <div class="ttc" id="aproblem2_8c_html_a0080e3ea8ded722c6add21338fd7e7af"><div class="ttname"><a href="problem2_8c.html#a0080e3ea8ded722c6add21338fd7e7af">calculateSize</a></div><div class="ttdeci">int calculateSize(int givenSize)</div><div class="ttdef"><b>Definition:</b> <a href="problem2_8c_source.html#l00042">problem2.c:42</a></div></div>
 <div class="ttc" id="aproblem2_8c_html_aa568202c036ff3994643300de471aa44"><div class="ttname"><a href="problem2_8c.html#aa568202c036ff3994643300de471aa44">insertArray</a></div><div class="ttdeci">void insertArray(FILE *input, int size, int givenSize)</div><div class="ttdef"><b>Definition:</b> <a href="problem2_8c_source.html#l00056">problem2.c:56</a></div></div>
 <div class="ttc" id="aproblem2_8c_html_a652b791800442c14bc0af301207049be"><div class="ttname"><a href="problem2_8c.html#a652b791800442c14bc0af301207049be">printDetails</a></div><div class="ttdeci">void printDetails(int x, int y)</div><div class="ttdef"><b>Definition:</b> <a href="problem2_8c_source.html#l00130">problem2.c:130</a></div></div>
-<div class="ttc" id="aproblem2_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="problem2_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="problem2_8c_source.html#l00137">problem2.c:137</a></div></div>
+<div class="ttc" id="aproblem2_8c_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="problem2_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition:</b> <a href="problem2_8c_source.html#l00158">problem2.c:158</a></div></div>
+<div class="ttc" id="aproblem2_8c_html_a460a54dcc670a3f18837a7b33c2c3e8b"><div class="ttname"><a href="problem2_8c.html#a460a54dcc670a3f18837a7b33c2c3e8b">leafDetails</a></div><div class="ttdeci">void leafDetails(int leafNo, int size)</div><div class="ttdef"><b>Definition:</b> <a href="problem2_8c_source.html#l00142">problem2.c:142</a></div></div>
 <div class="ttc" id="aproblem2_8c_html_a91019421e232c78af5831657514aa1b7"><div class="ttname"><a href="problem2_8c.html#a91019421e232c78af5831657514aa1b7">countCols</a></div><div class="ttdeci">int countCols(FILE *input)</div><div class="ttdoc">The array of data.</div><div class="ttdef"><b>Definition:</b> <a href="problem2_8c_source.html#l00023">problem2.c:23</a></div></div>
 <div class="ttc" id="astructdataCell_html_a30f561c10f9beceb735cfdbfb501ce3d"><div class="ttname"><a href="structdataCell.html#a30f561c10f9beceb735cfdbfb501ce3d">dataCell::data</a></div><div class="ttdeci">int data</div><div class="ttdef"><b>Definition:</b> <a href="problem2_8c_source.html#l00009">problem2.c:9</a></div></div>
 <div class="ttc" id="aproblem2_8c_html_af163e482779576465555099aa4e7047a"><div class="ttname"><a href="problem2_8c.html#af163e482779576465555099aa4e7047a">dataArray</a></div><div class="ttdeci">struct dataCell ** dataArray</div><div class="ttdef"><b>Definition:</b> <a href="problem2_8c_source.html#l00015">problem2.c:15</a></div></div>
