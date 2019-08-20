@@ -160,15 +160,15 @@ This method prints the contents of the dequeue and its size in bytes
 @return ---
  */
 void print(){
-	for(int i = 0; i <= left; i++){
-		printf("%d\n", deque[i]);
-	}
-	for(int i = left+1; i < right; i++){
-		printf("%d\n", 0);
-	}
-	for(int i = right; i < length; i++){
-		printf("%d\n", deque[i]);
-	}
+//	for(int i = 0; i <= left; i++){
+//		printf("%d\n", deque[i]);
+//	}
+//	for(int i = left+1; i < right; i++){
+//		printf("%d\n", 0);
+//	}
+//	for(int i = right; i < length; i++){
+///		printf("%d\n", deque[i]);
+//	}
 	printf("Size is: %ld\n", length*sizeof(int));
 }
 
@@ -190,6 +190,8 @@ int main(){
 	print();
 	deleteLeft();
 	print();
-
+	deleteLeft();
+deleteLeft();
+	print();
 	return 0;
 }

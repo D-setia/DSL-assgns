@@ -313,8 +313,13 @@ int main(){
 	insert(Data[1].name, Data[1].dob, Data[1].address, Data[1].phoneNo);
 	insert(Data[2].name, Data[2].dob, Data[2].address, Data[2].phoneNo);
 	insert(Data[3].name, Data[3].dob, Data[3].address, Data[3].phoneNo);
+	print();
+	printf("\n");
 	delete(102);
 	delete(101);
+	delete(104);
+	print();
+	printf("\n");
 	insert(Data[4].name, Data[4].dob, Data[4].address, Data[4].phoneNo);
 	insert(Data[5].name, Data[5].dob, Data[5].address, Data[5].phoneNo);
 	insert(Data[6].name, Data[6].dob, Data[6].address, Data[6].phoneNo);

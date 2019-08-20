@@ -1,0 +1,179 @@
+\hypertarget{Q2_8cpp}{}\doxysection{Q2.\+cpp File Reference}
+\label{Q2_8cpp}\index{Q2.cpp@{Q2.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classNode}{Node}}
+\item 
+class \mbox{\hyperlink{classLinkedList}{Linked\+List}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Q2_8cpp_ab87635db00a8ed4bace2125b07a896fb}{print\+Triplets}} (int i, int k)
+\item 
+int \mbox{\hyperlink{Q2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$ \mbox{\hyperlink{Q2_8cpp_aeb5c8191c604dff1caf1bc2bc25de292}{input}}
+\item 
+int $\ast$ \mbox{\hyperlink{Q2_8cpp_afbc311e0f17a403d378804ce74244262}{xorK}}
+\begin{DoxyCompactList}\small\item\em The input array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{Q2_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n}}
+\begin{DoxyCompactList}\small\item\em Pre-\/xor array. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{Q2_8cpp_a7106e2abc437ad981830d14176d15f09}{number}} = 0
+\begin{DoxyCompactList}\small\item\em Number of inputs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLinkedList}{Linked\+List}} \mbox{\hyperlink{Q2_8cpp_a2c49afe3f9d76abbeead0d6d9fe5b9a9}{linked\+List}}
+\begin{DoxyCompactList}\small\item\em Number of triplets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Q2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{Q2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Q2.cpp@{Q2.cpp}!main@{main}}
+\index{main@{main}!Q2.cpp@{Q2.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 63 of file Q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63           \{}
+\DoxyCodeLine{64     }
+\DoxyCodeLine{65     cin >> \mbox{\hyperlink{Q2_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n}};}
+\DoxyCodeLine{66     \mbox{\hyperlink{Q2_8cpp_aeb5c8191c604dff1caf1bc2bc25de292}{input}} = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[\mbox{\hyperlink{Q2_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n}}];}
+\DoxyCodeLine{67     \mbox{\hyperlink{Q2_8cpp_afbc311e0f17a403d378804ce74244262}{xorK}} = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[\mbox{\hyperlink{Q2_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n}}];}
+\DoxyCodeLine{68     \mbox{\hyperlink{Q2_8cpp_afbc311e0f17a403d378804ce74244262}{xorK}}[0] = 0;}
+\DoxyCodeLine{69     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{Q2_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n}}; i++)\{}
+\DoxyCodeLine{70         cin >> \mbox{\hyperlink{Q2_8cpp_aeb5c8191c604dff1caf1bc2bc25de292}{input}}[i];}
+\DoxyCodeLine{71         \textcolor{keywordflow}{if}(i == 0)\{}
+\DoxyCodeLine{72             \mbox{\hyperlink{Q2_8cpp_afbc311e0f17a403d378804ce74244262}{xorK}}[i] = \mbox{\hyperlink{Q2_8cpp_aeb5c8191c604dff1caf1bc2bc25de292}{input}}[i];}
+\DoxyCodeLine{73             \mbox{\hyperlink{Q2_8cpp_a2c49afe3f9d76abbeead0d6d9fe5b9a9}{linkedList}}.\mbox{\hyperlink{classLinkedList_a005894bd51c4dae24a0d684ce065523a}{insert}}(\mbox{\hyperlink{Q2_8cpp_afbc311e0f17a403d378804ce74244262}{xorK}}[i]);}
+\DoxyCodeLine{74         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{75             \mbox{\hyperlink{Q2_8cpp_afbc311e0f17a403d378804ce74244262}{xorK}}[i] = \mbox{\hyperlink{Q2_8cpp_afbc311e0f17a403d378804ce74244262}{xorK}}[i-\/1]\string^\mbox{\hyperlink{Q2_8cpp_aeb5c8191c604dff1caf1bc2bc25de292}{input}}[i];}
+\DoxyCodeLine{76             \mbox{\hyperlink{Q2_8cpp_a2c49afe3f9d76abbeead0d6d9fe5b9a9}{linkedList}}.\mbox{\hyperlink{classLinkedList_a005894bd51c4dae24a0d684ce065523a}{insert}}(\mbox{\hyperlink{Q2_8cpp_afbc311e0f17a403d378804ce74244262}{xorK}}[i]);}
+\DoxyCodeLine{77         \}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79     \}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{Q2_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n}}; i++)\{}
+\DoxyCodeLine{82         \textcolor{keywordflow}{if}(\mbox{\hyperlink{Q2_8cpp_afbc311e0f17a403d378804ce74244262}{xorK}}[i] == 0)\{}
+\DoxyCodeLine{83             \mbox{\hyperlink{Q2_8cpp_ab87635db00a8ed4bace2125b07a896fb}{printTriplets}}(0,i);}
+\DoxyCodeLine{84         \}}
+\DoxyCodeLine{85     \}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{Q2_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n}}; i++)\{}
+\DoxyCodeLine{88         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j < i-\/1; j++)\{}
+\DoxyCodeLine{89             \textcolor{keywordflow}{if}((\mbox{\hyperlink{Q2_8cpp_afbc311e0f17a403d378804ce74244262}{xorK}}[j]\string^\mbox{\hyperlink{Q2_8cpp_afbc311e0f17a403d378804ce74244262}{xorK}}[i]) == 0)\{}
+\DoxyCodeLine{90                 \mbox{\hyperlink{Q2_8cpp_ab87635db00a8ed4bace2125b07a896fb}{printTriplets}}(j+1,i);}
+\DoxyCodeLine{91             \}}
+\DoxyCodeLine{92         \}}
+\DoxyCodeLine{93     \}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     cout << \textcolor{stringliteral}{"\(\backslash\)nThe number of triplets is: "} << \mbox{\hyperlink{Q2_8cpp_a7106e2abc437ad981830d14176d15f09}{number}} << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{96     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{97 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Q2_8cpp_ab87635db00a8ed4bace2125b07a896fb}\label{Q2_8cpp_ab87635db00a8ed4bace2125b07a896fb}} 
+\index{Q2.cpp@{Q2.cpp}!printTriplets@{printTriplets}}
+\index{printTriplets@{printTriplets}!Q2.cpp@{Q2.cpp}}
+\doxysubsubsection{\texorpdfstring{printTriplets()}{printTriplets()}}
+{\footnotesize\ttfamily void print\+Triplets (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{k }\end{DoxyParamCaption})}
+
+This function prints the triplets of a subarray 
+\begin{DoxyParams}{Parameters}
+{\em i} & The starting index of array \\
+\hline
+{\em j} & The ending index of array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file Q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{56                                 \{}
+\DoxyCodeLine{57     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = i+2; j <= k+1; j++)\{}
+\DoxyCodeLine{58         printf(\textcolor{stringliteral}{"( \%d, \%d, \%d)\(\backslash\)n"} ,(i+1), j, (k+1));}
+\DoxyCodeLine{59         \mbox{\hyperlink{Q2_8cpp_a7106e2abc437ad981830d14176d15f09}{number}}++;}
+\DoxyCodeLine{60     \}}
+\DoxyCodeLine{61 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{Q2_8cpp_aeb5c8191c604dff1caf1bc2bc25de292}\label{Q2_8cpp_aeb5c8191c604dff1caf1bc2bc25de292}} 
+\index{Q2.cpp@{Q2.cpp}!input@{input}}
+\index{input@{input}!Q2.cpp@{Q2.cpp}}
+\doxysubsubsection{\texorpdfstring{input}{input}}
+{\footnotesize\ttfamily int$\ast$ input}
+
+
+
+Definition at line 45 of file Q2.\+cpp.
+
+\mbox{\Hypertarget{Q2_8cpp_a2c49afe3f9d76abbeead0d6d9fe5b9a9}\label{Q2_8cpp_a2c49afe3f9d76abbeead0d6d9fe5b9a9}} 
+\index{Q2.cpp@{Q2.cpp}!linkedList@{linkedList}}
+\index{linkedList@{linkedList}!Q2.cpp@{Q2.cpp}}
+\doxysubsubsection{\texorpdfstring{linkedList}{linkedList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLinkedList}{Linked\+List}} linked\+List}
+
+
+
+Number of triplets. 
+
+
+
+Definition at line 49 of file Q2.\+cpp.
+
+\mbox{\Hypertarget{Q2_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}\label{Q2_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}} 
+\index{Q2.cpp@{Q2.cpp}!n@{n}}
+\index{n@{n}!Q2.cpp@{Q2.cpp}}
+\doxysubsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily int n}
+
+
+
+Pre-\/xor array. 
+
+
+
+Definition at line 47 of file Q2.\+cpp.
+
+\mbox{\Hypertarget{Q2_8cpp_a7106e2abc437ad981830d14176d15f09}\label{Q2_8cpp_a7106e2abc437ad981830d14176d15f09}} 
+\index{Q2.cpp@{Q2.cpp}!number@{number}}
+\index{number@{number}!Q2.cpp@{Q2.cpp}}
+\doxysubsubsection{\texorpdfstring{number}{number}}
+{\footnotesize\ttfamily int number = 0}
+
+
+
+Number of inputs. 
+
+
+
+Definition at line 48 of file Q2.\+cpp.
+
+\mbox{\Hypertarget{Q2_8cpp_afbc311e0f17a403d378804ce74244262}\label{Q2_8cpp_afbc311e0f17a403d378804ce74244262}} 
+\index{Q2.cpp@{Q2.cpp}!xorK@{xorK}}
+\index{xorK@{xorK}!Q2.cpp@{Q2.cpp}}
+\doxysubsubsection{\texorpdfstring{xorK}{xorK}}
+{\footnotesize\ttfamily int$\ast$ xorK}
+
+
+
+The input array. 
+
+
+
+Definition at line 46 of file Q2.\+cpp.
+

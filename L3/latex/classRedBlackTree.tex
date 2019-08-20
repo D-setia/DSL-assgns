@@ -1,0 +1,483 @@
+\hypertarget{classRedBlackTree}{}\doxysection{Red\+Black\+Tree Class Reference}
+\label{classRedBlackTree}\index{RedBlackTree@{RedBlackTree}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$ \mbox{\hyperlink{classRedBlackTree_a5c75fea883a1e65c74e3df95fed9f15e}{B\+S\+T\+Insert}} (\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}, \mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$temp)
+\item 
+void \mbox{\hyperlink{classRedBlackTree_a407d38849e66e1a13241a5347b5d2e7e}{calculate\+Bal\+Factor}} (\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}})
+\item 
+void \mbox{\hyperlink{classRedBlackTree_a6fc1d55f4acd203c74946a744335e3c3}{rotate\+Right}} (\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\&\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}, \mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\&temp)
+\item 
+void \mbox{\hyperlink{classRedBlackTree_a795d76392f9f0010748583ef21a2e944}{rotate\+Left}} (\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\&\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}, \mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\&temp)
+\item 
+void \mbox{\hyperlink{classRedBlackTree_a9fee445b2127cd0393e544bbbdfc40c2}{restore\+R\+B\+Props}} (\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\&\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}, \mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\&temp)
+\item 
+void \mbox{\hyperlink{classRedBlackTree_aabc1b315b99acca0a8e8869d40279e48}{insert}} (int data)
+\item 
+void \mbox{\hyperlink{classRedBlackTree_a58af74ab88fb850980d781c082c27c7a}{print\+\_\+\+In\+Order}} (\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}})
+\item 
+void \mbox{\hyperlink{classRedBlackTree_a8a3c8438b7fef24ef33f43dfb73e1ef3}{print\+\_\+\+Level\+Order}} (\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}, int spaces)
+\item 
+void \mbox{\hyperlink{classRedBlackTree_ae12c2366a66c74995250f8c36f0bd1b6}{to\+Leaf\+Nodes}} (\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}, vector$<$ int $>$ path)
+\item 
+void \mbox{\hyperlink{classRedBlackTree_a1508f6cdc5bc09963e9a784cd4cc25a5}{print\+Paths}} (\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$ \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}} = N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 217 of file Q1.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRedBlackTree_a5c75fea883a1e65c74e3df95fed9f15e}\label{classRedBlackTree_a5c75fea883a1e65c74e3df95fed9f15e}} 
+\index{RedBlackTree@{RedBlackTree}!BSTInsert@{BSTInsert}}
+\index{BSTInsert@{BSTInsert}!RedBlackTree@{RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{BSTInsert()}{BSTInsert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRBNode}{R\+B\+Node}}$\ast$ Red\+Black\+Tree\+::\+B\+S\+T\+Insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$}]{root,  }\item[{\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$}]{temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function inserts the data in the tree in the same fashion as B\+ST insertion 
+\begin{DoxyParams}{Parameters}
+{\em root} & The parent/root node \\
+\hline
+{\em temp} & A temporary node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+R\+B\+Node$\ast$ The parent/root node with the data inserted 
+\end{DoxyReturn}
+
+
+Definition at line 228 of file Q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{228                                                   \{}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230         \textcolor{keywordflow}{if} (root == NULL) }
+\DoxyCodeLine{231         \textcolor{keywordflow}{return} temp; }
+\DoxyCodeLine{232     }
+\DoxyCodeLine{233         \textcolor{keywordflow}{if} (temp-\/>\mbox{\hyperlink{classRBNode_a2028890965e94283429ea2256b2987f6}{data}} <= \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a2028890965e94283429ea2256b2987f6}{data}}) }
+\DoxyCodeLine{234         \{ }
+\DoxyCodeLine{235             \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}}  = \mbox{\hyperlink{classRedBlackTree_a5c75fea883a1e65c74e3df95fed9f15e}{BSTInsert}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}}, temp); }
+\DoxyCodeLine{236             \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}}-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}} = \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}; }
+\DoxyCodeLine{237         \} }
+\DoxyCodeLine{238         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (temp-\/>\mbox{\hyperlink{classRBNode_a2028890965e94283429ea2256b2987f6}{data}} > \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a2028890965e94283429ea2256b2987f6}{data}}) }
+\DoxyCodeLine{239         \{ }
+\DoxyCodeLine{240             \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}} = \mbox{\hyperlink{classRedBlackTree_a5c75fea883a1e65c74e3df95fed9f15e}{BSTInsert}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}}, temp); }
+\DoxyCodeLine{241             \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}}-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}} = \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}; }
+\DoxyCodeLine{242         \} }
+\DoxyCodeLine{243     }
+\DoxyCodeLine{244         \textcolor{keywordflow}{return} \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}; }
+\DoxyCodeLine{245     \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRedBlackTree_a407d38849e66e1a13241a5347b5d2e7e}\label{classRedBlackTree_a407d38849e66e1a13241a5347b5d2e7e}} 
+\index{RedBlackTree@{RedBlackTree}!calculateBalFactor@{calculateBalFactor}}
+\index{calculateBalFactor@{calculateBalFactor}!RedBlackTree@{RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{calculateBalFactor()}{calculateBalFactor()}}
+{\footnotesize\ttfamily void Red\+Black\+Tree\+::calculate\+Bal\+Factor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function calculates the balance factor of each node upon insertion of a new one 
+\begin{DoxyParams}{Parameters}
+{\em The} & root/parent node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 253 of file Q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{253                                          \{}
+\DoxyCodeLine{254         }
+\DoxyCodeLine{255         \textcolor{keywordflow}{if}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}} == NULL) \textcolor{keywordflow}{return}; }
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257         \mbox{\hyperlink{classRedBlackTree_a407d38849e66e1a13241a5347b5d2e7e}{calculateBalFactor}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}});}
+\DoxyCodeLine{258         \mbox{\hyperlink{classRedBlackTree_a407d38849e66e1a13241a5347b5d2e7e}{calculateBalFactor}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}});}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260         \textcolor{keywordtype}{int} lh = ((\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}} != NULL)? \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}}-\/>\mbox{\hyperlink{classRBNode_ae5da6a947d0f2033842f9cd970717331}{h}}   : 0);}
+\DoxyCodeLine{261         \textcolor{keywordtype}{int} rh = ((\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}} != NULL)? \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}}-\/>\mbox{\hyperlink{classRBNode_ae5da6a947d0f2033842f9cd970717331}{h}} : 0);}
+\DoxyCodeLine{262         \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_ae5da6a947d0f2033842f9cd970717331}{h}} = max(lh, rh) + 1;}
+\DoxyCodeLine{263         \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a2a3c4aae5006ad5554c872215a377570}{balancefactor}} = abs(lh -\/ rh);}
+\DoxyCodeLine{264     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRedBlackTree_aabc1b315b99acca0a8e8869d40279e48}\label{classRedBlackTree_aabc1b315b99acca0a8e8869d40279e48}} 
+\index{RedBlackTree@{RedBlackTree}!insert@{insert}}
+\index{insert@{insert}!RedBlackTree@{RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Red\+Black\+Tree\+::insert (\begin{DoxyParamCaption}\item[{int}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function inserts new data into the tree 
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be inserted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 397 of file Q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{398         \{ }
+\DoxyCodeLine{399             \mbox{\hyperlink{classRBNode}{RBNode}} *temp = \textcolor{keyword}{new} \mbox{\hyperlink{classRBNode}{RBNode}}(data); }
+\DoxyCodeLine{400         }
+\DoxyCodeLine{401             \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}} = \mbox{\hyperlink{classRedBlackTree_a5c75fea883a1e65c74e3df95fed9f15e}{BSTInsert}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}, temp); }
+\DoxyCodeLine{402         }
+\DoxyCodeLine{403             \mbox{\hyperlink{classRedBlackTree_a9fee445b2127cd0393e544bbbdfc40c2}{restoreRBProps}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}, temp); }
+\DoxyCodeLine{404 }
+\DoxyCodeLine{405             \mbox{\hyperlink{classRedBlackTree_a407d38849e66e1a13241a5347b5d2e7e}{calculateBalFactor}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}});}
+\DoxyCodeLine{406         \}; }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRedBlackTree_a58af74ab88fb850980d781c082c27c7a}\label{classRedBlackTree_a58af74ab88fb850980d781c082c27c7a}} 
+\index{RedBlackTree@{RedBlackTree}!print\_InOrder@{print\_InOrder}}
+\index{print\_InOrder@{print\_InOrder}!RedBlackTree@{RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{print\_InOrder()}{print\_InOrder()}}
+{\footnotesize\ttfamily void Red\+Black\+Tree\+::print\+\_\+\+In\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function prints the data in the tree through inorder traversal 
+\begin{DoxyParams}{Parameters}
+{\em root} & The parent/root node for traversal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 414 of file Q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{414                                      \{ }
+\DoxyCodeLine{415         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}} == NULL) }
+\DoxyCodeLine{416             \textcolor{keywordflow}{return}; }
+\DoxyCodeLine{417     }
+\DoxyCodeLine{418         \mbox{\hyperlink{classRedBlackTree_a58af74ab88fb850980d781c082c27c7a}{print\_InOrder}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}}); }
+\DoxyCodeLine{419         cout << \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a2028890965e94283429ea2256b2987f6}{data}}  << \textcolor{stringliteral}{" "}; }
+\DoxyCodeLine{420         \mbox{\hyperlink{classRedBlackTree_a58af74ab88fb850980d781c082c27c7a}{print\_InOrder}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}}); }
+\DoxyCodeLine{421     \}    }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRedBlackTree_a8a3c8438b7fef24ef33f43dfb73e1ef3}\label{classRedBlackTree_a8a3c8438b7fef24ef33f43dfb73e1ef3}} 
+\index{RedBlackTree@{RedBlackTree}!print\_LevelOrder@{print\_LevelOrder}}
+\index{print\_LevelOrder@{print\_LevelOrder}!RedBlackTree@{RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{print\_LevelOrder()}{print\_LevelOrder()}}
+{\footnotesize\ttfamily void Red\+Black\+Tree\+::print\+\_\+\+Level\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$}]{root,  }\item[{int}]{spaces }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function prints the data in the tree in level-\/wise indentation 
+\begin{DoxyParams}{Parameters}
+{\em root} & The parent/root node \\
+\hline
+{\em spaces} & The number of appropriate spaces for indentation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 430 of file Q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{430                                                     \{}
+\DoxyCodeLine{431         }
+\DoxyCodeLine{432         \textcolor{keywordflow}{if}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}} == NULL) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{433 }
+\DoxyCodeLine{434         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i <= spaces; i++) cout << \textcolor{stringliteral}{"  "};}
+\DoxyCodeLine{435 }
+\DoxyCodeLine{436         cout << \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a2028890965e94283429ea2256b2987f6}{data}};}
+\DoxyCodeLine{437 }
+\DoxyCodeLine{438         \textcolor{keywordflow}{if}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a2a3c4aae5006ad5554c872215a377570}{balancefactor}} != 0)}
+\DoxyCodeLine{439             cout << \textcolor{stringliteral}{"["} << \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a2a3c4aae5006ad5554c872215a377570}{balancefactor}} << \textcolor{stringliteral}{"]"};}
+\DoxyCodeLine{440         cout << ((\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{isBlack}})? \textcolor{stringliteral}{"[BLACK]"} : \textcolor{stringliteral}{"[RED]"});    }
+\DoxyCodeLine{441         cout << \textcolor{stringliteral}{"\(\backslash\)n"};    }
+\DoxyCodeLine{442         \mbox{\hyperlink{classRedBlackTree_a8a3c8438b7fef24ef33f43dfb73e1ef3}{print\_LevelOrder}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}}, spaces+1);}
+\DoxyCodeLine{443         \mbox{\hyperlink{classRedBlackTree_a8a3c8438b7fef24ef33f43dfb73e1ef3}{print\_LevelOrder}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}}, spaces+1);}
+\DoxyCodeLine{444     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRedBlackTree_a1508f6cdc5bc09963e9a784cd4cc25a5}\label{classRedBlackTree_a1508f6cdc5bc09963e9a784cd4cc25a5}} 
+\index{RedBlackTree@{RedBlackTree}!printPaths@{printPaths}}
+\index{printPaths@{printPaths}!RedBlackTree@{RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{printPaths()}{printPaths()}}
+{\footnotesize\ttfamily void Red\+Black\+Tree\+::print\+Paths (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function prints paths to all leaf nodes 
+\begin{DoxyParams}{Parameters}
+{\em root} & The root/parent node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 476 of file Q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{476                                   \{}
+\DoxyCodeLine{477 }
+\DoxyCodeLine{478         \textcolor{keywordflow}{if}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}} == NULL) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{479 }
+\DoxyCodeLine{480         \mbox{\hyperlink{classRedBlackTree_ae12c2366a66c74995250f8c36f0bd1b6}{toLeafNodes}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}, \{\});}
+\DoxyCodeLine{481         \mbox{\hyperlink{classRedBlackTree_a1508f6cdc5bc09963e9a784cd4cc25a5}{printPaths}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}});}
+\DoxyCodeLine{482         \mbox{\hyperlink{classRedBlackTree_a1508f6cdc5bc09963e9a784cd4cc25a5}{printPaths}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}});}
+\DoxyCodeLine{483     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRedBlackTree_a9fee445b2127cd0393e544bbbdfc40c2}\label{classRedBlackTree_a9fee445b2127cd0393e544bbbdfc40c2}} 
+\index{RedBlackTree@{RedBlackTree}!restoreRBProps@{restoreRBProps}}
+\index{restoreRBProps@{restoreRBProps}!RedBlackTree@{RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{restoreRBProps()}{restoreRBProps()}}
+{\footnotesize\ttfamily void Red\+Black\+Tree\+::restore\+R\+B\+Props (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\&}]{root,  }\item[{\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\&}]{temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function restores the properties of Red Black Tree 
+\begin{DoxyParams}{Parameters}
+{\em root} & The root/parent node \\
+\hline
+{\em temp} & A temporary node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 330 of file Q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{330                                                      \{}
+\DoxyCodeLine{331 }
+\DoxyCodeLine{332             \mbox{\hyperlink{classRBNode}{RBNode}} *parent\_temp = NULL; }
+\DoxyCodeLine{333             \mbox{\hyperlink{classRBNode}{RBNode}} *grand\_parent\_temp = NULL; }
+\DoxyCodeLine{334 }
+\DoxyCodeLine{335             \textcolor{keywordflow}{while} ((temp != \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}) \&\& (temp-\/>\mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{isBlack}} == \textcolor{keyword}{false}) \&\& (temp-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}}-\/>\mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{isBlack}} == \textcolor{keyword}{false}))\{ }
+\DoxyCodeLine{336         }
+\DoxyCodeLine{337                 parent\_temp = temp-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}}; }
+\DoxyCodeLine{338                 grand\_parent\_temp = temp-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}}-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}}; }
+\DoxyCodeLine{339         }
+\DoxyCodeLine{340                 \textcolor{keywordflow}{if} (parent\_temp == grand\_parent\_temp-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}}) }
+\DoxyCodeLine{341                 \{ }
+\DoxyCodeLine{342         }
+\DoxyCodeLine{343                     \mbox{\hyperlink{classRBNode}{RBNode}} *uncle\_temp = grand\_parent\_temp-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}}; }
+\DoxyCodeLine{344         }
+\DoxyCodeLine{345                     \textcolor{keywordflow}{if} (uncle\_temp != NULL \&\& uncle\_temp-\/>\mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{isBlack}} == \textcolor{keyword}{false}) }
+\DoxyCodeLine{346                     \{ }
+\DoxyCodeLine{347                         grand\_parent\_temp-\/>\mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{isBlack}} = \textcolor{keyword}{false}; }
+\DoxyCodeLine{348                         parent\_temp-\/>\mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{isBlack}} = \textcolor{keyword}{true}; }
+\DoxyCodeLine{349                         uncle\_temp-\/>\mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{isBlack}} = \textcolor{keyword}{true}; }
+\DoxyCodeLine{350                         temp = grand\_parent\_temp; }
+\DoxyCodeLine{351 }
+\DoxyCodeLine{352                     \}\textcolor{keywordflow}{else} \{ }
+\DoxyCodeLine{353                         \textcolor{keywordflow}{if} (temp == parent\_temp-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}})\{ }
+\DoxyCodeLine{354                             }
+\DoxyCodeLine{355                             \mbox{\hyperlink{classRedBlackTree_a795d76392f9f0010748583ef21a2e944}{rotateLeft}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}, parent\_temp); }
+\DoxyCodeLine{356                             temp = parent\_temp; }
+\DoxyCodeLine{357                             parent\_temp = temp-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}}; }
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359                         \} }
+\DoxyCodeLine{360         }
+\DoxyCodeLine{361                         \mbox{\hyperlink{classRedBlackTree_a6fc1d55f4acd203c74946a744335e3c3}{rotateRight}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}, grand\_parent\_temp); }
+\DoxyCodeLine{362                         swap(parent\_temp-\/>\mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{isBlack}}, grand\_parent\_temp-\/>\mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{isBlack}}); }
+\DoxyCodeLine{363                         temp = parent\_temp; }
+\DoxyCodeLine{364                     \} }
+\DoxyCodeLine{365                 \}\textcolor{keywordflow}{else}\{ }
+\DoxyCodeLine{366                     \mbox{\hyperlink{classRBNode}{RBNode}} *uncle\_temp = grand\_parent\_temp-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}}; }
+\DoxyCodeLine{367         }
+\DoxyCodeLine{368                     \textcolor{keywordflow}{if} ((uncle\_temp != NULL) \&\& (uncle\_temp-\/>\mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{isBlack}} == \textcolor{keyword}{false}))\{ }
+\DoxyCodeLine{369                         grand\_parent\_temp-\/>\mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{isBlack}} = \textcolor{keyword}{false}; }
+\DoxyCodeLine{370                         parent\_temp-\/>\mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{isBlack}} = \textcolor{keyword}{true}; }
+\DoxyCodeLine{371                         uncle\_temp-\/>\mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{isBlack}} = \textcolor{keyword}{true}; }
+\DoxyCodeLine{372                         temp = grand\_parent\_temp; }
+\DoxyCodeLine{373                     \} }
+\DoxyCodeLine{374                     \textcolor{keywordflow}{else}\{ }
+\DoxyCodeLine{375                         \textcolor{keywordflow}{if} (temp == parent\_temp-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}})\{ }
+\DoxyCodeLine{376                             \mbox{\hyperlink{classRedBlackTree_a6fc1d55f4acd203c74946a744335e3c3}{rotateRight}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}, parent\_temp); }
+\DoxyCodeLine{377                             temp = parent\_temp; }
+\DoxyCodeLine{378                             parent\_temp = temp-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}}; }
+\DoxyCodeLine{379                         \} }
+\DoxyCodeLine{380         }
+\DoxyCodeLine{381                         \mbox{\hyperlink{classRedBlackTree_a795d76392f9f0010748583ef21a2e944}{rotateLeft}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}, grand\_parent\_temp); }
+\DoxyCodeLine{382                         swap(parent\_temp-\/>\mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{isBlack}}, grand\_parent\_temp-\/>\mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{isBlack}}); }
+\DoxyCodeLine{383                         temp = parent\_temp; }
+\DoxyCodeLine{384                     \} }
+\DoxyCodeLine{385                 \} }
+\DoxyCodeLine{386             \} }
+\DoxyCodeLine{387         }
+\DoxyCodeLine{388         \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{isBlack}} = \textcolor{keyword}{true}; }
+\DoxyCodeLine{389                     }
+\DoxyCodeLine{390     \};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRedBlackTree_a795d76392f9f0010748583ef21a2e944}\label{classRedBlackTree_a795d76392f9f0010748583ef21a2e944}} 
+\index{RedBlackTree@{RedBlackTree}!rotateLeft@{rotateLeft}}
+\index{rotateLeft@{rotateLeft}!RedBlackTree@{RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{rotateLeft()}{rotateLeft()}}
+{\footnotesize\ttfamily void Red\+Black\+Tree\+::rotate\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\&}]{root,  }\item[{\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\&}]{temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function balances the tree by rotation around a node in left direction 
+\begin{DoxyParams}{Parameters}
+{\em root} & The root/parent node \\
+\hline
+{\em temp} & A temporary node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 301 of file Q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{301                                                  \{ }
+\DoxyCodeLine{302         \mbox{\hyperlink{classRBNode}{RBNode}} *temp\_right = temp-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}}; }
+\DoxyCodeLine{303     }
+\DoxyCodeLine{304         temp-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}} = temp\_right-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}}; }
+\DoxyCodeLine{305     }
+\DoxyCodeLine{306         \textcolor{keywordflow}{if} (temp-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}} != NULL)\{}
+\DoxyCodeLine{307             temp-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}}-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}} = temp;}
+\DoxyCodeLine{308         \}}
+\DoxyCodeLine{309             }
+\DoxyCodeLine{310         temp\_right-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}} = temp-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}}; }
+\DoxyCodeLine{311     }
+\DoxyCodeLine{312         \textcolor{keywordflow}{if} (temp-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}} == NULL)\{}
+\DoxyCodeLine{313             \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}} = temp\_right;}
+\DoxyCodeLine{314         \}\textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (temp == temp-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}}-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}})\{}
+\DoxyCodeLine{315             temp-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}}-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}} = temp\_right;}
+\DoxyCodeLine{316         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{317             temp-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}}-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}} = temp\_right;}
+\DoxyCodeLine{318         \} }
+\DoxyCodeLine{319     }
+\DoxyCodeLine{320         temp\_right-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}} = temp;}
+\DoxyCodeLine{321         temp-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}} = temp\_right;}
+\DoxyCodeLine{322     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRedBlackTree_a6fc1d55f4acd203c74946a744335e3c3}\label{classRedBlackTree_a6fc1d55f4acd203c74946a744335e3c3}} 
+\index{RedBlackTree@{RedBlackTree}!rotateRight@{rotateRight}}
+\index{rotateRight@{rotateRight}!RedBlackTree@{RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{rotateRight()}{rotateRight()}}
+{\footnotesize\ttfamily void Red\+Black\+Tree\+::rotate\+Right (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\&}]{root,  }\item[{\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$\&}]{temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function balances the tree by rotation around a node in right direction 
+\begin{DoxyParams}{Parameters}
+{\em root} & The root/parent node \\
+\hline
+{\em temp} & A temporary node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 272 of file Q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{272                                                   \{ }
+\DoxyCodeLine{273         \mbox{\hyperlink{classRBNode}{RBNode}} *temp\_left = temp-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}}; }
+\DoxyCodeLine{274     }
+\DoxyCodeLine{275         temp-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}} = temp\_left-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}}; }
+\DoxyCodeLine{276     }
+\DoxyCodeLine{277         \textcolor{keywordflow}{if} (temp-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}} != NULL) }
+\DoxyCodeLine{278             temp-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}}-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}} = temp; }
+\DoxyCodeLine{279     }
+\DoxyCodeLine{280         temp\_left-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}} = temp-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}}; }
+\DoxyCodeLine{281     }
+\DoxyCodeLine{282         \textcolor{keywordflow}{if} (temp-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}} == NULL) }
+\DoxyCodeLine{283             \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}} = temp\_left; }
+\DoxyCodeLine{284     }
+\DoxyCodeLine{285         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (temp == temp-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}}-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}}) }
+\DoxyCodeLine{286             temp-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}}-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}} = temp\_left; }
+\DoxyCodeLine{287     }
+\DoxyCodeLine{288         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{289             temp-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}}-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}} = temp\_left; }
+\DoxyCodeLine{290     }
+\DoxyCodeLine{291         temp\_left-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}} = temp; }
+\DoxyCodeLine{292         temp-\/>\mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}} = temp\_left; }
+\DoxyCodeLine{293     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classRedBlackTree_ae12c2366a66c74995250f8c36f0bd1b6}\label{classRedBlackTree_ae12c2366a66c74995250f8c36f0bd1b6}} 
+\index{RedBlackTree@{RedBlackTree}!toLeafNodes@{toLeafNodes}}
+\index{toLeafNodes@{toLeafNodes}!RedBlackTree@{RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{toLeafNodes()}{toLeafNodes()}}
+{\footnotesize\ttfamily void Red\+Black\+Tree\+::to\+Leaf\+Nodes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$}]{root,  }\item[{vector$<$ int $>$}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This recursive function iterates to all the leaf nodes 
+\begin{DoxyParams}{Parameters}
+{\em root} & The root/parent node \\
+\hline
+{\em path} & A vector containing the path to leaf node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 452 of file Q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{452                                                      \{}
+\DoxyCodeLine{453 }
+\DoxyCodeLine{454         \textcolor{keywordflow}{if}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}} == NULL) \textcolor{keywordflow}{return};}
+\DoxyCodeLine{455 }
+\DoxyCodeLine{456         \textcolor{keywordflow}{if}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}} == NULL \&\& \mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}} == NULL) \{}
+\DoxyCodeLine{457             path.push\_back(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a2028890965e94283429ea2256b2987f6}{data}});}
+\DoxyCodeLine{458             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < path.size(); i++) \{}
+\DoxyCodeLine{459                 \textcolor{keywordflow}{if}(i == path.size()-\/1) cout << path[i] << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{460                 \textcolor{keywordflow}{else} cout << path[i] << \textcolor{stringliteral}{"-\/>"};}
+\DoxyCodeLine{461             \}}
+\DoxyCodeLine{462             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{463         \}}
+\DoxyCodeLine{464 }
+\DoxyCodeLine{465         path.push\_back(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a2028890965e94283429ea2256b2987f6}{data}});}
+\DoxyCodeLine{466     }
+\DoxyCodeLine{467         \mbox{\hyperlink{classRedBlackTree_ae12c2366a66c74995250f8c36f0bd1b6}{toLeafNodes}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}}, path);}
+\DoxyCodeLine{468         \mbox{\hyperlink{classRedBlackTree_ae12c2366a66c74995250f8c36f0bd1b6}{toLeafNodes}}(\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}-\/>\mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}}, path);    }
+\DoxyCodeLine{469     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}\label{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}} 
+\index{RedBlackTree@{RedBlackTree}!root@{root}}
+\index{root@{root}!RedBlackTree@{RedBlackTree}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRBNode}{R\+B\+Node}}$\ast$ Red\+Black\+Tree\+::root = N\+U\+LL}
+
+
+
+Definition at line 219 of file Q1.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Q1_8cpp}{Q1.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,75 @@
+\hypertarget{classLinkedList}{}\doxysection{Linked\+List Class Reference}
+\label{classLinkedList}\index{LinkedList@{LinkedList}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLinkedList_a005894bd51c4dae24a0d684ce065523a}{insert}} (int data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{classLinkedList_a3b496be2ca8046e2a806f6e2eab33d9b}{head}} = N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 20 of file Q2.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLinkedList_a005894bd51c4dae24a0d684ce065523a}\label{classLinkedList_a005894bd51c4dae24a0d684ce065523a}} 
+\index{LinkedList@{LinkedList}!insert@{insert}}
+\index{insert@{insert}!LinkedList@{LinkedList}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Linked\+List\+::insert (\begin{DoxyParamCaption}\item[{int}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function inserts the pre-\/xor into the linked list 
+\begin{DoxyParams}{Parameters}
+{\em data} & The data to be inserted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file Q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29                          \{}
+\DoxyCodeLine{30         \mbox{\hyperlink{classNode}{Node}}* newNode = \textcolor{keyword}{new} \mbox{\hyperlink{classNode}{Node}}(data);}
+\DoxyCodeLine{31         \mbox{\hyperlink{classNode}{Node}}* temp;}
+\DoxyCodeLine{32         temp = \mbox{\hyperlink{classLinkedList_a3b496be2ca8046e2a806f6e2eab33d9b}{head}};}
+\DoxyCodeLine{33         \textcolor{keywordflow}{if}(\mbox{\hyperlink{classLinkedList_a3b496be2ca8046e2a806f6e2eab33d9b}{head}} == NULL)\{}
+\DoxyCodeLine{34             \mbox{\hyperlink{classLinkedList_a3b496be2ca8046e2a806f6e2eab33d9b}{head}} = newNode;}
+\DoxyCodeLine{35         \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{36             \textcolor{keywordflow}{while}(temp-\/>\mbox{\hyperlink{classNode_a2559a716f69ccaa76d648d9f1b83065e}{next}} != NULL)\{}
+\DoxyCodeLine{37                 temp = temp-\/>\mbox{\hyperlink{classNode_a2559a716f69ccaa76d648d9f1b83065e}{next}};}
+\DoxyCodeLine{38             \}}
+\DoxyCodeLine{39             temp-\/>\mbox{\hyperlink{classNode_a2559a716f69ccaa76d648d9f1b83065e}{next}} = newNode;}
+\DoxyCodeLine{40         \}}
+\DoxyCodeLine{41     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classLinkedList_a3b496be2ca8046e2a806f6e2eab33d9b}\label{classLinkedList_a3b496be2ca8046e2a806f6e2eab33d9b}} 
+\index{LinkedList@{LinkedList}!head@{head}}
+\index{head@{head}!LinkedList@{LinkedList}}
+\doxysubsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}$\ast$ Linked\+List\+::head = N\+U\+LL}
+
+
+
+Definition at line 22 of file Q2.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Q2_8cpp}{Q2.\+cpp}}\end{DoxyCompactItemize}

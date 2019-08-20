@@ -1,0 +1,164 @@
+\hypertarget{classNode}{}\doxysection{Node Class Reference}
+\label{classNode}\index{Node@{Node}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNode_a0d68253f48f4deb1e078ef6cf08a5bf4}{Node}} (int \mbox{\hyperlink{classNode_a87c003c9f600e3fc58e6e90835f0b605}{data}})
+\begin{DoxyCompactList}\small\item\em Balance factor of the node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode_a0d68253f48f4deb1e078ef6cf08a5bf4}{Node}} (int \mbox{\hyperlink{classNode_a87c003c9f600e3fc58e6e90835f0b605}{data}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{classNode_ab8c667ac8fdb120ed4c031682a9cdaee}{left}}
+\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{classNode_a7328862eaa6dea28018326549b3294d3}{right}}
+\begin{DoxyCompactList}\small\item\em Pointer to left child. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNode_a87c003c9f600e3fc58e6e90835f0b605}{data}}
+\begin{DoxyCompactList}\small\item\em Pointer to right child. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNode_a61966b207f0584aaa4773e5e1266e905}{height}} = 1
+\begin{DoxyCompactList}\small\item\em Data stored in the node. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classNode_a2984f1ec65e558633862e9d4feb8015d}{balance\+Factor}} = 0
+\begin{DoxyCompactList}\small\item\em Height of the node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{classNode_a2559a716f69ccaa76d648d9f1b83065e}{next}} = N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the node for Binary Search Tree
+
+This is the node for linked list 
+
+Definition at line 9 of file Q1.\+cpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNode_a0d68253f48f4deb1e078ef6cf08a5bf4}\label{classNode_a0d68253f48f4deb1e078ef6cf08a5bf4}} 
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}\item[{int}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Balance factor of the node. 
+
+This is the constructor of node class which initialises the data of the node 
+\begin{DoxyParams}{Parameters}
+{\em data} & The data stored in the node \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 22 of file Q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22                   \{}
+\DoxyCodeLine{23         this-\/>\mbox{\hyperlink{classNode_a87c003c9f600e3fc58e6e90835f0b605}{data}} = \mbox{\hyperlink{classNode_a87c003c9f600e3fc58e6e90835f0b605}{data}};}
+\DoxyCodeLine{24     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classNode_a0d68253f48f4deb1e078ef6cf08a5bf4}\label{classNode_a0d68253f48f4deb1e078ef6cf08a5bf4}} 
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}\item[{int}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 14 of file Q2.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14                   \{}
+\DoxyCodeLine{15         this-\/>\mbox{\hyperlink{classNode_a87c003c9f600e3fc58e6e90835f0b605}{data}} = \mbox{\hyperlink{classNode_a87c003c9f600e3fc58e6e90835f0b605}{data}};}
+\DoxyCodeLine{16     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classNode_a2984f1ec65e558633862e9d4feb8015d}\label{classNode_a2984f1ec65e558633862e9d4feb8015d}} 
+\index{Node@{Node}!balanceFactor@{balanceFactor}}
+\index{balanceFactor@{balanceFactor}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{balanceFactor}{balanceFactor}}
+{\footnotesize\ttfamily int Node\+::balance\+Factor = 0}
+
+
+
+Height of the node. 
+
+
+
+Definition at line 15 of file Q1.\+cpp.
+
+\mbox{\Hypertarget{classNode_a87c003c9f600e3fc58e6e90835f0b605}\label{classNode_a87c003c9f600e3fc58e6e90835f0b605}} 
+\index{Node@{Node}!data@{data}}
+\index{data@{data}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily int Node\+::data}
+
+
+
+Pointer to right child. 
+
+
+
+Definition at line 13 of file Q1.\+cpp.
+
+\mbox{\Hypertarget{classNode_a61966b207f0584aaa4773e5e1266e905}\label{classNode_a61966b207f0584aaa4773e5e1266e905}} 
+\index{Node@{Node}!height@{height}}
+\index{height@{height}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily int Node\+::height = 1}
+
+
+
+Data stored in the node. 
+
+
+
+Definition at line 14 of file Q1.\+cpp.
+
+\mbox{\Hypertarget{classNode_ab8c667ac8fdb120ed4c031682a9cdaee}\label{classNode_ab8c667ac8fdb120ed4c031682a9cdaee}} 
+\index{Node@{Node}!left@{left}}
+\index{left@{left}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}$\ast$ Node\+::left}
+
+
+
+Definition at line 11 of file Q1.\+cpp.
+
+\mbox{\Hypertarget{classNode_a2559a716f69ccaa76d648d9f1b83065e}\label{classNode_a2559a716f69ccaa76d648d9f1b83065e}} 
+\index{Node@{Node}!next@{next}}
+\index{next@{next}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}$\ast$ Node\+::next = N\+U\+LL}
+
+
+
+Definition at line 11 of file Q2.\+cpp.
+
+\mbox{\Hypertarget{classNode_a7328862eaa6dea28018326549b3294d3}\label{classNode_a7328862eaa6dea28018326549b3294d3}} 
+\index{Node@{Node}!right@{right}}
+\index{right@{right}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}$\ast$ Node\+::right}
+
+
+
+Pointer to left child. 
+
+
+
+Definition at line 12 of file Q1.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Q1_8cpp}{Q1.\+cpp}}\item 
+\mbox{\hyperlink{Q2_8cpp}{Q2.\+cpp}}\end{DoxyCompactItemize}

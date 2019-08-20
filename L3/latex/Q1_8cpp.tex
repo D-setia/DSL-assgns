@@ -1,0 +1,200 @@
+\hypertarget{Q1_8cpp}{}\doxysection{Q1.\+cpp File Reference}
+\label{Q1_8cpp}\index{Q1.cpp@{Q1.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classNode}{Node}}
+\item 
+class \mbox{\hyperlink{classRBNode}{R\+B\+Node}}
+\item 
+class \mbox{\hyperlink{classBiSearchTree}{Bi\+Search\+Tree}}
+\item 
+class \mbox{\hyperlink{classRedBlackTree}{Red\+Black\+Tree}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{Q1_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Q1_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{Q1_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Q1.cpp@{Q1.cpp}!main@{main}}
+\index{main@{main}!Q1.cpp@{Q1.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 488 of file Q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{488           \{}
+\DoxyCodeLine{489     \mbox{\hyperlink{classBiSearchTree}{BiSearchTree}} bstree;}
+\DoxyCodeLine{490     \mbox{\hyperlink{classRedBlackTree}{RedBlackTree}} rbtree;}
+\DoxyCodeLine{491     \textcolor{keywordtype}{int} \mbox{\hyperlink{Q2_8cpp_aeb5c8191c604dff1caf1bc2bc25de292}{input}} = 0;}
+\DoxyCodeLine{492     \textcolor{keywordtype}{int} data;}
+\DoxyCodeLine{493 }
+\DoxyCodeLine{494     \textcolor{keywordflow}{do}\{     }
+\DoxyCodeLine{495         cout << \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n1) Insert new node in BST and Red-\/Black-\/Tree"} << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{496         cout << \textcolor{stringliteral}{"2) Create AVL tree from the inorder traversal of the BST"} << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{497         cout << \textcolor{stringliteral}{"3) Print tree data through inorder traversal"} << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{498         cout << \textcolor{stringliteral}{"4) Print all the paths in the BST/AVL/Red-\/Black-\/Tree"} << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{499         cout << \textcolor{stringliteral}{"5) Print the BST/AVL/Red-\/Black-\/Tree using level-\/wise indentation"} << \textcolor{stringliteral}{"\(\backslash\)n"}; }
+\DoxyCodeLine{500         cout << \textcolor{stringliteral}{"6) Exit"} << \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n"};}
+\DoxyCodeLine{501 }
+\DoxyCodeLine{502         cin >> \mbox{\hyperlink{Q2_8cpp_aeb5c8191c604dff1caf1bc2bc25de292}{input}};}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{504         \textcolor{keywordflow}{switch}(\mbox{\hyperlink{Q2_8cpp_aeb5c8191c604dff1caf1bc2bc25de292}{input}}) \{}
+\DoxyCodeLine{505 }
+\DoxyCodeLine{506             \textcolor{keywordflow}{case} 1: \{}
+\DoxyCodeLine{507 }
+\DoxyCodeLine{508                 cout << \textcolor{stringliteral}{"Enter data to be inserted"} << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{509                 cin >> data;}
+\DoxyCodeLine{510 }
+\DoxyCodeLine{511                 bstree.\mbox{\hyperlink{classBiSearchTree_a78192062a5e55fa2297d0cb8d911bafd}{root}} = bstree.\mbox{\hyperlink{classBiSearchTree_a46b45b4cd98c2382d19b17291edff6e3}{insert}}(bstree.\mbox{\hyperlink{classBiSearchTree_a78192062a5e55fa2297d0cb8d911bafd}{root}}, data);}
+\DoxyCodeLine{512                 rbtree.\mbox{\hyperlink{classRedBlackTree_aabc1b315b99acca0a8e8869d40279e48}{insert}}(data);}
+\DoxyCodeLine{513 }
+\DoxyCodeLine{514                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{515             \}}
+\DoxyCodeLine{516 }
+\DoxyCodeLine{517             \textcolor{keywordflow}{case} 2: \{}
+\DoxyCodeLine{518                 bstree.\mbox{\hyperlink{classBiSearchTree_ac67dd79c41ee660b700894f1f80ea036}{convertToAvl}}();}
+\DoxyCodeLine{519                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{520             \}}
+\DoxyCodeLine{521 }
+\DoxyCodeLine{522             \textcolor{keywordflow}{case} 3: \{}
+\DoxyCodeLine{523                 }
+\DoxyCodeLine{524                 cout << \textcolor{stringliteral}{"1) Red Black Tree"} << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{525                 cout << \textcolor{stringliteral}{"2) Binary Search Tree"} << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{526 }
+\DoxyCodeLine{527                 \textcolor{keywordtype}{int} x; cin >> x;}
+\DoxyCodeLine{528 }
+\DoxyCodeLine{529                 \textcolor{keywordflow}{switch}(x) \{}
+\DoxyCodeLine{530                     \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{531                         cout << \textcolor{stringliteral}{"\(\backslash\)n"};                   }
+\DoxyCodeLine{532                         rbtree.\mbox{\hyperlink{classRedBlackTree_a58af74ab88fb850980d781c082c27c7a}{print\_InOrder}}(rbtree.\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}});}
+\DoxyCodeLine{533                         cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{534                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{535 }
+\DoxyCodeLine{536                     \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{537                         cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{538                         bstree.\mbox{\hyperlink{classBiSearchTree_a30cddbf6bb69130b61519c93b17e63c1}{print\_InOrder}}(bstree.\mbox{\hyperlink{classBiSearchTree_a78192062a5e55fa2297d0cb8d911bafd}{root}});}
+\DoxyCodeLine{539                         cout << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{540                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{541 }
+\DoxyCodeLine{542                     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{543                         cout << \textcolor{stringliteral}{"Invalid input."};            }
+\DoxyCodeLine{544                 \}    }
+\DoxyCodeLine{545                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{546             \}}
+\DoxyCodeLine{547 }
+\DoxyCodeLine{548             \textcolor{keywordflow}{case} 4: \{}
+\DoxyCodeLine{549                 cout << \textcolor{stringliteral}{"1) Red Black Tree"} << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{550                 cout << \textcolor{stringliteral}{"2) Binary Search Tree"} << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{551 }
+\DoxyCodeLine{552                 \textcolor{keywordtype}{int} x; cin >> x;}
+\DoxyCodeLine{553 }
+\DoxyCodeLine{554                 \textcolor{keywordflow}{switch}(x) \{}
+\DoxyCodeLine{555 }
+\DoxyCodeLine{556                     \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{557                         rbtree.\mbox{\hyperlink{classRedBlackTree_a1508f6cdc5bc09963e9a784cd4cc25a5}{printPaths}}(rbtree.\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}});}
+\DoxyCodeLine{558                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{559 }
+\DoxyCodeLine{560                     \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{561                         bstree.\mbox{\hyperlink{classBiSearchTree_ad57be495b103e9ee405fcb2beacc7383}{printPaths}}(bstree.\mbox{\hyperlink{classBiSearchTree_a78192062a5e55fa2297d0cb8d911bafd}{root}});}
+\DoxyCodeLine{562                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{563 }
+\DoxyCodeLine{564                     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{565                         cout << \textcolor{stringliteral}{"Invalid input."} << \textcolor{stringliteral}{"\(\backslash\)n"};   }
+\DoxyCodeLine{566                 \}}
+\DoxyCodeLine{567 }
+\DoxyCodeLine{568                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{569             \}}
+\DoxyCodeLine{570 }
+\DoxyCodeLine{571             \textcolor{keywordflow}{case} 5: \{}
+\DoxyCodeLine{572                 cout << \textcolor{stringliteral}{"1) Red Black Tree"} << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{573                 cout << \textcolor{stringliteral}{"2) Binary Search Tree"} << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{574 }
+\DoxyCodeLine{575                 \textcolor{keywordtype}{int} x; cin >> x;}
+\DoxyCodeLine{576 }
+\DoxyCodeLine{577                 \textcolor{keywordflow}{switch}(x) \{}
+\DoxyCodeLine{578                     \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{579                         rbtree.\mbox{\hyperlink{classRedBlackTree_a8a3c8438b7fef24ef33f43dfb73e1ef3}{print\_LevelOrder}}(rbtree.\mbox{\hyperlink{classRedBlackTree_a319be096dab01fc07d378ce2220c6bbc}{root}}, 0);}
+\DoxyCodeLine{580                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{581 }
+\DoxyCodeLine{582                     \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{583                         bstree.\mbox{\hyperlink{classBiSearchTree_a2e997ff2f48cec6c35cd4ba19a96934b}{print\_LevelOrder}}(bstree.\mbox{\hyperlink{classBiSearchTree_a78192062a5e55fa2297d0cb8d911bafd}{root}}, 0);}
+\DoxyCodeLine{584                         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{585 }
+\DoxyCodeLine{586                     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{587                         cout << \textcolor{stringliteral}{"Invalid input!"};            }
+\DoxyCodeLine{588                 \}    }
+\DoxyCodeLine{589                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{590             \}}
+\DoxyCodeLine{591 }
+\DoxyCodeLine{592             \textcolor{keywordflow}{case} 6: \{}
+\DoxyCodeLine{593                 \textcolor{keywordflow}{return} 0;                }
+\DoxyCodeLine{594             \}}
+\DoxyCodeLine{595 }
+\DoxyCodeLine{596             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{597                 cout << \textcolor{stringliteral}{"Invalid input."} << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{598         \}}
+\DoxyCodeLine{599     \}\textcolor{keywordflow}{while}(\mbox{\hyperlink{Q2_8cpp_aeb5c8191c604dff1caf1bc2bc25de292}{input}} != 6);}
+\DoxyCodeLine{600 }
+\DoxyCodeLine{601     \textcolor{comment}{// newBSTree.root = newBSTree.insert(newBSTree.root, 10);}}
+\DoxyCodeLine{602     \textcolor{comment}{// newBSTree.root = newBSTree.insert(newBSTree.root, 20);}}
+\DoxyCodeLine{603     \textcolor{comment}{// newBSTree.root = newBSTree.insert(newBSTree.root, 30);}}
+\DoxyCodeLine{604     \textcolor{comment}{// newBSTree.root = newBSTree.insert(newBSTree.root, 40);}}
+\DoxyCodeLine{605     \textcolor{comment}{// newBSTree.root = newBSTree.insert(newBSTree.root, 50);}}
+\DoxyCodeLine{606     \textcolor{comment}{// newBSTree.root = newBSTree.insert(newBSTree.root, 25);}}
+\DoxyCodeLine{607     \textcolor{comment}{// // newBSTree.root = newBSTree.insert(newBSTree.root, 55);}}
+\DoxyCodeLine{608     \textcolor{comment}{// //newBSTree.insert(55);}}
+\DoxyCodeLine{609     \textcolor{comment}{// newBSTree.print\_InOrder(newBSTree.root);}}
+\DoxyCodeLine{610     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{611     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{612     \textcolor{comment}{// newBSTree.print\_LevelOrder(newBSTree.root, 0);}}
+\DoxyCodeLine{613     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{614     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{615     \textcolor{comment}{// newBSTree.printPaths(newBSTree.root);}}
+\DoxyCodeLine{616     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{617     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{618     \textcolor{comment}{// newBSTree.convertToAvl();}}
+\DoxyCodeLine{619     \textcolor{comment}{// newBSTree.print\_InOrder(newBSTree.root);}}
+\DoxyCodeLine{620     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{621     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{622     \textcolor{comment}{// newBSTree.print\_LevelOrder(newBSTree.root, 0);}}
+\DoxyCodeLine{623     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{624     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{625     \textcolor{comment}{// newBSTree.printPaths(newBSTree.root);}}
+\DoxyCodeLine{626     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{627     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{628     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{629     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{630     \textcolor{comment}{// RedBlackTree rbtree;}}
+\DoxyCodeLine{631     \textcolor{comment}{// rbtree.insert(10);}}
+\DoxyCodeLine{632     \textcolor{comment}{// rbtree.insert(20);}}
+\DoxyCodeLine{633     \textcolor{comment}{// rbtree.insert(30);}}
+\DoxyCodeLine{634     \textcolor{comment}{// rbtree.insert(40);}}
+\DoxyCodeLine{635     \textcolor{comment}{// rbtree.insert(50);}}
+\DoxyCodeLine{636     \textcolor{comment}{// rbtree.insert(25);}}
+\DoxyCodeLine{637     \textcolor{comment}{// //rbtree.insert(55);}}
+\DoxyCodeLine{638     \textcolor{comment}{// rbtree.print\_InOrder(rbtree.root);}}
+\DoxyCodeLine{639     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{640     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{641     \textcolor{comment}{// rbtree.print\_LevelOrder(rbtree.root, 0);}}
+\DoxyCodeLine{642     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{643     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{644     \textcolor{comment}{// rbtree.printPaths(rbtree.root);}}
+\DoxyCodeLine{645     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{646     \textcolor{comment}{// cout << "\(\backslash\)n";}}
+\DoxyCodeLine{647 }
+\DoxyCodeLine{648     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{649 \}}
+
+\end{DoxyCode}

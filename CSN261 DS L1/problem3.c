@@ -88,14 +88,14 @@ int main(){
 		counter++;
 	}
 	
-	pixelValue(145,67);
-	pixelValue(1245,497);
-	pixelValue(907,43);
+	pixelValue(21,730);
+//	pixelValue(1245,497);
+//	pixelValue(907,43);
 
-	removeAllShades(red);
-	
-	pixelValue(145,67);
-	pixelValue(1245,497);
-	pixelValue(907,43);	
+//	removeAllShades(green);
+	keepOnly(green);	
+	pixelValue(21,730);
+//	pixelValue(1245,497);
+//	pixelValue(907,43);	
 	return 0;
 }

@@ -1,0 +1,161 @@
+\hypertarget{classRBNode}{}\doxysection{R\+B\+Node Class Reference}
+\label{classRBNode}\index{RBNode@{RBNode}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRBNode_adbbd26bfa2434d0ab2d8cd17a77921dd}{R\+B\+Node}} (int \mbox{\hyperlink{classRBNode_a2028890965e94283429ea2256b2987f6}{data}})
+\begin{DoxyCompactList}\small\item\em Parent of the node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classRBNode_a2028890965e94283429ea2256b2987f6}{data}}
+\item 
+bool \mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{is\+Black}}
+\begin{DoxyCompactList}\small\item\em Data stored in node. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRBNode_a2a3c4aae5006ad5554c872215a377570}{balancefactor}}
+\begin{DoxyCompactList}\small\item\em Boolean to identify color of node. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classRBNode_ae5da6a947d0f2033842f9cd970717331}{h}}
+\begin{DoxyCompactList}\small\item\em Balance factor of the node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$ \mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}}
+\begin{DoxyCompactList}\small\item\em Height of the node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$ \mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}}
+\begin{DoxyCompactList}\small\item\em Left child of node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRBNode}{R\+B\+Node}} $\ast$ \mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}}
+\begin{DoxyCompactList}\small\item\em Right child of node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the node for Red Black Tree 
+
+Definition at line 31 of file Q1.\+cpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRBNode_adbbd26bfa2434d0ab2d8cd17a77921dd}\label{classRBNode_adbbd26bfa2434d0ab2d8cd17a77921dd}} 
+\index{RBNode@{RBNode}!RBNode@{RBNode}}
+\index{RBNode@{RBNode}!RBNode@{RBNode}}
+\doxysubsubsection{\texorpdfstring{RBNode()}{RBNode()}}
+{\footnotesize\ttfamily R\+B\+Node\+::\+R\+B\+Node (\begin{DoxyParamCaption}\item[{int}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Parent of the node. 
+
+
+
+Definition at line 41 of file Q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41                      \{ }
+\DoxyCodeLine{42         }
+\DoxyCodeLine{43         this-\/>\mbox{\hyperlink{classRBNode_a2028890965e94283429ea2256b2987f6}{data}} = \mbox{\hyperlink{classRBNode_a2028890965e94283429ea2256b2987f6}{data}}; }
+\DoxyCodeLine{44         \mbox{\hyperlink{classRBNode_a3345545f8a1678010bca11b5f7153a4a}{left}} = \mbox{\hyperlink{classRBNode_af82826872827c548a5713eb84f264767}{right}} = \mbox{\hyperlink{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}{parent}} = NULL; }
+\DoxyCodeLine{45         this-\/>\mbox{\hyperlink{classRBNode_afabba279279bcb3a8013f37c737a3fb6}{isBlack}} = \textcolor{keyword}{false}; }
+\DoxyCodeLine{46     }
+\DoxyCodeLine{47     \}   }
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classRBNode_a2a3c4aae5006ad5554c872215a377570}\label{classRBNode_a2a3c4aae5006ad5554c872215a377570}} 
+\index{RBNode@{RBNode}!balancefactor@{balancefactor}}
+\index{balancefactor@{balancefactor}!RBNode@{RBNode}}
+\doxysubsubsection{\texorpdfstring{balancefactor}{balancefactor}}
+{\footnotesize\ttfamily int R\+B\+Node\+::balancefactor}
+
+
+
+Boolean to identify color of node. 
+
+
+
+Definition at line 35 of file Q1.\+cpp.
+
+\mbox{\Hypertarget{classRBNode_a2028890965e94283429ea2256b2987f6}\label{classRBNode_a2028890965e94283429ea2256b2987f6}} 
+\index{RBNode@{RBNode}!data@{data}}
+\index{data@{data}!RBNode@{RBNode}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily int R\+B\+Node\+::data}
+
+
+
+Definition at line 33 of file Q1.\+cpp.
+
+\mbox{\Hypertarget{classRBNode_ae5da6a947d0f2033842f9cd970717331}\label{classRBNode_ae5da6a947d0f2033842f9cd970717331}} 
+\index{RBNode@{RBNode}!h@{h}}
+\index{h@{h}!RBNode@{RBNode}}
+\doxysubsubsection{\texorpdfstring{h}{h}}
+{\footnotesize\ttfamily int R\+B\+Node\+::h}
+
+
+
+Balance factor of the node. 
+
+
+
+Definition at line 36 of file Q1.\+cpp.
+
+\mbox{\Hypertarget{classRBNode_afabba279279bcb3a8013f37c737a3fb6}\label{classRBNode_afabba279279bcb3a8013f37c737a3fb6}} 
+\index{RBNode@{RBNode}!isBlack@{isBlack}}
+\index{isBlack@{isBlack}!RBNode@{RBNode}}
+\doxysubsubsection{\texorpdfstring{isBlack}{isBlack}}
+{\footnotesize\ttfamily bool R\+B\+Node\+::is\+Black}
+
+
+
+Data stored in node. 
+
+
+
+Definition at line 34 of file Q1.\+cpp.
+
+\mbox{\Hypertarget{classRBNode_a3345545f8a1678010bca11b5f7153a4a}\label{classRBNode_a3345545f8a1678010bca11b5f7153a4a}} 
+\index{RBNode@{RBNode}!left@{left}}
+\index{left@{left}!RBNode@{RBNode}}
+\doxysubsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRBNode}{R\+B\+Node}}$\ast$ R\+B\+Node\+::left}
+
+
+
+Height of the node. 
+
+
+
+Definition at line 37 of file Q1.\+cpp.
+
+\mbox{\Hypertarget{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}\label{classRBNode_a131e0d1a4f73d55e6b5ad282c6846612}} 
+\index{RBNode@{RBNode}!parent@{parent}}
+\index{parent@{parent}!RBNode@{RBNode}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRBNode}{R\+B\+Node}}$\ast$ R\+B\+Node\+::parent}
+
+
+
+Right child of node. 
+
+
+
+Definition at line 39 of file Q1.\+cpp.
+
+\mbox{\Hypertarget{classRBNode_af82826872827c548a5713eb84f264767}\label{classRBNode_af82826872827c548a5713eb84f264767}} 
+\index{RBNode@{RBNode}!right@{right}}
+\index{right@{right}!RBNode@{RBNode}}
+\doxysubsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRBNode}{R\+B\+Node}}$\ast$ R\+B\+Node\+::right}
+
+
+
+Left child of node. 
+
+
+
+Definition at line 38 of file Q1.\+cpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Q1_8cpp}{Q1.\+cpp}}\end{DoxyCompactItemize}
