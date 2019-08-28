@@ -98,9 +98,20 @@ int main(){
 	char* b_string;
 
 	FILE* inputFile = fopen("outputfile.txt", "r");
+	FILE* inputFile2 = fopen("outputfile.txt", "r");
+	
 	char* fileData = (char*) calloc(1000, sizeof(char));
-	fgets(fileData, 1000, inputFile);
-	strtok(fileData, "\n\n");
+	char* fileData2 = (char*) calloc(1000, sizeof(char));
+	char* fileData3 = (char*) calloc(1000, sizeof(char));
+	// fgets(fileData, 1000, inputFile);
+	while(fgets(fileData, 1000, inputFile)){
+		fileData2 = strcat(fileData2, fileData);
+
+	} 
+	
+	// for(int i = 0; i < strlen(fileData2) - 1; i++){
+	// 	fileData3[i] =  fileData2[i];
+	// }
 
 	FILE* opFile = fopen("decryptedOutputfile.txt", "w");
 	char* opData;
@@ -150,12 +161,13 @@ int main(){
 		return 0;
 	}
 
-	opData = decrypt(n, a, b, fileData);
+	opData = decrypt(n, a, b, fileData2);
 
-	printf("%s\n", fileData);
+	printf("%s\n", fileData2);
 	printf("%s\n", opData);
 	
 	strtok(opData, "_");
+	// opData = strcat(opData, "\n");
 
 	fprintf(opFile,"%s",opData);
 

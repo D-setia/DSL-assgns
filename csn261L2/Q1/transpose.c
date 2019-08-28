@@ -73,6 +73,8 @@ int main(){
 	char* opData = (char*) calloc(1000, sizeof(char));
 
 	char* fileData = (char*) calloc(1000, sizeof(char));
+	char* fileData2 = (char*) calloc(1000, sizeof(char));
+	char* fileData3 = (char*) calloc(1000, sizeof(char));
 	
 	printf("Give the values of n, a and b in the format:\nn a b\n");
 
@@ -114,18 +116,26 @@ int main(){
 		return 0;
 	}
 
-	FILE* inputFile = fopen("Sample_testcase_1.txt", "r");
-	fgets(fileData, 1000, inputFile);
-	strtok(fileData, "\n\n");
+	FILE* inputFile = fopen("tc1.txt", "r");
+	FILE* inputFile2 = fopen("tc1.txt", "r");
 
+	while(fgets(fileData, 1000, inputFile)){
+		fileData2 = strcat(fileData2, fileData);
+
+	} 
+	
+	for(int i = 0; i < strlen(fileData2) - 1; i++){
+		fileData3[i] =  fileData2[i];
+	}
 	if((a == 0)||(gcd(abs(a),n) != 1)){
 		printf("ERROR: Encryption is not possible.\nChoose appropriate a and b\n");
 		return 0;
 	}
 	
-	opData = encrypt(n, a, b, fileData);
+	opData = encrypt(n, a, b, fileData3);
+	// opData = strcat(opData, "\n");
 
-	printf("%s\n", fileData);
+	printf("%s\n", fileData3);
 	printf("%s\n", opData);
 
 	fprintf(opFile,"%s",opData);
