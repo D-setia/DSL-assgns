@@ -8,8 +8,8 @@ This is the node for Binary Search Tree
  */
 class Node{
 public:
-	Node* left; //! Pointer to left child
-	Node* right; //! Pointer to right child
+	Node* left = NULL; //! Pointer to left child
+	Node* right = NULL; //! Pointer to right child
 	int data; //! Data stored in the node
 	int height = 1; //! Height of the node
 	int balanceFactor = 0; //! Balance factor of the node
@@ -123,6 +123,20 @@ public:
 		return root;
 	}
 
+
+		void calculateBalFactor(Node *root){
+		
+		if(root == NULL) return; 
+
+		calculateBalFactor(root->left);
+		calculateBalFactor(root->right);
+
+		int lh = ((root->left != NULL)? root->left->height	 : 0);
+		int rh = ((root->right != NULL)? root->right->height : 0);
+		root->height = max(lh, rh) + 1;
+		root->balanceFactor = abs(lh - rh);
+	}
+
 	/*!
 	This function converts the Binary Search Tree to AVL Tree
 	@return ---
@@ -131,7 +145,8 @@ public:
 		
 		inOrderTree.clear();
 		createArray_inOrder(root);
-		root = generateAVL(root, 0, floor(inOrderTree.size() / 2), inOrderTree.size() - 1);
+		root = generateAVL(root, 0, floor(inOrderTree.size() -1 / 2), inOrderTree.size() - 1);
+		calculateBalFactor(root);
 
 	}
 
