@@ -37,7 +37,6 @@ bool canAttack(Queen* queenI, Queen* queenJ){
 void setQueen(Queen* queenI){
 	int flag1 = 0;
 	int i = queenI->y;
-	//cout << i << "\n";
 	if(isPossible){
 		if(queenI->x > (n-1)){
 					if(i == 0){
@@ -51,7 +50,6 @@ void setQueen(Queen* queenI){
 				}
 	for(int j = 0; j < i; j++){
 		if(canAttack(queenI, queenArr[j])){
-		//	if(isPossible){
 				if(queenI->x >= (n-1)){
 					if(i == 0){
 						isPossible = false;
@@ -63,16 +61,13 @@ void setQueen(Queen* queenI){
 					}
 				}else{ 
 					queenI->x += 1;
-	//				cout << queenI->x << "\n";
 					flag1 = 1;
 				}				
-	//			flag1 = 1;	
-		//	}
 		}
 		
 	}
 	}
-//	if(flag1 == 1) setQueen(queenI);
+
 	if(isPossible && (flag1 == 1)) setQueen(queenI);
 }
 
@@ -85,7 +80,6 @@ bool setQueens(){
 
 void print(){
 	for(int i = n-1; i >= 0; i--){
-	//	printf("Queen No. %d, x = %d, y = %d \n", i, queenArr[i]->x, queenArr[i]->y);
 		for(int j = 0; j < queenArr[i]->x; j++){
 			printf("0 ");
 		}
@@ -102,12 +96,6 @@ int main(){
 	cin >> n;
 	initQueens(n);
 	printf("\n");
-//	setQueens();
-//	Queen* queen1 = new Queen(0);
-//	Queen* queen2 = new Queen(2);
-//	queen2->x = 1;
-//	cout << canAttack(queen1, queen2) << "\n";
-//	cout << "\n";
 	
 	while(isPossible && (queenArr[0]->x < n)){
 	setQueens();
@@ -115,9 +103,8 @@ int main(){
 		print();
 		printf("\n");
 		ans++;
-	}else{
-//		if(ans == 0) printf("It is not possible to set up the board\n");
 	}
+
 	queenArr[0]->x += 1;
 	}
 
