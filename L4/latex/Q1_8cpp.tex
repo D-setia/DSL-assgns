@@ -1,0 +1,215 @@
+\hypertarget{Q1_8cpp}{}\doxysection{Q1.\+cpp File Reference}
+\label{Q1_8cpp}\index{Q1.cpp@{Q1.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classNode}{Node}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Q1_8cpp_a147c4cdc7dec51aff11896a4a5d43b69}{insert}} (string word, string word\+Meaning)
+\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{Q1_8cpp_a0966725b4be4e894e661e5dbd806ac6b}{search}} (string word)
+\item 
+int \mbox{\hyperlink{Q1_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{Q1_8cpp_a3f7db53410d0f3007de60cc3d64a0c09}{root}}
+\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{Q1_8cpp_a93bf4c36cc8e4c8a89dea46576d6492a}{search\+Result}}
+\item 
+string \mbox{\hyperlink{Q1_8cpp_ab27d38308879bde28222a26d4229a56b}{ipline}}
+\item 
+string \mbox{\hyperlink{Q1_8cpp_a576ce9ca552277df651ada32e9ead715}{input\+Word}}
+\item 
+string \mbox{\hyperlink{Q1_8cpp_ae8975b993a5725e8f6070e8913d12829}{input\+Meaning}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Q1_8cpp_a147c4cdc7dec51aff11896a4a5d43b69}\label{Q1_8cpp_a147c4cdc7dec51aff11896a4a5d43b69}} 
+\index{Q1.cpp@{Q1.cpp}!insert@{insert}}
+\index{insert@{insert}!Q1.cpp@{Q1.cpp}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void insert (\begin{DoxyParamCaption}\item[{string}]{word,  }\item[{string}]{word\+Meaning }\end{DoxyParamCaption})}
+
+This function inserts a word into the dictionary along with its meaning 
+\begin{DoxyParams}{Parameters}
+{\em word} & The word to add to the dictionary \\
+\hline
+{\em word\+Meanig} & Meaning of the word \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 35 of file Q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{35                                             \{}
+\DoxyCodeLine{36     \mbox{\hyperlink{classNode}{Node}}* node=\mbox{\hyperlink{Q1_8cpp_a3f7db53410d0f3007de60cc3d64a0c09}{root}};}
+\DoxyCodeLine{37     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<word.length();i++)}
+\DoxyCodeLine{38     \{}
+\DoxyCodeLine{39         \textcolor{keywordtype}{int} letter=(int)word[i]-\/(\textcolor{keywordtype}{int})\textcolor{charliteral}{'a'};}
+\DoxyCodeLine{40         \textcolor{keywordflow}{if}(!node-\/>\mbox{\hyperlink{classNode_afd43208afd37bba14e75dd89d9846234}{child}}[letter])}
+\DoxyCodeLine{41         \{}
+\DoxyCodeLine{42             \mbox{\hyperlink{classNode}{Node}}* newNode=\textcolor{keyword}{new} \mbox{\hyperlink{classNode}{Node}}();}
+\DoxyCodeLine{43             node-\/>\mbox{\hyperlink{classNode_afd43208afd37bba14e75dd89d9846234}{child}}[letter]=newNode;}
+\DoxyCodeLine{44         \}}
+\DoxyCodeLine{45         node=node-\/>\mbox{\hyperlink{classNode_afd43208afd37bba14e75dd89d9846234}{child}}[letter];}
+\DoxyCodeLine{46     \}}
+\DoxyCodeLine{47     node-\/>\mbox{\hyperlink{classNode_aa51a6e65fa1c82d4aecbac7d6e4c588b}{wordEnd}}=\textcolor{keyword}{true};}
+\DoxyCodeLine{48     node-\/>\mbox{\hyperlink{classNode_a59fec111441e93f03a8199610a308c07}{wordMeaning}}=wordMeaning;}
+\DoxyCodeLine{49 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Q1_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{Q1_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Q1.cpp@{Q1.cpp}!main@{main}}
+\index{main@{main}!Q1.cpp@{Q1.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 75 of file Q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{75           \{}
+\DoxyCodeLine{76     \mbox{\hyperlink{Q1_8cpp_a3f7db53410d0f3007de60cc3d64a0c09}{root}}=\textcolor{keyword}{new} \mbox{\hyperlink{classNode}{Node}}();}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     ifstream str;}
+\DoxyCodeLine{79     str.open(\textcolor{stringliteral}{"L4\_P1\_input.csv"});}
+\DoxyCodeLine{80     \textcolor{keywordflow}{if}(!str.is\_open())}
+\DoxyCodeLine{81         cout<<\textcolor{stringliteral}{"Input file not found."}<<endl;}
+\DoxyCodeLine{82     }
+\DoxyCodeLine{83     \textcolor{keywordflow}{while}(getline(str,\mbox{\hyperlink{Q1_8cpp_ab27d38308879bde28222a26d4229a56b}{ipline}}))}
+\DoxyCodeLine{84     \{}
+\DoxyCodeLine{85         stringstream string(\mbox{\hyperlink{Q1_8cpp_ab27d38308879bde28222a26d4229a56b}{ipline}});}
+\DoxyCodeLine{86         getline(\textcolor{keywordtype}{string}, \mbox{\hyperlink{Q1_8cpp_a576ce9ca552277df651ada32e9ead715}{inputWord}},\textcolor{charliteral}{';'});}
+\DoxyCodeLine{87         getline(\textcolor{keywordtype}{string},\mbox{\hyperlink{Q1_8cpp_ae8975b993a5725e8f6070e8913d12829}{inputMeaning}},\textcolor{charliteral}{';'});}
+\DoxyCodeLine{88         }
+\DoxyCodeLine{89         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i < \mbox{\hyperlink{Q1_8cpp_a576ce9ca552277df651ada32e9ead715}{inputWord}}.length(); i++)}
+\DoxyCodeLine{90         \mbox{\hyperlink{Q1_8cpp_a576ce9ca552277df651ada32e9ead715}{inputWord}}[i] = tolower(\mbox{\hyperlink{Q1_8cpp_a576ce9ca552277df651ada32e9ead715}{inputWord}}[i]);}
+\DoxyCodeLine{91         }
+\DoxyCodeLine{92         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i < \mbox{\hyperlink{Q1_8cpp_ae8975b993a5725e8f6070e8913d12829}{inputMeaning}}.length(); i++)}
+\DoxyCodeLine{93         \mbox{\hyperlink{Q1_8cpp_ae8975b993a5725e8f6070e8913d12829}{inputMeaning}}[i] = tolower(\mbox{\hyperlink{Q1_8cpp_ae8975b993a5725e8f6070e8913d12829}{inputMeaning}}[i]);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95         \textcolor{comment}{// inputMeaning = inputMeaning.tolower();}}
+\DoxyCodeLine{96         \mbox{\hyperlink{Q1_8cpp_a147c4cdc7dec51aff11896a4a5d43b69}{insert}}(\mbox{\hyperlink{Q1_8cpp_a576ce9ca552277df651ada32e9ead715}{inputWord}},\mbox{\hyperlink{Q1_8cpp_ae8975b993a5725e8f6070e8913d12829}{inputMeaning}});}
+\DoxyCodeLine{97     \}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{keywordtype}{string} input;}
+\DoxyCodeLine{100     getline(cin,input);}
+\DoxyCodeLine{101     }
+\DoxyCodeLine{102     \mbox{\hyperlink{Q1_8cpp_a93bf4c36cc8e4c8a89dea46576d6492a}{searchResult}} = \mbox{\hyperlink{Q1_8cpp_a0966725b4be4e894e661e5dbd806ac6b}{search}}(input);}
+\DoxyCodeLine{103     \textcolor{keywordflow}{if}(\mbox{\hyperlink{Q1_8cpp_a93bf4c36cc8e4c8a89dea46576d6492a}{searchResult}})}
+\DoxyCodeLine{104         cout<<\mbox{\hyperlink{Q1_8cpp_a93bf4c36cc8e4c8a89dea46576d6492a}{searchResult}}-\/>\mbox{\hyperlink{classNode_a59fec111441e93f03a8199610a308c07}{wordMeaning}}<<endl;}
+\DoxyCodeLine{105     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{106         cout<<\textcolor{stringliteral}{"Word not found in dictionary."}<<endl;}
+\DoxyCodeLine{107     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{108 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Q1_8cpp_a0966725b4be4e894e661e5dbd806ac6b}\label{Q1_8cpp_a0966725b4be4e894e661e5dbd806ac6b}} 
+\index{Q1.cpp@{Q1.cpp}!search@{search}}
+\index{search@{search}!Q1.cpp@{Q1.cpp}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}$\ast$ search (\begin{DoxyParamCaption}\item[{string}]{word }\end{DoxyParamCaption})}
+
+This function serches for the word specified by the argument in the dictionary 
+\begin{DoxyParams}{Parameters}
+{\em word} & The word to search in the dictionary \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node$\ast$ A node with the meaning set as the required meaning 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file Q1.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{57 \{}
+\DoxyCodeLine{58     \mbox{\hyperlink{classNode}{Node}}* node=\mbox{\hyperlink{Q1_8cpp_a3f7db53410d0f3007de60cc3d64a0c09}{root}};}
+\DoxyCodeLine{59     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<word.length();i++)}
+\DoxyCodeLine{60     \{}
+\DoxyCodeLine{61         \textcolor{keywordtype}{int} letter=(int)word[i]-\/(\textcolor{keywordtype}{int})\textcolor{charliteral}{'a'};}
+\DoxyCodeLine{62         \textcolor{keywordflow}{if}(!node-\/>\mbox{\hyperlink{classNode_afd43208afd37bba14e75dd89d9846234}{child}}[letter])}
+\DoxyCodeLine{63             \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{64         node=node-\/>\mbox{\hyperlink{classNode_afd43208afd37bba14e75dd89d9846234}{child}}[letter];}
+\DoxyCodeLine{65     \}}
+\DoxyCodeLine{66     \textcolor{keywordflow}{if}(node-\/>\mbox{\hyperlink{classNode_aa51a6e65fa1c82d4aecbac7d6e4c588b}{wordEnd}})\{}
+\DoxyCodeLine{67         \mbox{\hyperlink{classNode}{Node}}* temp = \textcolor{keyword}{new} \mbox{\hyperlink{classNode}{Node}}();}
+\DoxyCodeLine{68         temp-\/>\mbox{\hyperlink{classNode_a59fec111441e93f03a8199610a308c07}{wordMeaning}} = node-\/>\mbox{\hyperlink{classNode_a59fec111441e93f03a8199610a308c07}{wordMeaning}};}
+\DoxyCodeLine{69         \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{70     \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{71         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{72     \}}
+\DoxyCodeLine{73 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{Q1_8cpp_ae8975b993a5725e8f6070e8913d12829}\label{Q1_8cpp_ae8975b993a5725e8f6070e8913d12829}} 
+\index{Q1.cpp@{Q1.cpp}!inputMeaning@{inputMeaning}}
+\index{inputMeaning@{inputMeaning}!Q1.cpp@{Q1.cpp}}
+\doxysubsubsection{\texorpdfstring{inputMeaning}{inputMeaning}}
+{\footnotesize\ttfamily string input\+Meaning}
+
+
+
+Definition at line 27 of file Q1.\+cpp.
+
+\mbox{\Hypertarget{Q1_8cpp_a576ce9ca552277df651ada32e9ead715}\label{Q1_8cpp_a576ce9ca552277df651ada32e9ead715}} 
+\index{Q1.cpp@{Q1.cpp}!inputWord@{inputWord}}
+\index{inputWord@{inputWord}!Q1.cpp@{Q1.cpp}}
+\doxysubsubsection{\texorpdfstring{inputWord}{inputWord}}
+{\footnotesize\ttfamily string input\+Word}
+
+
+
+Definition at line 26 of file Q1.\+cpp.
+
+\mbox{\Hypertarget{Q1_8cpp_ab27d38308879bde28222a26d4229a56b}\label{Q1_8cpp_ab27d38308879bde28222a26d4229a56b}} 
+\index{Q1.cpp@{Q1.cpp}!ipline@{ipline}}
+\index{ipline@{ipline}!Q1.cpp@{Q1.cpp}}
+\doxysubsubsection{\texorpdfstring{ipline}{ipline}}
+{\footnotesize\ttfamily string ipline}
+
+
+
+Definition at line 25 of file Q1.\+cpp.
+
+\mbox{\Hypertarget{Q1_8cpp_a3f7db53410d0f3007de60cc3d64a0c09}\label{Q1_8cpp_a3f7db53410d0f3007de60cc3d64a0c09}} 
+\index{Q1.cpp@{Q1.cpp}!root@{root}}
+\index{root@{root}!Q1.cpp@{Q1.cpp}}
+\doxysubsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}$\ast$ root}
+
+
+
+Definition at line 23 of file Q1.\+cpp.
+
+\mbox{\Hypertarget{Q1_8cpp_a93bf4c36cc8e4c8a89dea46576d6492a}\label{Q1_8cpp_a93bf4c36cc8e4c8a89dea46576d6492a}} 
+\index{Q1.cpp@{Q1.cpp}!searchResult@{searchResult}}
+\index{searchResult@{searchResult}!Q1.cpp@{Q1.cpp}}
+\doxysubsubsection{\texorpdfstring{searchResult}{searchResult}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}}$\ast$ search\+Result}
+
+
+
+Definition at line 24 of file Q1.\+cpp.
+

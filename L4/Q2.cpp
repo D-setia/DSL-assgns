@@ -5,6 +5,12 @@ int noOfWays = 0;
 int** chessBoard;
 int n; 
   
+/*!
+This function checks if the queen placed at a particular position is safe or not
+@param row 	The row of the queen
+@param col 	The column of the queen
+@return bool 	If the queen is safe at the position or not	
+*/
 bool isSafe(int row, int col) {
   
     for (int i = 0; i < col; i++){ 
@@ -28,6 +34,10 @@ bool isSafe(int row, int col) {
     return true; 
 }
 
+/*!
+This function prints the board
+@return ---
+*/
 void print() 
 { 
     noOfWays++; 
@@ -40,8 +50,12 @@ void print()
     printf("\n"); 
 }
   
-/* A recursive utility function to solve N 
-Queen problem */
+/*!
+This function is called recursively and sets up the queens on the 
+chessboard. When a valid combination is reached, the board is printed
+@param col  	The column whose queen is to be set
+@return bool 	If it is possible to set up the board or not
+*/
 bool setQueens(int col){ 
     if (col == n) 
     { 

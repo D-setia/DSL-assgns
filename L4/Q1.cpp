@@ -1,71 +1,108 @@
 #include<iostream>
+#include<string>
+#include<fstream>
+#include<sstream>
 using namespace std;
+/*!
+This is the Node class with all the important attributes
+*/
+class Node{
+public:
+	Node* child[26];
+	bool wordEnd;
+	string wordMeaning;
 
-struct trienode
-{
-	trienode* child[26];
-	bool end;
-	string meaning;
-};
-trienode* root;
-string temp_meaning;
-void insert_in_trie(string word,string meaning)
-{
-	trienode* node=root;
-	for(int i=0;i<word.length();i++)
-	{
-		int pos=(int)word[i]-(int)'A';
-		if(!node->child[pos])
-		{
-			trienode* newnode=new trienode;
-			newnode->end=false;
-			for(int i=0;i<26;i++)
-				newnode->child[i]=NULL;
-			node->child[pos]=newnode;
+	Node(){
+		this->wordEnd = false;
+		for(int i = 0; i< 26; i++){
+			this->child[i] = NULL;
 		}
-		node=node->child[pos];
 	}
-	node->end=true;
-	node->meaning=meaning;
-	return;
-}
-bool search_in_trie(string word)
-{
-	trienode* node=root;
+};
+
+Node* root;
+Node* searchResult;
+string ipline;
+string inputWord; 
+string inputMeaning;
+
+/*!
+This function inserts a word into the dictionary along with its meaning
+@param word     The word to add to the dictionary
+@param wordMeanig   Meaning of the word
+@return ---
+*/
+void insert(string word, string wordMeaning){
+	Node* node=root;
 	for(int i=0;i<word.length();i++)
 	{
-		int pos=(int)word[i]-(int)'A';
-		if(!node->child[pos])
-			return false;
-		node=node->child[pos];
+		int letter=(int)word[i]-(int)'a';
+		if(!node->child[letter])
+		{
+			Node* newNode=new Node();
+			node->child[letter]=newNode;
+		}
+		node=node->child[letter];
 	}
-	if(node->end)
-		temp_meaning=node->meaning;
-	return node->end;
+	node->wordEnd=true;
+	node->wordMeaning=wordMeaning;
 }
-int main()
+
+/*!
+This function serches for the word specified by the argument in the dictionary
+@param word     The word to search in the dictionary
+@return Node*   A node with the meaning set as the required meaning
+*/
+Node* search(string word)
 {
-	root=new trienode;
-	root->end=false;
-	for(int i=0;i<26;i++)
-		root->child[i]=NULL;
-	ifstream fp;
-	fp.open("TrieInput.csv");
-	if(!fp.is_open())
-		cout<<"Unable to open input file."<<endl;
-	string line,word,meaning;
-	while(getline(fp,line))
+	Node* node=root;
+	for(int i=0;i<word.length();i++)
 	{
-		stringstream str(line);
-		getline(str,word,';');
-		getline(str,meaning,';');
-		insert_in_trie(word,meaning);
+		int letter=(int)word[i]-(int)'a';
+		if(!node->child[letter])
+			return NULL;
+		node=node->child[letter];
 	}
+	if(node->wordEnd){
+		Node* temp = new Node();
+		temp->wordMeaning = node->wordMeaning;
+		return temp;
+	}else{
+		return NULL;
+	}
+}
+
+int main(){
+	root=new Node();
+
+	ifstream str;
+	str.open("L4_P1_input.csv");
+	if(!str.is_open())
+		cout<<"Input file not found."<<endl;
+	
+	while(getline(str,ipline))
+	{
+		stringstream string(ipline);
+		getline(string, inputWord,';');
+		getline(string,inputMeaning,';');
+        
+        for (int i=0; i < inputWord.length(); i++)
+        inputWord[i] = tolower(inputWord[i]);
+        
+        for (int i=0; i < inputMeaning.length(); i++)
+        inputMeaning[i] = tolower(inputMeaning[i]);
+
+        // inputMeaning = inputMeaning.tolower();
+		insert(inputWord,inputMeaning);
+	}
+
 	string input;
 	getline(cin,input);
-	if(search_in_trie(input))
-		cout<<temp_meaning<<endl;
+	
+	searchResult = search(input);
+	if(searchResult)
+		cout<<searchResult->wordMeaning<<endl;
 	else
-		cout<<"Invalid word."<<endl;
+		cout<<"Word not found in dictionary."<<endl;
 	return 0;
 }

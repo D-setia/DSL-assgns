@@ -1,0 +1,184 @@
+\hypertarget{Q3_8cpp}{}\doxysection{Q3.\+cpp File Reference}
+\label{Q3_8cpp}\index{Q3.cpp@{Q3.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Q3_8cpp_a03baf4956180e4a88334c2a90cc97178}{set\+Values}} ()
+\item 
+int \mbox{\hyperlink{Q3_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ int, int $>$ \mbox{\hyperlink{Q3_8cpp_a78e1a941aca1e86dcb3e356aa5df9124}{hash\+Map}}
+\item 
+int \mbox{\hyperlink{Q3_8cpp_a930b83edda39ee8cfa78dd4574a50bc3}{sum}} = 0
+\item 
+int \mbox{\hyperlink{Q3_8cpp_a9f59b34b1f25fe00023291b678246bcc}{length}} = 0
+\item 
+int $\ast$ \mbox{\hyperlink{Q3_8cpp_acbddc7160280aea531941a9b78819567}{arr}}
+\item 
+int \mbox{\hyperlink{Q3_8cpp_a7722c8ecbb62d99aee7ce68b1752f337}{N}}
+\item 
+int \mbox{\hyperlink{Q3_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n}}
+\item 
+int \mbox{\hyperlink{Q3_8cpp_a01f10c7a68420aff91a418cf1f39de6f}{start\+Index}} = -\/1
+\item 
+int \mbox{\hyperlink{Q3_8cpp_a1d490dd85f0efc44964139f9773a1f5a}{end\+Index}} = -\/1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Q3_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{Q3_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Q3.cpp@{Q3.cpp}!main@{main}}
+\index{main@{main}!Q3.cpp@{Q3.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 41 of file Q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41           \{ }
+\DoxyCodeLine{42     }
+\DoxyCodeLine{43     cin >> \mbox{\hyperlink{Q3_8cpp_a7722c8ecbb62d99aee7ce68b1752f337}{N}};}
+\DoxyCodeLine{44     \mbox{\hyperlink{Q3_8cpp_acbddc7160280aea531941a9b78819567}{arr}} = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[\mbox{\hyperlink{Q3_8cpp_a7722c8ecbb62d99aee7ce68b1752f337}{N}}];}
+\DoxyCodeLine{45     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{Q3_8cpp_a7722c8ecbb62d99aee7ce68b1752f337}{N}}; i++)\{}
+\DoxyCodeLine{46         cin >> \mbox{\hyperlink{Q3_8cpp_acbddc7160280aea531941a9b78819567}{arr}}[i];}
+\DoxyCodeLine{47     \}}
+\DoxyCodeLine{48     cin >> \mbox{\hyperlink{Q3_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n}};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \mbox{\hyperlink{Q3_8cpp_a03baf4956180e4a88334c2a90cc97178}{setValues}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     cout << \textcolor{stringliteral}{"Length of longest subarrray is "} << \mbox{\hyperlink{Q3_8cpp_a9f59b34b1f25fe00023291b678246bcc}{length}} << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{53     cout << \textcolor{stringliteral}{"Index from "} << \mbox{\hyperlink{Q3_8cpp_a01f10c7a68420aff91a418cf1f39de6f}{startIndex}} << \textcolor{stringliteral}{" to "} << \mbox{\hyperlink{Q3_8cpp_a1d490dd85f0efc44964139f9773a1f5a}{endIndex}} << \textcolor{stringliteral}{"\(\backslash\)n"};}
+\DoxyCodeLine{54     }
+\DoxyCodeLine{55     \textcolor{keywordflow}{return} 0; }
+\DoxyCodeLine{56 \} }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Q3_8cpp_a03baf4956180e4a88334c2a90cc97178}\label{Q3_8cpp_a03baf4956180e4a88334c2a90cc97178}} 
+\index{Q3.cpp@{Q3.cpp}!setValues@{setValues}}
+\index{setValues@{setValues}!Q3.cpp@{Q3.cpp}}
+\doxysubsubsection{\texorpdfstring{setValues()}{setValues()}}
+{\footnotesize\ttfamily void set\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function adds the values to the map and sets the values of starting index, ending index and the length of longest subarray \begin{DoxyReturn}{Returns}
+--- 
+\end{DoxyReturn}
+
+
+Definition at line 20 of file Q3.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20                  \{  }
+\DoxyCodeLine{21     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{Q3_8cpp_a7722c8ecbb62d99aee7ce68b1752f337}{N}}; i++) \{  }
+\DoxyCodeLine{22         \mbox{\hyperlink{Q3_8cpp_a930b83edda39ee8cfa78dd4574a50bc3}{sum}} += \mbox{\hyperlink{Q3_8cpp_acbddc7160280aea531941a9b78819567}{arr}}[i];  }
+\DoxyCodeLine{23         \textcolor{keywordflow}{if} (\mbox{\hyperlink{Q3_8cpp_a930b83edda39ee8cfa78dd4574a50bc3}{sum}} == \mbox{\hyperlink{Q3_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n}})\{}
+\DoxyCodeLine{24             \mbox{\hyperlink{Q3_8cpp_a9f59b34b1f25fe00023291b678246bcc}{length}} = i + 1;}
+\DoxyCodeLine{25             \mbox{\hyperlink{Q3_8cpp_a01f10c7a68420aff91a418cf1f39de6f}{startIndex}} = 0;}
+\DoxyCodeLine{26             \mbox{\hyperlink{Q3_8cpp_a1d490dd85f0efc44964139f9773a1f5a}{endIndex}} = i;}
+\DoxyCodeLine{27         \}}
+\DoxyCodeLine{28         \textcolor{keywordflow}{if} (\mbox{\hyperlink{Q3_8cpp_a78e1a941aca1e86dcb3e356aa5df9124}{hashMap}}.find(\mbox{\hyperlink{Q3_8cpp_a930b83edda39ee8cfa78dd4574a50bc3}{sum}}) == \mbox{\hyperlink{Q3_8cpp_a78e1a941aca1e86dcb3e356aa5df9124}{hashMap}}.end())\{}
+\DoxyCodeLine{29             \mbox{\hyperlink{Q3_8cpp_a78e1a941aca1e86dcb3e356aa5df9124}{hashMap}}[\mbox{\hyperlink{Q3_8cpp_a930b83edda39ee8cfa78dd4574a50bc3}{sum}}] = i;}
+\DoxyCodeLine{30         \}  }
+\DoxyCodeLine{31         \textcolor{keywordflow}{if} (\mbox{\hyperlink{Q3_8cpp_a78e1a941aca1e86dcb3e356aa5df9124}{hashMap}}.find(\mbox{\hyperlink{Q3_8cpp_a930b83edda39ee8cfa78dd4574a50bc3}{sum}} -\/ \mbox{\hyperlink{Q3_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n}}) != \mbox{\hyperlink{Q3_8cpp_a78e1a941aca1e86dcb3e356aa5df9124}{hashMap}}.end())\{  }
+\DoxyCodeLine{32             \textcolor{keywordflow}{if} (\mbox{\hyperlink{Q3_8cpp_a9f59b34b1f25fe00023291b678246bcc}{length}} < (i -\/ \mbox{\hyperlink{Q3_8cpp_a78e1a941aca1e86dcb3e356aa5df9124}{hashMap}}[\mbox{\hyperlink{Q3_8cpp_a930b83edda39ee8cfa78dd4574a50bc3}{sum}} -\/ \mbox{\hyperlink{Q3_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n}}]))\{ }
+\DoxyCodeLine{33                 \mbox{\hyperlink{Q3_8cpp_a9f59b34b1f25fe00023291b678246bcc}{length}} = i -\/ \mbox{\hyperlink{Q3_8cpp_a78e1a941aca1e86dcb3e356aa5df9124}{hashMap}}[\mbox{\hyperlink{Q3_8cpp_a930b83edda39ee8cfa78dd4574a50bc3}{sum}} -\/ \mbox{\hyperlink{Q3_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n}}];}
+\DoxyCodeLine{34                 \mbox{\hyperlink{Q3_8cpp_a01f10c7a68420aff91a418cf1f39de6f}{startIndex}} = \mbox{\hyperlink{Q3_8cpp_a78e1a941aca1e86dcb3e356aa5df9124}{hashMap}}[\mbox{\hyperlink{Q3_8cpp_a930b83edda39ee8cfa78dd4574a50bc3}{sum}} -\/\mbox{\hyperlink{Q3_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}{n}}] + 1;}
+\DoxyCodeLine{35                 \mbox{\hyperlink{Q3_8cpp_a1d490dd85f0efc44964139f9773a1f5a}{endIndex}} = i;}
+\DoxyCodeLine{36             \}}
+\DoxyCodeLine{37         \} }
+\DoxyCodeLine{38     \} }
+\DoxyCodeLine{39 \} }
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{Q3_8cpp_acbddc7160280aea531941a9b78819567}\label{Q3_8cpp_acbddc7160280aea531941a9b78819567}} 
+\index{Q3.cpp@{Q3.cpp}!arr@{arr}}
+\index{arr@{arr}!Q3.cpp@{Q3.cpp}}
+\doxysubsubsection{\texorpdfstring{arr}{arr}}
+{\footnotesize\ttfamily int$\ast$ arr}
+
+
+
+Definition at line 9 of file Q3.\+cpp.
+
+\mbox{\Hypertarget{Q3_8cpp_a1d490dd85f0efc44964139f9773a1f5a}\label{Q3_8cpp_a1d490dd85f0efc44964139f9773a1f5a}} 
+\index{Q3.cpp@{Q3.cpp}!endIndex@{endIndex}}
+\index{endIndex@{endIndex}!Q3.cpp@{Q3.cpp}}
+\doxysubsubsection{\texorpdfstring{endIndex}{endIndex}}
+{\footnotesize\ttfamily int end\+Index = -\/1}
+
+
+
+Definition at line 13 of file Q3.\+cpp.
+
+\mbox{\Hypertarget{Q3_8cpp_a78e1a941aca1e86dcb3e356aa5df9124}\label{Q3_8cpp_a78e1a941aca1e86dcb3e356aa5df9124}} 
+\index{Q3.cpp@{Q3.cpp}!hashMap@{hashMap}}
+\index{hashMap@{hashMap}!Q3.cpp@{Q3.cpp}}
+\doxysubsubsection{\texorpdfstring{hashMap}{hashMap}}
+{\footnotesize\ttfamily map$<$int, int$>$ hash\+Map}
+
+
+
+Definition at line 6 of file Q3.\+cpp.
+
+\mbox{\Hypertarget{Q3_8cpp_a9f59b34b1f25fe00023291b678246bcc}\label{Q3_8cpp_a9f59b34b1f25fe00023291b678246bcc}} 
+\index{Q3.cpp@{Q3.cpp}!length@{length}}
+\index{length@{length}!Q3.cpp@{Q3.cpp}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily int length = 0}
+
+
+
+Definition at line 8 of file Q3.\+cpp.
+
+\mbox{\Hypertarget{Q3_8cpp_a7722c8ecbb62d99aee7ce68b1752f337}\label{Q3_8cpp_a7722c8ecbb62d99aee7ce68b1752f337}} 
+\index{Q3.cpp@{Q3.cpp}!N@{N}}
+\index{N@{N}!Q3.cpp@{Q3.cpp}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily int N}
+
+
+
+Definition at line 10 of file Q3.\+cpp.
+
+\mbox{\Hypertarget{Q3_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}\label{Q3_8cpp_a76f11d9a0a47b94f72c2d0e77fb32240}} 
+\index{Q3.cpp@{Q3.cpp}!n@{n}}
+\index{n@{n}!Q3.cpp@{Q3.cpp}}
+\doxysubsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily int n}
+
+
+
+Definition at line 11 of file Q3.\+cpp.
+
+\mbox{\Hypertarget{Q3_8cpp_a01f10c7a68420aff91a418cf1f39de6f}\label{Q3_8cpp_a01f10c7a68420aff91a418cf1f39de6f}} 
+\index{Q3.cpp@{Q3.cpp}!startIndex@{startIndex}}
+\index{startIndex@{startIndex}!Q3.cpp@{Q3.cpp}}
+\doxysubsubsection{\texorpdfstring{startIndex}{startIndex}}
+{\footnotesize\ttfamily int start\+Index = -\/1}
+
+
+
+Definition at line 12 of file Q3.\+cpp.
+
+\mbox{\Hypertarget{Q3_8cpp_a930b83edda39ee8cfa78dd4574a50bc3}\label{Q3_8cpp_a930b83edda39ee8cfa78dd4574a50bc3}} 
+\index{Q3.cpp@{Q3.cpp}!sum@{sum}}
+\index{sum@{sum}!Q3.cpp@{Q3.cpp}}
+\doxysubsubsection{\texorpdfstring{sum}{sum}}
+{\footnotesize\ttfamily int sum = 0}
+
+
+
+Definition at line 7 of file Q3.\+cpp.
+

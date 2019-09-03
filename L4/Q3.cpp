@@ -12,6 +12,11 @@ int n;
 int startIndex = -1;
 int endIndex = -1;
 
+/*!
+This function adds the values to the map and sets the values of 
+starting index, ending index and the length of longest subarray
+@return ---
+*/
 void setValues() {  
     for (int i = 0; i < N; i++) {  
         sum += arr[i];  
